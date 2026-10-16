@@ -1,0 +1,23 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/_error": [
+      "static/chunks/c890c_next_dist_compiled_9d304482._.js",
+      "static/chunks/c890c_next_dist_shared_lib_c62bdfe1._.js",
+      "static/chunks/c890c_next_dist_client_fa48f5b5._.js",
+      "static/chunks/c890c_next_dist_6ceb4877._.js",
+      "static/chunks/c890c_next_error_30759cbb.js",
+      "static/chunks/[next]_entry_page-loader_ts_e81cf581._.js",
+      "static/chunks/3346f_react-dom_206185d3._.js",
+      "static/chunks/f7a55__pnpm_ce95979c._.js",
+      "static/chunks/[root-of-the-server]__034c90c0._.js",
+      "static/chunks/Downloads_zentrall-home_pages__error_2da965e7._.js",
+      "static/chunks/turbopack-Downloads_zentrall-home_pages__error_f9850c81._.js"
+    ]
+  },
+  "ampFirstPages": []
+}

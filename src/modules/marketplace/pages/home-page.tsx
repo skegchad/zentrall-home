@@ -1,509 +1,495 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import {
-  Coffee,
-  Compass,
-  Gift,
-  Home as HomeIcon,
-  Laptop,
-  Moon,
-  PartyPopper,
-  Shirt,
+  ArrowRight,
+  ChevronRight,
+  Globe,
+  Headphones,
+  Heart,
+  HeartHandshake,
+  MapPin,
+  Menu,
+  Quote,
+  RotateCcw,
+  ShieldCheck,
   ShoppingBag,
   Sparkles,
-  Tag,
-  Utensils,
-  Wrench,
+  Star,
+  Store,
+  Truck,
+  X,
 } from "lucide-react";
 
-import { cn } from "@/lib/utils";
-import { featuredProducts, routes, stores } from "../data";
-import type { MarketplaceFeaturedProduct, MarketplaceStore } from "../data";
-import { ProductCard, StoreCard } from "../components/cards";
-import { ZentralChatbot } from "../components/zentral-chatbot";
+/**
+ * Cambia esto por la foto real del hero (por ejemplo "/hero.jpg" dentro de /public).
+ * Mientras sea null se usa un fondo con degradados de la paleta de Zentrall.
+ */
+const HERO_IMAGE: "../../../../assets/img/hero.png";
 
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.07 } },
-};
+/* ───────── Datos ───────── */
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.35 } },
-};
+const navLinks = [
+  { label: "Inicio", href: "/" },
+  { label: "Explorar", href: "/explorar" },
+  { label: "Tiendas", href: "/tiendas" },
+  { label: "Rutas", href: "/rutas" },
+  { label: "Ofertas", href: "/explorar" },
+];
 
-type HomePageProps = {
-  initialStores?: MarketplaceStore[];
-  initialProducts?: MarketplaceFeaturedProduct[];
-  businessCount?: number;
-};
+const benefits = [
+  { icon: Truck, title: "Envío a domicilio", detail: "En toda la ciudad" },
+  { icon: RotateCcw, title: "Cambios fáciles", detail: "Política de 30 días" },
+  { icon: ShieldCheck, title: "Pagos seguros", detail: "Compra 100% protegida" },
+  { icon: Headphones, title: "Atención cercana", detail: "Te ayudamos cuando quieras" },
+];
 
+const favorites = [
+  { id: 1, name: "Bolso urbano", category: "Moda", price: 28, emoji: "👜" },
+  { id: 2, name: "Vela aromática", category: "Hogar", price: 18.5, emoji: "🕯️" },
+  { id: 3, name: "Botella térmica", category: "Accesorios", price: 24, emoji: "🧴" },
+  { id: 4, name: "Café de especialidad", category: "Gastronomía", price: 8.5, emoji: "☕" },
+  { id: 5, name: "Set facial", category: "Belleza", price: 24.5, emoji: "🌸" },
+];
 
-// ── Componente ────────────────────────────────────────────────────────────────
+const values = [
+  { icon: ShoppingBag, label: "Compra local\ny con propósito" },
+  { icon: Globe, label: "Hecho en\nGuayaquil" },
+  { icon: HeartHandshake, label: "Impacto positivo\nen cada compra" },
+];
 
-export function MarketplaceHomePage({ initialStores = [], initialProducts = [], businessCount = 0 }: HomePageProps) {
-  const [activeOccasion, setActiveOccasion] = useState("");
+const serif = "font-[Georgia,'Times_New_Roman',serif]";
 
-  const categoryChips = [
-    { id: "Gastronomia", icon: Utensils, label: "Gastronomia" },
-    { id: "Moda", icon: Shirt, label: "Moda" },
-    { id: "Tecnologia", icon: Laptop, label: "Tech" },
-    { id: "Belleza", icon: Sparkles, label: "Belleza" },
-    { id: "Servicios", icon: Wrench, label: "Servicios" },
-    { id: "Regalos", icon: Gift, label: "Regalos" },
-    { id: "Hogar", icon: HomeIcon, label: "Hogar" },
-    { id: "Promos", icon: Tag, label: "Ofertas" },
-  ];
+/* ───────── Hero (topbar + forma líquida) ───────── */
 
-  const exploreCategories = [
-    { name: "Gastronomia", icon: Utensils, count: 45 },
-    { name: "Moda", icon: Shirt, count: 32 },
-    { name: "Tech", icon: Laptop, count: 18 },
-    { name: "Servicios", icon: Wrench, count: 24 },
-    { name: "Regalos", icon: Gift, count: 20 },
-    { name: "Hogar", icon: HomeIcon, count: 15 },
-    { name: "Belleza", icon: Sparkles, count: 28 },
-    { name: "Ofertas", icon: Tag, count: 50 },
-  ];
-
-  const occasions = [
-    { id: "desayuno", icon: Coffee, label: "Desayuno", cat: "Gastronomia" },
-    { id: "almuerzo", icon: Utensils, label: "Almuerzo", cat: "Gastronomia" },
-    { id: "regalo", icon: Gift, label: "Regalo", cat: "Regalos" },
-    { id: "look", icon: Shirt, label: "Mi look", cat: "Moda" },
-    { id: "belleza", icon: Sparkles, label: "Belleza", cat: "Belleza" },
-    { id: "hogar", icon: HomeIcon, label: "Mi hogar", cat: "Hogar" },
-    { id: "tech", icon: Laptop, label: "Tech", cat: "Tecnologia" },
-    { id: "noche", icon: Moon, label: "Noche", cat: "Gastronomia" },
-    { id: "evento", icon: PartyPopper, label: "Evento", cat: "Servicios" },
-    { id: "compras", icon: ShoppingBag, label: "Compras", cat: "Moda" },
-  ];
-
-  // ── Datos reales o fallback a mock ──────────────────────────────────────────
-  const hasRealData = initialStores.length > 0;
-
-  const featuredGrid = hasRealData
-    ? initialProducts.slice(0, 8)
-    : featuredProducts.filter((p) => p.isFeatured).slice(0, 8);
-
-  const offerCarousel = hasRealData
-    ? initialProducts.slice(0, 6)
-    : featuredProducts.filter((p) => p.isOffer).slice(0, 6);
-
-  const nearbyProducts = hasRealData
-    ? initialProducts.slice(0, 6)
-    : featuredProducts.filter((p) => !p.isFeatured).slice(0, 6);
-
-  const verifiedStores = hasRealData
-    ? initialStores.slice(0, 4)
-    : stores.filter((s) => s.tags.includes("Verificado")).slice(0, 4);
-
-  const moreProducts = hasRealData
-    ? initialProducts.slice(8, 16)
-    : featuredProducts.slice(8, 16);
-
-  const activeOccasionData = occasions.find((o) => o.id === activeOccasion);
-  const occasionProducts = activeOccasionData
-    ? featuredProducts.filter((p) => p.category === activeOccasionData.cat).slice(0, 4)
-    : featuredProducts.slice(0, 4);
-
-  const displayCount = businessCount > 0 ? businessCount : 500;
+function Hero() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
+    <section className="relative isolate overflow-hidden bg-[#14132a] text-white">
+      {/* Fondo */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 78% 25%, color-mix(in srgb, var(--color-primario) 55%, transparent), transparent 48%), radial-gradient(circle at 12% 85%, color-mix(in srgb, var(--color-descuento) 38%, transparent), transparent 50%), linear-gradient(135deg, #1b1b2f 0%, #0d0c1d 100%)",
+        }}
+      />
 
-      <div className="marketplace-page">
+      {/* Topbar */}
+      <header className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-5 py-5 md:px-10">
+        <Link
+          href="/"
+          className={`${serif} italic text-3xl leading-none tracking-tight`}
+        >
+          Zentrall
+        </Link>
 
-        <div className="marketplace-home-intro flex min-h-[calc(100svh-var(--market-header-height))] flex-col border-b border-border/40 bg-background pb-[calc(var(--market-bottom-nav-height)+1rem)] md:pb-0">
-          {/* ── Hero + Chatbot ── */}
-          <section className="relative flex flex-1 items-center overflow-hidden py-10 md:py-12">
-            <div className="pointer-events-none absolute right-0 top-0 h-120 w-120 translate-x-1/3 -translate-y-1/3 rounded-full bg-primary/5 blur-3xl" />
-            <div className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 -translate-x-1/3 translate-y-1/2 rounded-full bg-primary/5 blur-3xl" />
+        <nav className="hidden items-center gap-8 text-xs font-medium md:flex">
+          {navLinks.map((link, index) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className={`border-b pb-1 transition hover:border-white ${
+                index === 0
+                  ? "border-white"
+                  : "border-transparent text-white/80"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-            <div className="marketplace-container marketplace-container--narrow relative">
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45 }}
-                className="mb-8 text-center"
-              >
-                <h1 className="mb-4 text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-                  La variedad de la ciudad,{" "}
-                  <span className="italic text-primary" style={{ fontFamily: "Georgia, serif" }}>organizada</span>{" "}
-                  en un solo lugar
-                </h1>
-                <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                  Encuentra productos, tiendas y servicios locales de Guayaquil. Verificados, ordenados y listos para
-                  atenderte.
-                </p>
-              </motion.div>
-
-              {/* ── Chatbot Concierge ── */}
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.12 }}
-                className="mb-8"
-              >
-                <ZentralChatbot />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.28 }}
-                className="mt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground"
-              >
-                <span className="flex items-center gap-1.5">
-                  <span className="inline-block h-2 w-2 rounded-full bg-primary" />
-                  +{displayCount} tiendas locales
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="inline-block h-2 w-2 rounded-full bg-primary/70" />
-                  Tiendas verificadas
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="inline-block h-2 w-2 rounded-full bg-primary/50" />
-                  Entrega hoy disponible
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="inline-block h-2 w-2 rounded-full bg-primary/40" />
-                  Concierge Zentrall activo
-                </span>
-              </motion.div>
-            </div>
-          </section>
-
-          {/* ── Category chips ── */}
-          <section className="shrink-0 border-t border-border/40 bg-background py-5">
-            <div className="marketplace-container">
-              <div className="flex flex-wrap justify-center gap-3 pb-2">
-                {categoryChips.map((category) => {
-                  const Icon = category.icon;
-                  return (
-                    <Link key={category.id} href="/explorar" className="flex w-17 flex-col items-center gap-2">
-                      <div className="flex h-13 w-13 items-center justify-center rounded-full bg-secondary text-foreground transition-colors hover:bg-primary hover:text-primary-foreground">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <span className="text-center text-[11px] font-medium leading-tight">{category.label}</span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
+        <div className="hidden items-center gap-3 md:flex">
+          <Link
+            href="/login"
+            className="flex h-9 items-center gap-2 rounded-full border border-white/40 bg-white/10 px-4 text-xs font-semibold backdrop-blur transition hover:bg-white/20"
+          >
+            <ShoppingBag size={14} /> Ingresar
+          </Link>
+          <Link
+            href="/login"
+            className="flex h-9 items-center gap-2 rounded-full bg-[var(--color-primario)] px-4 text-xs font-semibold text-[var(--color-sobre-primario)] shadow-lg transition hover:opacity-90"
+          >
+            <Store size={14} /> Mi tienda
+          </Link>
         </div>
 
-        {/* ── Vitrina de hoy ── */}
-        {featuredGrid.length > 0 && (
-          <MarketplaceSection title="Vitrina de hoy" description="Lo mas buscado en Zentrall ahora" href="/explorar">
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"
+        <button
+          type="button"
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+          onClick={() => setMenuOpen((open) => !open)}
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur md:hidden"
+        >
+          {menuOpen ? <X size={18} /> : <Menu size={18} />}
+        </button>
+      </header>
+
+      {/* Menú móvil */}
+      {menuOpen && (
+        <div className="relative z-20 mx-5 mb-2 flex flex-col gap-1 rounded-2xl border border-white/20 bg-black/60 p-3 backdrop-blur md:hidden">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="rounded-xl px-4 py-3 text-sm font-medium transition hover:bg-white/10"
             >
-              {featuredGrid.map((product) => (
-                <motion.div key={product.id} variants={fadeUp}>
-                  <ProductCard product={product} />
-                </motion.div>
-              ))}
-            </motion.div>
-          </MarketplaceSection>
-        )}
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/login"
+            onClick={() => setMenuOpen(false)}
+            className="mt-1 rounded-xl bg-[var(--color-primario)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-sobre-primario)]"
+          >
+            Ingresar
+          </Link>
+        </div>
+      )}
 
-        {/* ── Ofertas activas ── */}
-        {offerCarousel.length > 0 && (
-          <section className="marketplace-section marketplace-section--subtle">
-            <div className="marketplace-container">
-              <div className="marketplace-section-header">
-                <div>
-                  <h2 className="flex items-center gap-2 text-xl font-bold tracking-tight">
-                    <Tag className="h-5 w-5 text-primary" />
-                    {hasRealData ? "Productos disponibles" : "Ofertas activas"}
-                  </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {hasRealData ? "Directo de negocios locales" : "Descuentos imperdibles, solo por hoy"}
-                  </p>
-                </div>
-                <Link href="/explorar" className="text-sm font-semibold text-primary hover:underline">
-                  Ver todas
-                </Link>
-              </div>
-              <div className="scrollbar-hide -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4 md:mx-0 md:px-0">
-                {offerCarousel.map((product) => (
-                  <div key={product.id} className="w-44 shrink-0 snap-start md:w-52">
-                    <ProductCard product={product} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+      {/* Contenido del hero */}
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-5 pb-40 pt-10 md:px-10 md:pb-52 md:pt-14 lg:grid-cols-[1fr_1.05fr]">
+        {/* Texto */}
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[11px] font-semibold backdrop-blur">
+            <Store size={14} /> Comercio local de Guayaquil
+          </span>
 
-        {/* ── Explorar por categoría ── */}
-        <section className="marketplace-section">
-          <div className="marketplace-container">
-            <div className="marketplace-section-header">
-              <h2 className="text-xl font-bold tracking-tight">Explorar por categoria</h2>
-              <p className="text-sm text-muted-foreground">Encuentra exactamente lo que necesitas</p>
-            </div>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-              {exploreCategories.map((category) => {
-                const Icon = category.icon;
-                return (
-                  <Link key={category.name} href="/explorar">
-                    <div className="marketplace-panel flex min-h-18 cursor-pointer items-center gap-3 p-4 transition hover:border-primary/20 hover:bg-primary/5">
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold leading-tight">{category.name}</div>
-                        <div className="text-xs text-muted-foreground">{category.count} tiendas</div>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+          <h1
+            className={`${serif} m-0 mt-6 max-w-xl text-5xl font-medium italic leading-[1.05] tracking-tight text-white drop-shadow-[0_4px_18px_rgba(0,0,0,0.5)] sm:text-6xl lg:text-6xl xl:text-7xl`}
+          >
+            Descubre lo mejor,
+            <span className="block text-[color-mix(in_srgb,var(--color-descuento)_60%,white)]">
+              hecho con amor.
+            </span>
+          </h1>
 
-        {/* ── Tiendas verificadas ── */}
-        {verifiedStores.length > 0 && (
-          <section className="marketplace-section marketplace-section--subtle">
-            <div className="marketplace-container">
-              <div className="marketplace-section-header">
-                <div>
-                  <h2 className="text-xl font-bold tracking-tight text-foreground">
-                    {hasRealData ? "Negocios en Zentrall" : "Tiendas verificadas"}
-                  </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {hasRealData ? "Negocios locales activos" : "Calidad garantizada en Guayaquil"}
-                  </p>
-                </div>
-                <Link href="/tiendas" className="shrink-0 text-sm font-semibold text-primary hover:underline">
-                  Ver todos
-                </Link>
-              </div>
-              <div className="scrollbar-hide -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4 md:mx-0 md:px-0">
-                {verifiedStores.map((store) => (
-                  <div key={store.id} className="w-70 shrink-0 snap-start md:w-75">
-                    <StoreCard store={store} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+          <p className="mt-6 max-w-md text-sm leading-7 text-white/80 sm:text-base">
+            Productos, negocios y lugares únicos de tu ciudad, reunidos en un
+            solo lugar para que encuentres algo que se sienta como en casa.
+          </p>
 
-        {/* ── Descubrimientos locales ── */}
-        {nearbyProducts.length > 0 && (
-          <section className="marketplace-section">
-            <div className="marketplace-container">
-              <div className="marketplace-section-header">
-                <div>
-                  <h2 className="flex items-center gap-2 text-xl font-bold tracking-tight">
-                    <Compass className="h-5 w-5 text-primary" />
-                    Descubrimientos locales
-                  </h2>
-                  <p className="text-sm text-muted-foreground">Productos de negocios en tu zona de Guayaquil</p>
-                </div>
-                <Link href="/explorar" className="shrink-0 text-sm font-semibold text-primary hover:underline">
-                  Explorar
-                </Link>
-              </div>
-              <div className="scrollbar-hide -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4 md:mx-0 md:px-0">
-                {nearbyProducts.map((product) => (
-                  <div key={product.id} className="w-44 shrink-0 snap-start md:w-52">
-                    <ProductCard product={product} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ── Para tu plan de hoy (siempre mock — no hay datos reales de ocasiones aún) ── */}
-        <section className="marketplace-section marketplace-section--subtle">
-          <div className="marketplace-container">
-            <div className="marketplace-section-header">
-              <h2 className="text-xl font-bold tracking-tight text-foreground">Para tu plan de hoy</h2>
-              <p className="text-sm text-muted-foreground">Cuentanos para que y encontramos lo ideal</p>
-            </div>
-
-            <div className="scrollbar-hide -mx-4 flex gap-2 overflow-x-auto px-4 pb-4 md:mx-0 md:px-0">
-              {occasions.map((occasion) => {
-                const Icon = occasion.icon;
-                const isActive = activeOccasion === occasion.id;
-                return (
-                  <button
-                    key={occasion.id}
-                    type="button"
-                    aria-pressed={isActive}
-                    onClick={() => setActiveOccasion(isActive ? "" : occasion.id)}
-                    className={cn(
-                      "flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors",
-                      isActive
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border bg-background hover:border-primary/30 hover:bg-primary/10",
-                    )}
-                  >
-                    <Icon className="h-4 w-4" />
-                    {occasion.label}
-                  </button>
-                );
-              })}
-            </div>
-
-            <motion.div
-              key={activeOccasion}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.2 }}
-              className="scrollbar-hide -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:px-0"
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <Link
+              href="/explorar"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primario)] px-6 py-3 text-sm font-semibold text-[var(--color-sobre-primario)] shadow-lg transition hover:opacity-90"
             >
-              {occasionProducts.map((product) => (
-                <div key={product.id} className="w-44 shrink-0 snap-start md:w-52">
-                  <ProductCard product={product} />
-                </div>
+              Explorar ahora <ArrowRight size={16} />
+            </Link>
+            <Link
+              href="/tiendas"
+              className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold backdrop-blur transition hover:bg-white/20"
+            >
+              Ver tiendas <MapPin size={16} />
+            </Link>
+          </div>
+        </div>
+
+        {/* Imagen con marco líquido animado */}
+        <div className="relative mx-auto w-full max-w-xl">
+          {/* Forma de atrás */}
+          <div
+            aria-hidden
+            className="zentrall-blob-back absolute -inset-4 bg-[color-mix(in_srgb,var(--color-descuento)_35%,transparent)]"
+          />
+
+          {/* Imagen */}
+          <div
+            className="zentrall-blob relative flex aspect-[1/0.92] items-center justify-center overflow-hidden bg-cover bg-center shadow-2xl"
+            style={
+              HERO_IMAGE
+                ? { backgroundImage: `url(${HERO_IMAGE})` }
+                : {
+                    backgroundImage:
+                      "radial-gradient(circle at 30% 25%, color-mix(in srgb, var(--color-descuento) 45%, #2a2e78), transparent 55%), radial-gradient(circle at 75% 80%, color-mix(in srgb, var(--color-primario) 60%, #14132a), transparent 60%), linear-gradient(135deg, var(--color-circulo), #1b1b2f)",
+                  }
+            }
+          >
+            {!HERO_IMAGE && (
+              <span className="select-none text-[9rem] drop-shadow-xl sm:text-[11rem]">
+                img
+              </span>
+            )}
+          </div>
+
+          {/* Tarjeta de valoración */}
+          <div
+            className="zentrall-float absolute -right-2 top-0 rounded-2xl bg-white px-4 py-3 text-[#1b1b2f] shadow-xl sm:-right-6"
+            style={{ ["--rot" as string]: "0deg" }}
+          >
+            <div className="flex gap-0.5 text-amber-400">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <Star key={index} size={13} className="fill-current" />
               ))}
-            </motion.div>
+            </div>
+            <p className="mt-1 text-xs font-bold">¡Querido por los vecinos!</p>
+            <p className="text-[10px] text-[#6b6d85]">4.9 (230+ reseñas)</p>
           </div>
-        </section>
 
-        {/* ── Rutas (siempre mock — no hay datos reales aún) ── */}
-        <section className="marketplace-section">
-          <div className="marketplace-container">
-            <div className="marketplace-section-header">
-              <h2 className="flex items-center gap-2 text-xl font-bold tracking-tight">
-                <Compass className="h-5 w-5 text-primary" />
-                Rutas para tu plan
-              </h2>
-              <p className="text-sm text-muted-foreground">Itinerarios curados para cada momento del dia</p>
-            </div>
-            <div className="scrollbar-hide -mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-4 md:mx-0 md:px-0">
-              {routes.map((route) => (
-                <div key={route.id} className="w-72.5 shrink-0 snap-start md:w-85">
-                  <div className="flex h-full flex-col rounded-2xl bg-foreground p-5 text-background shadow-sm">
-                    <span className="mb-3 w-fit rounded-full bg-background/20 px-2.5 py-1 text-xs font-semibold text-background">
-                      {route.steps.length} paradas
-                    </span>
-                    <h3 className="mb-2 text-lg font-bold">{route.title}</h3>
-                    <p className="mb-5 flex-1 text-sm text-background/80">{route.description}</p>
-                    <Link
-                      href="/rutas"
-                      className="inline-flex h-10 items-center justify-center rounded-md border border-background/30 bg-background/10 px-4 text-sm font-semibold text-background transition hover:bg-background hover:text-foreground"
-                    >
-                      Ver recorrido
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Sello */}
+          <div
+            className="zentrall-float absolute -bottom-4 left-2 flex h-24 w-24 items-center justify-center rounded-full bg-[var(--color-descuento)] text-center text-xs font-bold leading-tight text-white shadow-xl sm:-left-4"
+            style={{ ["--rot" as string]: "-8deg", animationDelay: "-2s" }}
+          >
+            Hecho
+            <br />
+            en tu
+            <br />
+            ciudad
           </div>
-        </section>
-
-        {/* ── CTA campaña ── */}
-        <section className="marketplace-section pt-0!">
-          <div className="marketplace-container">
-            <div className="relative overflow-hidden rounded-2xl bg-primary p-6 text-primary-foreground shadow-md md:p-8">
-              <div className="absolute right-0 top-0 h-56 w-56 translate-x-1/3 -translate-y-1/2 rounded-full bg-white opacity-10 blur-3xl" />
-              <div className="relative z-10">
-                <span className="mb-3 inline-flex rounded-full bg-primary-foreground/20 px-2.5 py-1 text-xs font-semibold text-primary-foreground">
-                  Campana activa
-                </span>
-                <h3 className="mb-2 text-2xl font-bold md:text-3xl">Festival de la Costa</h3>
-                <p className="mb-5 max-w-md text-sm text-primary-foreground/80">
-                  Los mejores negocios de Guayaquil con precios especiales esta semana. Descubre productos, compara y
-                  contacta directo.
-                </p>
-                <Link
-                  href="/explorar"
-                  className="inline-flex h-11 items-center justify-center rounded-full bg-background px-5 text-sm font-bold text-primary transition hover:bg-background/90"
-                >
-                  Ver productos de la campana
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Mas populares ── */}
-        {moreProducts.length > 0 && (
-          <section className="marketplace-section">
-            <div className="marketplace-container">
-              <div className="marketplace-section-header">
-                <div>
-                  <h2 className="text-xl font-bold tracking-tight text-foreground">
-                    {hasRealData ? "Más productos en Zentrall" : "Mas populares en Zentrall"}
-                  </h2>
-                  <p className="text-sm text-muted-foreground">
-                    {hasRealData ? "Del catálogo de negocios locales" : "Los preferidos de la comunidad guayaquilena"}
-                  </p>
-                </div>
-                <Link
-                  href="/explorar"
-                  className="hidden h-9 items-center justify-center rounded-full border border-border bg-background px-4 text-sm font-semibold text-foreground transition hover:border-primary hover:bg-primary/10 sm:inline-flex"
-                >
-                  Ver todos
-                </Link>
-              </div>
-              <motion.div
-                variants={stagger}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4"
-              >
-                {moreProducts.map((product) => (
-                  <motion.div key={product.id} variants={fadeUp}>
-                    <ProductCard product={product} />
-                  </motion.div>
-                ))}
-              </motion.div>
-              <div className="mt-6 text-center sm:hidden">
-                <Link
-                  href="/explorar"
-                  className="inline-flex h-11 w-full items-center justify-center rounded-full border border-border bg-background px-4 text-sm font-semibold text-foreground transition hover:border-primary hover:bg-primary/10"
-                >
-                  Ver todos los productos
-                </Link>
-              </div>
-            </div>
-          </section>
-        )}
-
+        </div>
       </div>
 
+      {/* Borde líquido inferior */}
+      <svg
+        aria-hidden
+        viewBox="0 0 1440 160"
+        preserveAspectRatio="none"
+        className="absolute inset-x-0 bottom-0 z-10 block h-24 w-full md:h-36"
+      >
+        <path
+          d="M0,96 C120,140 260,150 400,120 C560,86 640,40 800,52 C960,64 1060,128 1220,132 C1320,134 1390,112 1440,92 L1440,160 L0,160 Z"
+          style={{ fill: "var(--color-fondo)" }}
+        />
+      </svg>
+    </section>
   );
 }
 
-type MarketplaceSectionProps = {
-  title: string;
-  description: string;
-  href: string;
-  children: React.ReactNode;
-};
+/* ───────── Estructura nueva ───────── */
 
-function MarketplaceSection({ title, description, href, children }: MarketplaceSectionProps) {
+function BenefitsBar() {
   return (
-    <section className="marketplace-section">
-      <div className="marketplace-container">
-        <div className="marketplace-section-header">
-          <div>
-            <h2 className="text-xl font-bold tracking-tight text-foreground">{title}</h2>
-            <p className="text-sm text-muted-foreground">{description}</p>
+    <section className="relative z-10 -mt-10 px-5 md:px-10">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-y-6 rounded-3xl border border-[var(--color-borde)] bg-[var(--color-tarjeta)] px-4 py-7 shadow-[var(--sombra-suave)] md:grid-cols-4 md:divide-x md:divide-[var(--color-borde)]">
+        {benefits.map(({ icon: Icon, title, detail }) => (
+          <div
+            key={title}
+            className="flex flex-col items-center px-3 text-center"
+          >
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-circulo)] text-[var(--color-circulo-icono)]">
+              <Icon size={24} />
+            </span>
+            <h3 className="mt-3 text-sm font-semibold text-[var(--color-texto)]">
+              {title}
+            </h3>
+            <p className="mt-1 text-[11px] text-[var(--color-texto-suave)]">
+              {detail}
+            </p>
           </div>
-          <Link href={href} className="shrink-0 text-sm font-semibold text-primary hover:underline">
-            Ver todos
-          </Link>
-        </div>
-        {children}
+        ))}
       </div>
     </section>
+  );
+}
+
+function Favorites() {
+  const [saved, setSaved] = useState<number[]>([]);
+
+  const toggle = (id: number) =>
+    setSaved((current) =>
+      current.includes(id)
+        ? current.filter((item) => item !== id)
+        : [...current, id],
+    );
+
+  return (
+    <section className="px-5 py-16 md:px-10">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-6 flex items-end justify-between">
+          <h2
+            className={`${serif} m-0 text-2xl font-normal tracking-tight text-[var(--color-texto)] sm:text-3xl`}
+          >
+            Nuestros favoritos
+          </h2>
+          <Link
+            href="/explorar"
+            className="flex items-center gap-1 text-xs font-medium text-[var(--color-texto)] transition hover:text-[var(--color-primario)]"
+          >
+            Ver todos los productos <ChevronRight size={15} />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {favorites.map((product) => (
+            <article
+              key={product.id}
+              className="group overflow-hidden rounded-2xl border border-[var(--color-borde)] bg-[var(--color-tarjeta)] transition hover:-translate-y-1 hover:shadow-[var(--sombra-media)]"
+            >
+              <Link href="/explorar" className="block">
+                <div className="relative flex aspect-square items-center justify-center bg-[var(--color-imagen)]">
+                  <span className="select-none text-6xl transition duration-300 group-hover:scale-110">
+                    {product.emoji}
+                  </span>
+                  <button
+                    type="button"
+                    aria-label={`Guardar ${product.name}`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      toggle(product.id);
+                    }}
+                    className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-superficie)]/80 text-[var(--color-texto)] backdrop-blur transition hover:text-[var(--color-descuento)]"
+                  >
+                    <Heart
+                      size={16}
+                      className={
+                        saved.includes(product.id)
+                          ? "fill-[var(--color-descuento)] text-[var(--color-descuento)]"
+                          : ""
+                      }
+                    />
+                  </button>
+                </div>
+              </Link>
+              <div className="p-3">
+                <h3 className="truncate text-xs font-semibold text-[var(--color-texto)]">
+                  {product.name}
+                </h3>
+                <p className="mt-0.5 text-[10px] text-[var(--color-texto-suave)]">
+                  {product.category}
+                </p>
+                <p className="mt-2 text-sm font-bold text-[var(--color-precio)]">
+                  ${product.price.toFixed(2)}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function JoinBanner() {
+  const [sent, setSent] = useState(false);
+
+  return (
+    <section className="px-5 md:px-10">
+      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-3xl text-white lg:grid-cols-[1.1fr_0.8fr_1fr]">
+        {/* Newsletter */}
+        <div className="bg-[color-mix(in_srgb,var(--color-primario)_55%,#14132a)] p-8 sm:p-10">
+          <h2
+            className={`${serif} m-0 text-2xl font-normal tracking-tight text-white sm:text-3xl`}
+          >
+            Únete al círculo Zentrall
+          </h2>
+          <p className="mt-3 max-w-xs text-sm leading-6 text-white/80">
+            Recibe ofertas exclusivas, novedades de negocios locales y rutas
+            para disfrutar la ciudad.
+          </p>
+
+          {sent ? (
+            <p className="mt-6 rounded-full bg-white/15 px-5 py-3 text-sm font-medium">
+              ¡Gracias! Pronto sabrás de nosotros 💌
+            </p>
+          ) : (
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                setSent(true);
+              }}
+              className="mt-6 flex max-w-sm overflow-hidden rounded-full bg-white"
+            >
+              <input
+                type="email"
+                required
+                aria-label="Correo electrónico"
+                placeholder="Ingresa tu correo"
+                className="min-w-0 flex-1 bg-transparent px-5 py-3 text-xs text-[#1b1b2f] outline-none placeholder:text-[#6b6d85]"
+              />
+              <button
+                type="submit"
+                className="bg-[var(--color-descuento)] px-5 text-xs font-semibold text-white transition hover:opacity-90"
+              >
+                Unirme
+              </button>
+            </form>
+          )}
+        </div>
+
+        {/* Imagen central */}
+        <div
+          className="relative hidden min-h-[240px] items-center justify-center lg:flex"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, var(--color-circulo), var(--color-imagen))",
+          }}
+        >
+          {/* Reemplaza por una captura/foto real */}
+          <div className="flex h-56 w-32 flex-col items-center justify-center rounded-[1.6rem] border-4 border-[#1b1b2f] bg-[var(--color-superficie)] text-[var(--color-texto)] shadow-[var(--sombra-media)]">
+            <span className={`${serif} text-sm italic`}>Zentrall</span>
+            <span className="mt-2 text-3xl">📍</span>
+            <span className="mt-2 px-3 text-center text-[8px] text-[var(--color-texto-suave)]">
+              Descubre tu ciudad
+            </span>
+          </div>
+        </div>
+
+        {/* Frase */}
+        <div className="relative bg-[color-mix(in_srgb,var(--color-primario)_30%,#0d0c1d)] p-8 sm:p-10">
+          <Quote
+            size={30}
+            className="fill-[var(--color-descuento)] text-[var(--color-descuento)]"
+          />
+          <p
+            className={`${serif} mt-4 max-w-xs text-xl leading-snug text-white`}
+          >
+            Comprar con propósito hace que cada compra sea más significativa.
+          </p>
+          <Sparkles
+            aria-hidden
+            size={36}
+            className="absolute bottom-6 right-6 text-white/20"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ValuesStrip() {
+  return (
+    <section className="px-5 pb-16 pt-12 md:px-10">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+        <p
+          className={`${serif} m-0 text-2xl leading-snug tracking-tight text-[var(--color-texto)]`}
+        >
+          Bueno para ti.
+          <br />
+          Bueno para tu ciudad.
+        </p>
+
+        <div className="hidden h-12 w-px bg-[var(--color-borde)] lg:block" />
+
+        <ul className="grid gap-6 sm:grid-cols-3 lg:gap-14">
+          {values.map(({ icon: Icon, label }) => (
+            <li key={label} className="flex items-center gap-3">
+              <Icon size={30} className="shrink-0 text-[var(--color-texto)]" />
+              <span className="whitespace-pre-line text-xs leading-5 text-[var(--color-texto)]">
+                {label}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ───────── Página ───────── */
+
+export function MarketplaceHomePage() {
+  return (
+    <div className="min-w-0 bg-[var(--color-fondo)] text-[var(--color-texto)]">
+      <Hero />
+      <BenefitsBar />
+      <Favorites />
+      <JoinBanner />
+      <ValuesStrip />
+    </div>
   );
 }

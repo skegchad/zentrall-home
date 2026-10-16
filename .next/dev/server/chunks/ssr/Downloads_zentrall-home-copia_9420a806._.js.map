@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USUARIO/Downloads/zentrall-home-copia/src/app/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\r\nimport \"./global.css\";\r\n\r\nexport const metadata: Metadata = {\r\n  title: \"Zentrall | Marketplace\",\r\n  description: \"Descubre productos y tiendas en Zentrall.\",\r\n};\r\n\r\nexport default function RootLayout({\r\n  children,\r\n}: Readonly<{\r\n  children: React.ReactNode;\r\n}>) {\r\n  return (\r\n    <html lang=\"es\">\r\n      <body>{children}</body>\r\n    </html>\r\n  );\r\n}"],"names":[],"mappings":";;;;;;;;;AAGO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;AACf;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGR;IACA,qBACE,uYAAC;QAAK,MAAK;kBACT,cAAA,uYAAC;sBAAM;;;;;;;;;;;AAGb"}},
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USUARIO/Downloads/zentrall-home-copia/node_modules/.pnpm/next%4016.1.6_%40babel%2Bcore%407.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,0OACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

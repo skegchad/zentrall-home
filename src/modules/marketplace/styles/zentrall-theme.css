@@ -1,0 +1,124 @@
+/* ===== Zentrall — paleta del comercio =====
+   Solo define variables (sin estilos globales de body, h1, h2, etc.)
+   para no chocar con el resto del proyecto. */
+
+/* ===== MODO CLARO ===== */
+:root {
+  --color-fondo: #f6f5fb;
+  --color-header: rgba(255, 255, 255, 0.85);
+  --color-footer: #dedce8;
+  --color-superficie: #ffffff;
+  --color-tarjeta: #ffffff;
+  --color-borde: #e3e1f0;
+  --color-texto: #1b1b2f;
+  --color-texto-suave: #6b6d85;
+  --color-primario: #5b4fd6;
+  --color-sobre-primario: #ffffff;
+  --color-circulo: #e3e0fb;
+  --color-circulo-icono: #3b3a8f;
+  --color-activo-fondo: #fdece7;
+  --color-activo-borde: #f3b9aa;
+  --color-activo-texto: #c2503a;
+  --color-descuento: #e5604f;
+  --color-precio: #b0402b;
+  --color-imagen: #efedf8;
+  --velo: 246, 245, 251;
+  --radio: 16px;
+  --sombra-suave: 0 2px 8px rgba(20, 20, 50, 0.08), 0 8px 24px rgba(20, 20, 50, 0.08);
+  --sombra-media: 0 4px 12px rgba(20, 20, 50, 0.1), 0 16px 40px rgba(20, 20, 50, 0.14);
+  --sombra-header: 0 2px 12px rgba(20, 20, 50, 0.1);
+}
+
+/* ===== MODO OSCURO =====
+   Cubre los tres atributos que usa tu proyecto para el tema oscuro. */
+:root[data-tema="dark"],
+html[data-theme-mode="dark"],
+.marketplace-shell[data-marketplace-theme="dark"] {
+  --color-fondo: #0b0d17;
+  --color-header: rgba(13, 15, 26, 0.85);
+  --color-footer: #010102;
+  --color-superficie: #101226;
+  --color-tarjeta: #141629;
+  --color-borde: #262a45;
+  --color-texto: #f1f2f8;
+  --color-texto-suave: #9a9eb8;
+  --color-primario: #b4a6f7;
+  --color-sobre-primario: #14132a;
+  --color-circulo: #2a2e78;
+  --color-circulo-icono: #ffffff;
+  --color-activo-fondo: rgba(240, 138, 115, 0.14);
+  --color-activo-borde: rgba(240, 138, 115, 0.45);
+  --color-activo-texto: #f59a85;
+  --color-descuento: #f0736a;
+  --color-precio: #f59a85;
+  --color-imagen: #1c1f38;
+  --velo: 11, 13, 23;
+  --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.4), 0 16px 40px rgba(0, 0, 0, 0.5);
+  --sombra-header: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Marco líquido animado del hero ===== */
+@keyframes zentrall-morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+  }
+  25% {
+    border-radius: 58% 42% 38% 62% / 55% 60% 40% 45%;
+  }
+  50% {
+    border-radius: 38% 62% 55% 45% / 60% 38% 62% 40%;
+  }
+  75% {
+    border-radius: 62% 38% 45% 55% / 40% 58% 42% 60%;
+  }
+}
+
+@keyframes zentrall-morph-back {
+  0%,
+  100% {
+    border-radius: 58% 42% 40% 60% / 50% 55% 45% 50%;
+    transform: rotate(0deg) scale(1);
+  }
+  33% {
+    border-radius: 40% 60% 55% 45% / 62% 40% 60% 38%;
+    transform: rotate(6deg) scale(1.03);
+  }
+  66% {
+    border-radius: 55% 45% 62% 38% / 42% 58% 42% 58%;
+    transform: rotate(-5deg) scale(0.99);
+  }
+}
+
+@keyframes zentrall-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--rot, 0deg));
+  }
+}
+
+.zentrall-blob {
+  animation: zentrall-morph 9s ease-in-out infinite;
+  will-change: border-radius;
+}
+
+.zentrall-blob-back {
+  animation: zentrall-morph-back 12s ease-in-out infinite;
+  will-change: border-radius, transform;
+}
+
+.zentrall-float {
+  animation: zentrall-float 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zentrall-blob,
+  .zentrall-blob-back,
+  .zentrall-float {
+    animation: none;
+  }
+}
