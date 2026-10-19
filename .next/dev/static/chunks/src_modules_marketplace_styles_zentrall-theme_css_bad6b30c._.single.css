@@ -1,0 +1,131 @@
+/* [project]/src/modules/marketplace/styles/zentrall-theme.css [app-client] (css) */
+:root {
+  --color-fondo: #f6f5fb;
+  --color-header: #ffffffd9;
+  --color-footer: #dedce8;
+  --color-superficie: #fff;
+  --color-tarjeta: #fff;
+  --color-borde: #e3e1f0;
+  --color-texto: #1b1b2f;
+  --color-texto-suave: #6b6d85;
+  --color-primario: #5b4fd6;
+  --color-sobre-primario: #fff;
+  --color-circulo: #e3e0fb;
+  --color-circulo-icono: #3b3a8f;
+  --color-activo-fondo: #fdece7;
+  --color-activo-borde: #f3b9aa;
+  --color-activo-texto: #c2503a;
+  --color-descuento: #e5604f;
+  --color-precio: #b0402b;
+  --color-imagen: #efedf8;
+  --velo: 246, 245, 251;
+  --radio: 16px;
+  --sombra-suave: 0 2px 8px #14143214, 0 8px 24px #14143214;
+  --sombra-media: 0 4px 12px #1414321a, 0 16px 40px #14143224;
+  --sombra-header: 0 2px 12px #1414321a;
+}
+
+:root[data-tema="dark"], html[data-theme-mode="dark"], .marketplace-shell[data-marketplace-theme="dark"] {
+  --color-fondo: #0b0d17;
+  --color-header: #0d0f1ad9;
+  --color-footer: #010102;
+  --color-superficie: #101226;
+  --color-tarjeta: #141629;
+  --color-borde: #262a45;
+  --color-texto: #f1f2f8;
+  --color-texto-suave: #9a9eb8;
+  --color-primario: #b4a6f7;
+  --color-sobre-primario: #14132a;
+  --color-circulo: #2a2e78;
+  --color-circulo-icono: #fff;
+  --color-activo-fondo: #f08a7324;
+  --color-activo-borde: #f08a7373;
+  --color-activo-texto: #f59a85;
+  --color-descuento: #f0736a;
+  --color-precio: #f59a85;
+  --color-imagen: #1c1f38;
+  --velo: 11, 13, 23;
+  --sombra-suave: 0 2px 8px #00000059, 0 8px 24px #00000059;
+  --sombra-media: 0 4px 12px #0006, 0 16px 40px #00000080;
+  --sombra-header: 0 2px 12px #00000080;
+}
+
+@keyframes zentrall-wave {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes zentrall-wave-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zentrall-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.zentrall-wave-a {
+  animation: 16s linear infinite zentrall-wave, 5s ease-in-out infinite zentrall-bob;
+}
+
+.zentrall-wave-b {
+  animation: 22s linear infinite zentrall-wave-reverse, 7s ease-in-out infinite reverse zentrall-bob;
+}
+
+@keyframes zentrall-float {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rot, 0deg));
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(var(--rot, 0deg));
+  }
+}
+
+.zentrall-float {
+  animation: 5s ease-in-out infinite zentrall-float;
+}
+
+.zentrall-no-scrollbar {
+  scrollbar-width: none;
+}
+
+.zentrall-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zentrall-wave-a, .zentrall-wave-b, .zentrall-float {
+    animation: none;
+  }
+}
+
+.logo {
+  letter-spacing: .02em;
+  color: var(--color-texto);
+  white-space: nowrap;
+  align-items: center;
+  gap: .6rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+}
+
+/*# sourceMappingURL=src_modules_marketplace_styles_zentrall-theme_css_bad6b30c._.single.css.map*/

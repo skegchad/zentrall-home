@@ -1,0 +1,1279 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "React" [ref=e10] [cursor=pointer]:
+            - /url: /
+          - link "v19.3" [ref=e19] [cursor=pointer]:
+            - /url: /versions
+        - button "Search Ctrl K" [ref=e21] [cursor=pointer]:
+          - text: Search
+          - generic [ref=e24]:
+            - generic [ref=e25]: Ctrl
+            - generic [ref=e26]: K
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - link "Learn" [ref=e30] [cursor=pointer]:
+              - /url: /learn
+            - link "Reference" [ref=e32] [cursor=pointer]:
+              - /url: /reference/react
+            - link "Community" [ref=e34] [cursor=pointer]:
+              - /url: /community
+            - link "Blog" [ref=e36] [cursor=pointer]:
+              - /url: /blog
+          - generic [ref=e37]:
+            - button "Use Dark Mode" [ref=e39] [cursor=pointer]
+            - link "Translations" [ref=e45] [cursor=pointer]:
+              - /url: /community/translations
+            - link "Open on GitHub" [ref=e49] [cursor=pointer]:
+              - /url: https://github.com/react/react/releases
+    - generic [ref=e53]:
+      - complementary [ref=e58]:
+        - navigation [ref=e59]:
+          - list [ref=e60]:
+            - heading "react@19.3" [level=3] [ref=e61]
+            - listitem [ref=e62]:
+              - link "Overview" [ref=e63] [cursor=pointer]:
+                - /url: /reference/react
+            - listitem [ref=e65]:
+              - link "Hooks" [ref=e66] [cursor=pointer]:
+                - /url: /reference/react/hooks
+              - region [ref=e74]:
+                - list [ref=e75]:
+                  - listitem [ref=e76]:
+                    - link "useActionState" [ref=e77] [cursor=pointer]:
+                      - /url: /reference/react/useActionState
+                  - listitem [ref=e79]:
+                    - link "useCallback" [ref=e80] [cursor=pointer]:
+                      - /url: /reference/react/useCallback
+                  - listitem [ref=e82]:
+                    - link "useContext" [ref=e83] [cursor=pointer]:
+                      - /url: /reference/react/useContext
+                  - listitem [ref=e85]:
+                    - link "useDebugValue" [ref=e86] [cursor=pointer]:
+                      - /url: /reference/react/useDebugValue
+                  - listitem [ref=e88]:
+                    - link "useDeferredValue" [ref=e89] [cursor=pointer]:
+                      - /url: /reference/react/useDeferredValue
+                  - listitem [ref=e91]:
+                    - link "useEffect" [ref=e92] [cursor=pointer]:
+                      - /url: /reference/react/useEffect
+                  - listitem [ref=e94]:
+                    - link "useEffectEvent" [ref=e95] [cursor=pointer]:
+                      - /url: /reference/react/useEffectEvent
+                  - listitem [ref=e97]:
+                    - link "useId" [ref=e98] [cursor=pointer]:
+                      - /url: /reference/react/useId
+                  - listitem [ref=e100]:
+                    - link "useImperativeHandle" [ref=e101] [cursor=pointer]:
+                      - /url: /reference/react/useImperativeHandle
+                  - listitem [ref=e103]:
+                    - link "useInsertionEffect" [ref=e104] [cursor=pointer]:
+                      - /url: /reference/react/useInsertionEffect
+                  - listitem [ref=e106]:
+                    - link "useLayoutEffect" [ref=e107] [cursor=pointer]:
+                      - /url: /reference/react/useLayoutEffect
+                  - listitem [ref=e109]:
+                    - link "useMemo" [ref=e110] [cursor=pointer]:
+                      - /url: /reference/react/useMemo
+                  - listitem [ref=e112]:
+                    - link "useOptimistic" [ref=e113] [cursor=pointer]:
+                      - /url: /reference/react/useOptimistic
+                  - listitem [ref=e115]:
+                    - link "useReducer" [ref=e116] [cursor=pointer]:
+                      - /url: /reference/react/useReducer
+                  - listitem [ref=e118]:
+                    - link "useRef" [ref=e119] [cursor=pointer]:
+                      - /url: /reference/react/useRef
+                  - listitem [ref=e121]:
+                    - link "useState" [ref=e122] [cursor=pointer]:
+                      - /url: /reference/react/useState
+                  - listitem [ref=e124]:
+                    - link "useSyncExternalStore" [ref=e125] [cursor=pointer]:
+                      - /url: /reference/react/useSyncExternalStore
+                  - listitem [ref=e127]:
+                    - link "useTransition" [ref=e128] [cursor=pointer]:
+                      - /url: /reference/react/useTransition
+            - listitem [ref=e130]:
+              - link "Components" [ref=e131] [cursor=pointer]:
+                - /url: /reference/react/components
+            - listitem [ref=e138]:
+              - link "APIs" [ref=e139] [cursor=pointer]:
+                - /url: /reference/react/apis
+            - separator [ref=e146]
+            - heading "react-dom@19.3" [level=3] [ref=e147]
+            - listitem [ref=e148]:
+              - link "Hooks" [ref=e149] [cursor=pointer]:
+                - /url: /reference/react-dom/hooks
+            - listitem [ref=e156]:
+              - link "Components" [ref=e157] [cursor=pointer]:
+                - /url: /reference/react-dom/components
+            - listitem [ref=e164]:
+              - link "APIs" [ref=e165] [cursor=pointer]:
+                - /url: /reference/react-dom
+            - listitem [ref=e172]:
+              - link "Client APIs" [ref=e173] [cursor=pointer]:
+                - /url: /reference/react-dom/client
+            - listitem [ref=e180]:
+              - link "Server APIs" [ref=e181] [cursor=pointer]:
+                - /url: /reference/react-dom/server
+            - listitem [ref=e188]:
+              - link "Static APIs" [ref=e189] [cursor=pointer]:
+                - /url: /reference/react-dom/static
+            - separator [ref=e196]
+            - heading "React Compiler" [level=3] [ref=e197]
+            - listitem [ref=e198]:
+              - link "Configuration" [ref=e199] [cursor=pointer]:
+                - /url: /reference/react-compiler/configuration
+            - listitem [ref=e206]:
+              - link "Directives" [ref=e207] [cursor=pointer]:
+                - /url: /reference/react-compiler/directives
+            - listitem [ref=e214]:
+              - link "Compiling Libraries" [ref=e215] [cursor=pointer]:
+                - /url: /reference/react-compiler/compiling-libraries
+            - separator [ref=e217]
+            - heading "React DevTools" [level=3] [ref=e218]
+            - listitem [ref=e219]:
+              - link "React Performance tracks" [ref=e220] [cursor=pointer]:
+                - /url: /reference/dev-tools/react-performance-tracks
+            - separator [ref=e222]
+            - heading "eslint-plugin-react-hooks" [level=3] [ref=e223]
+            - listitem [ref=e224]:
+              - link "Lints" [ref=e225] [cursor=pointer]:
+                - /url: /reference/eslint-plugin-react-hooks
+            - separator [ref=e232]
+            - heading "Rules of React" [level=3] [ref=e233]
+            - listitem [ref=e234]:
+              - link "Overview" [ref=e235] [cursor=pointer]:
+                - /url: /reference/rules
+            - separator [ref=e242]
+            - heading "React Server Components" [level=3] [ref=e243]
+            - listitem [ref=e244]:
+              - link "Server Components" [ref=e245] [cursor=pointer]:
+                - /url: /reference/rsc/server-components
+            - listitem [ref=e247]:
+              - link "Server Functions" [ref=e248] [cursor=pointer]:
+                - /url: /reference/rsc/server-functions
+            - listitem [ref=e250]:
+              - link "Directives" [ref=e251] [cursor=pointer]:
+                - /url: /reference/rsc/directives
+            - separator [ref=e258]
+            - heading "Legacy APIs" [level=3] [ref=e259]
+            - listitem [ref=e260]:
+              - link "Legacy React APIs" [ref=e261] [cursor=pointer]:
+                - /url: /reference/react/legacy
+      - main [ref=e269]:
+        - article [ref=e270]:
+          - generic [ref=e271]:
+            - generic [ref=e274]:
+              - generic [ref=e275]:
+                - generic [ref=e277]:
+                  - link "API Reference" [ref=e279] [cursor=pointer]:
+                    - /url: /reference/react
+                  - link "Hooks" [ref=e284] [cursor=pointer]:
+                    - /url: /reference/react/hooks
+                - button "Copy page" [ref=e288] [cursor=pointer]
+              - heading "useState" [level=1] [ref=e293]
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - generic [ref=e296]:
+                  - generic [ref=e297]:
+                    - paragraph [ref=e298]:
+                      - code [ref=e299]: useState
+                      - text: is a React Hook that lets you add a
+                      - link "state variable" [ref=e300] [cursor=pointer]:
+                        - /url: /learn/state-a-components-memory
+                      - text: to your component.
+                    - code [ref=e306]:
+                      - generic [ref=e307]: const [state, setState] = useState(initialState)
+                  - list [ref=e308]:
+                    - listitem [ref=e309]:
+                      - link "Reference" [ref=e310] [cursor=pointer]:
+                        - /url: "#reference"
+                      - list [ref=e311]:
+                        - listitem [ref=e312]:
+                          - link [ref=e313] [cursor=pointer]:
+                            - /url: "#usestate"
+                            - code [ref=e314]: useState(initialState)
+                        - listitem [ref=e315]:
+                          - link [ref=e316] [cursor=pointer]:
+                            - /url: "#setstate"
+                            - code [ref=e317]: set
+                            - text: functions, like
+                            - code [ref=e318]: setSomething(nextState)
+                    - listitem [ref=e319]:
+                      - link "Usage" [ref=e320] [cursor=pointer]:
+                        - /url: "#usage"
+                      - list [ref=e321]:
+                        - listitem [ref=e322]:
+                          - link "Adding state to a component" [ref=e323] [cursor=pointer]:
+                            - /url: "#adding-state-to-a-component"
+                        - listitem [ref=e324]:
+                          - link "Updating state based on the previous state" [ref=e325] [cursor=pointer]:
+                            - /url: "#updating-state-based-on-the-previous-state"
+                        - listitem [ref=e326]:
+                          - link "Updating objects and arrays in state" [ref=e327] [cursor=pointer]:
+                            - /url: "#updating-objects-and-arrays-in-state"
+                        - listitem [ref=e328]:
+                          - link "Avoiding recreating the initial state" [ref=e329] [cursor=pointer]:
+                            - /url: "#avoiding-recreating-the-initial-state"
+                        - listitem [ref=e330]:
+                          - link "Resetting state with a key" [ref=e331] [cursor=pointer]:
+                            - /url: "#resetting-state-with-a-key"
+                        - listitem [ref=e332]:
+                          - link "Storing information from previous renders" [ref=e333] [cursor=pointer]:
+                            - /url: "#storing-information-from-previous-renders"
+                    - listitem [ref=e334]:
+                      - link "Troubleshooting" [ref=e335] [cursor=pointer]:
+                        - /url: "#troubleshooting"
+                      - list [ref=e336]:
+                        - listitem [ref=e337]:
+                          - link "I’ve updated the state, but logging gives me the old value" [ref=e338] [cursor=pointer]:
+                            - /url: "#ive-updated-the-state-but-logging-gives-me-the-old-value"
+                        - listitem [ref=e339]:
+                          - link "I’ve updated the state, but the screen doesn’t update" [ref=e340] [cursor=pointer]:
+                            - /url: "#ive-updated-the-state-but-the-screen-doesnt-update"
+                        - listitem [ref=e341]:
+                          - 'link "I’m getting an error: “Too many re-renders”" [ref=e342] [cursor=pointer]':
+                            - /url: "#im-getting-an-error-too-many-re-renders"
+                        - listitem [ref=e343]:
+                          - link "My initializer or updater function runs twice" [ref=e344] [cursor=pointer]:
+                            - /url: "#my-initializer-or-updater-function-runs-twice"
+                        - listitem [ref=e345]:
+                          - link "I’m trying to set state to a function, but it gets called instead" [ref=e346] [cursor=pointer]:
+                            - /url: "#im-trying-to-set-state-to-a-function-but-it-gets-called-instead"
+                  - separator [ref=e347]
+                  - heading "Reference Link for Reference" [level=2] [ref=e348]:
+                    - text: Reference
+                    - link "Link for Reference":
+                      - /url: "#reference"
+                  - heading [level=3] [ref=e349]:
+                    - code [ref=e350]: useState(initialState)
+                    - link "Link for this heading":
+                      - /url: "#usestate"
+                  - paragraph [ref=e351]:
+                    - text: Call
+                    - code [ref=e352]: useState
+                    - text: at the top level of your component to declare a
+                    - link "state variable." [ref=e353] [cursor=pointer]:
+                      - /url: /learn/state-a-components-memory
+                  - code [ref=e359]:
+                    - generic [ref=e360]: "import { useState } from 'react';"
+                    - generic [ref=e362]: "function MyComponent() {"
+                    - generic [ref=e363]: const [age, setAge] = useState(28);
+                    - generic [ref=e364]: const [name, setName] = useState('Taylor');
+                    - generic [ref=e365]: const [todos, setTodos] = useState(() => createTodos());
+                    - generic [ref=e366]: // ...
+                  - paragraph [ref=e367]:
+                    - text: The convention is to name state variables like
+                    - code [ref=e368]: "[something, setSomething]"
+                    - text: using
+                    - link "array destructuring." [ref=e369] [cursor=pointer]:
+                      - /url: https://javascript.info/destructuring-assignment
+                  - paragraph [ref=e370]:
+                    - link "See more examples below." [ref=e371] [cursor=pointer]:
+                      - /url: "#usage"
+                  - heading "Parameters Link for Parameters" [level=4] [ref=e372]:
+                    - text: Parameters
+                    - link "Link for Parameters":
+                      - /url: "#parameters"
+                  - list [ref=e373]:
+                    - listitem [ref=e374]:
+                      - code [ref=e375]: initialState
+                      - text: ": The value you want the state to be initially. It can be a value of any type, but there is a special behavior for functions. This argument is ignored after the initial render."
+                      - list [ref=e376]:
+                        - listitem [ref=e377]:
+                          - text: If you pass a function as
+                          - code [ref=e378]: initialState
+                          - text: ", it will be treated as an"
+                          - emphasis [ref=e379]: initializer function
+                          - text: . It should be pure, should take no arguments, and should return a value of any type. React will call your initializer function when initializing the component, and store its return value as the initial state.
+                          - link "See an example below." [ref=e380] [cursor=pointer]:
+                            - /url: "#avoiding-recreating-the-initial-state"
+                  - heading "Returns Link for Returns" [level=4] [ref=e381]:
+                    - text: Returns
+                    - link "Link for Returns":
+                      - /url: "#returns"
+                  - paragraph [ref=e382]:
+                    - code [ref=e383]: useState
+                    - text: "returns an array with exactly two values:"
+                  - list [ref=e384]:
+                    - listitem [ref=e385]:
+                      - text: The current state. During the first render, it will match the
+                      - code [ref=e386]: initialState
+                      - text: you have passed.
+                    - listitem [ref=e387]:
+                      - text: The
+                      - link [ref=e388] [cursor=pointer]:
+                        - /url: "#setstate"
+                        - code [ref=e389]: set
+                        - text: function
+                      - text: that lets you update the state to a different value and trigger a re-render.
+                  - heading "Caveats Link for Caveats" [level=4] [ref=e390]:
+                    - text: Caveats
+                    - link "Link for Caveats":
+                      - /url: "#caveats"
+                  - list [ref=e391]:
+                    - listitem [ref=e392]:
+                      - code [ref=e393]: useState
+                      - text: is a Hook, so you can only call it
+                      - strong [ref=e394]: at the top level of your component
+                      - text: or your own Hooks. You can’t call it inside loops or conditions. If you need that, extract a new component and move the state into it.
+                    - listitem [ref=e395]:
+                      - text: In Strict Mode, React will
+                      - strong [ref=e396]: call your initializer function twice
+                      - text: in order to
+                      - link "help you find accidental impurities." [ref=e397] [cursor=pointer]:
+                        - /url: "#my-initializer-or-updater-function-runs-twice"
+                      - text: This is development-only behavior and does not affect production. If your initializer function is pure (as it should be), this should not affect the behavior. The result from one of the calls will be ignored.
+                  - separator [ref=e398]
+                  - heading [level=3] [ref=e399]:
+                    - code [ref=e400]: set
+                    - text: functions, like
+                    - code [ref=e401]: setSomething(nextState)
+                    - link "Link for this heading":
+                      - /url: "#setstate"
+                  - paragraph [ref=e402]:
+                    - text: The
+                    - code [ref=e403]: set
+                    - text: function returned by
+                    - code [ref=e404]: useState
+                    - text: "lets you update the state to a different value and trigger a re-render. You can pass the next state directly, or a function that calculates it from the previous state:"
+                  - code [ref=e410]:
+                    - generic [ref=e411]: const [name, setName] = useState('Edward');
+                    - generic [ref=e413]: "function handleClick() {"
+                    - generic [ref=e414]: setName('Taylor');
+                    - generic [ref=e415]: setAge(a => a + 1);
+                    - generic [ref=e416]: // ...
+                  - heading "Parameters Link for Parameters" [level=4] [ref=e417]:
+                    - text: Parameters
+                    - link "Link for Parameters":
+                      - /url: "#setstate-parameters"
+                  - list [ref=e418]:
+                    - listitem [ref=e419]:
+                      - code [ref=e420]: nextState
+                      - text: ": The value that you want the state to be. It can be a value of any type, but there is a special behavior for functions."
+                      - list [ref=e421]:
+                        - listitem [ref=e422]:
+                          - text: If you pass a function as
+                          - code [ref=e423]: nextState
+                          - text: ", it will be treated as an"
+                          - emphasis [ref=e424]: updater function
+                          - text: . It must be pure, should take the pending state as its only argument, and should return the next state. React will put your updater function in a queue and re-render your component. During the next render, React will calculate the next state by applying all of the queued updaters to the previous state.
+                          - link "See an example below." [ref=e425] [cursor=pointer]:
+                            - /url: "#updating-state-based-on-the-previous-state"
+                  - heading "Returns Link for Returns" [level=4] [ref=e426]:
+                    - text: Returns
+                    - link "Link for Returns":
+                      - /url: "#setstate-returns"
+                  - paragraph [ref=e427]:
+                    - code [ref=e428]: set
+                    - text: functions do not have a return value.
+                  - heading "Caveats Link for Caveats" [level=4] [ref=e429]:
+                    - text: Caveats
+                    - link "Link for Caveats":
+                      - /url: "#setstate-caveats"
+                  - list [ref=e430]:
+                    - listitem [ref=e431]:
+                      - paragraph [ref=e432]:
+                        - text: The
+                        - code [ref=e433]: set
+                        - text: function
+                        - strong [ref=e434]:
+                          - text: only updates the state variable for the
+                          - emphasis [ref=e435]: next
+                          - text: render
+                        - text: . If you read the state variable after calling the
+                        - code [ref=e436]: set
+                        - text: function,
+                        - link "you will still get the old value" [ref=e437] [cursor=pointer]:
+                          - /url: "#ive-updated-the-state-but-logging-gives-me-the-old-value"
+                        - text: that was on the screen before your call.
+                    - listitem [ref=e438]:
+                      - paragraph [ref=e439]:
+                        - text: If the new value you provide is identical to the current
+                        - code [ref=e440]: state
+                        - text: ", as determined by an"
+                        - link [ref=e441] [cursor=pointer]:
+                          - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+                          - code [ref=e442]: Object.is
+                        - text: comparison, React will
+                        - strong [ref=e443]: skip re-rendering the component and its children.
+                        - text: This is an optimization. Although in some cases React may still need to call your component before skipping the children, it shouldn’t affect your code.
+                    - listitem [ref=e444]:
+                      - paragraph [ref=e445]:
+                        - text: React
+                        - link "batches state updates." [ref=e446] [cursor=pointer]:
+                          - /url: /learn/queueing-a-series-of-state-updates
+                        - text: It updates the screen
+                        - strong [ref=e447]: after all the event handlers have run
+                        - text: and have called their
+                        - code [ref=e448]: set
+                        - text: functions. This prevents multiple re-renders during a single event. In the rare case that you need to force React to update the screen earlier, for example to access the DOM, you can use
+                        - link [ref=e449] [cursor=pointer]:
+                          - /url: /reference/react-dom/flushSync
+                          - code [ref=e450]: flushSync
+                          - text: .
+                    - listitem [ref=e451]:
+                      - paragraph [ref=e452]:
+                        - text: The
+                        - code [ref=e453]: set
+                        - text: function has a stable identity, so you will often see it omitted from Effect dependencies, but including it will not cause the Effect to fire. If the linter lets you omit a dependency without errors, it is safe to do.
+                        - link "Learn more about removing Effect dependencies." [ref=e454] [cursor=pointer]:
+                          - /url: /learn/removing-effect-dependencies#move-dynamic-objects-and-functions-inside-your-effect
+                    - listitem [ref=e455]:
+                      - paragraph [ref=e456]:
+                        - text: Calling the
+                        - code [ref=e457]: set
+                        - text: function
+                        - emphasis [ref=e458]: during rendering
+                        - text: is only allowed from within the currently rendering component. React will discard its output and immediately attempt to render it again with the new state. This pattern is rarely needed, but you can use it to
+                        - strong [ref=e459]: store information from the previous renders
+                        - text: .
+                        - link "See an example below." [ref=e460] [cursor=pointer]:
+                          - /url: "#storing-information-from-previous-renders"
+                    - listitem [ref=e461]:
+                      - paragraph [ref=e462]:
+                        - text: In Strict Mode, React will
+                        - strong [ref=e463]: call your updater function twice
+                        - text: in order to
+                        - link "help you find accidental impurities." [ref=e464] [cursor=pointer]:
+                          - /url: "#my-initializer-or-updater-function-runs-twice"
+                        - text: This is development-only behavior and does not affect production. If your updater function is pure (as it should be), this should not affect the behavior. The result from one of the calls will be ignored.
+                  - separator [ref=e465]
+                  - heading "Usage Link for Usage" [level=2] [ref=e466]:
+                    - text: Usage
+                    - link "Link for Usage":
+                      - /url: "#usage"
+                  - heading "Adding state to a component Link for Adding state to a component" [level=3] [ref=e467]:
+                    - text: Adding state to a component
+                    - link "Link for Adding state to a component":
+                      - /url: "#adding-state-to-a-component"
+                  - paragraph [ref=e468]:
+                    - text: Call
+                    - code [ref=e469]: useState
+                    - text: at the top level of your component to declare one or more
+                    - link "state variables." [ref=e470] [cursor=pointer]:
+                      - /url: /learn/state-a-components-memory
+                  - code [ref=e476]:
+                    - generic [ref=e477]: "import { useState } from 'react';"
+                    - generic [ref=e479]: "function MyComponent() {"
+                    - generic [ref=e480]: const [age, setAge] = useState(42);
+                    - generic [ref=e481]: const [name, setName] = useState('Taylor');
+                    - generic [ref=e482]: // ...
+                  - paragraph [ref=e483]:
+                    - text: The convention is to name state variables like
+                    - code [ref=e484]: "[something, setSomething]"
+                    - text: using
+                    - link "array destructuring." [ref=e485] [cursor=pointer]:
+                      - /url: https://javascript.info/destructuring-assignment
+                  - paragraph [ref=e486]:
+                    - code [ref=e487]: useState
+                    - text: "returns an array with exactly two items:"
+                  - list [ref=e488]:
+                    - listitem [ref=e489]: The current state of this state variable, initially set to the initial state you provided.
+                    - listitem [ref=e490]:
+                      - text: The
+                      - generic [ref=e491]:
+                        - code [ref=e492]: set
+                        - text: function
+                      - text: that lets you change it to any other value in response to interaction.
+                  - paragraph [ref=e493]:
+                    - text: To update what’s on the screen, call the
+                    - code [ref=e494]: set
+                    - text: "function with some next state:"
+                  - code [ref=e500]:
+                    - generic [ref=e501]: "function handleClick() {"
+                    - generic [ref=e502]: setName('Robin');
+                    - generic [ref=e503]: "}"
+                  - paragraph [ref=e504]: React will store the next state, render your component again with the new values, and update the UI.
+                  - generic [ref=e505]:
+                    - heading "Pitfall" [level=3] [ref=e506]
+                    - generic [ref=e511]:
+                      - paragraph [ref=e512]:
+                        - text: Calling the
+                        - code [ref=e513]: set
+                        - text: function
+                        - link [ref=e514] [cursor=pointer]:
+                          - /url: "#ive-updated-the-state-but-logging-gives-me-the-old-value"
+                          - strong [ref=e515]: does not
+                          - text: change the current state in the already executing code
+                        - text: ":"
+                      - code [ref=e521]:
+                        - generic [ref=e522]: "function handleClick() {"
+                        - generic [ref=e523]: setName('Robin');
+                        - generic [ref=e524]: console.log(name); // Still "Taylor"!
+                        - generic [ref=e525]: "}"
+                      - paragraph [ref=e526]:
+                        - text: It only affects what
+                        - code [ref=e527]: useState
+                        - text: will return starting from the
+                        - emphasis [ref=e528]: next
+                        - text: render.
+                - generic [ref=e530]:
+                  - generic [ref=e531]:
+                    - heading "Basic useState examples Link for Basic useState examples" [level=4] [ref=e532]:
+                      - text: Basic useState examples
+                      - link "Link for Basic useState examples":
+                        - /url: "#examples-basic"
+                    - generic [ref=e533]:
+                      - generic [ref=e535]:
+                        - button "1. Counter (number)" [ref=e536] [cursor=pointer]
+                        - button "2. Text field (string)" [ref=e537] [cursor=pointer]
+                        - button "3. Checkbox (boolean)" [ref=e538] [cursor=pointer]
+                        - button "4. Form (two variables)" [ref=e539] [cursor=pointer]
+                      - generic [ref=e540]:
+                        - button "Scroll left" [ref=e541] [cursor=pointer]
+                        - button "Scroll right" [ref=e546] [cursor=pointer]
+                  - generic [ref=e551]:
+                    - generic [ref=e552]:
+                      - 'heading "Example 1 of 4: Counter (number) Link for this heading" [level=4] [ref=e553]':
+                        - generic [ref=e554]: "Example 1 of 4:"
+                        - text: Counter (number)
+                        - link "Link for this heading":
+                          - /url: "#counter-number"
+                      - paragraph [ref=e555]:
+                        - text: In this example, the
+                        - code [ref=e556]: count
+                        - text: state variable holds a number. Clicking the button increments it.
+                      - generic [ref=e559]:
+                        - generic [ref=e560]:
+                          - button "App.js" [ref=e564] [cursor=pointer]
+                          - generic [ref=e566]:
+                            - button "Download" [ref=e567] [cursor=pointer]
+                            - button "Reload" [ref=e571] [cursor=pointer]
+                            - button "Clear" [ref=e575] [cursor=pointer]
+                            - link "Fork" [ref=e580] [cursor=pointer]:
+                              - /url: https://codesandbox.io/api/v1/sandboxes/define?undefined&environment=create-react-app
+                        - generic [ref=e585]:
+                          - textbox "Code Editor for App.js" [ref=e588]:
+                            - generic [ref=e589]: "import { useState } from 'react'; export default function Counter() { const [count, setCount] = useState(0); function handleClick() { setCount(count + 1); } return ( <button onClick={handleClick}> You pressed me {count} times </button> ); }"
+                          - iframe [ref=e592]
+                    - button "Next Example" [ref=e594] [cursor=pointer]
+                - generic [ref=e597]:
+                  - separator [ref=e598]
+                  - heading "Updating state based on the previous state Link for Updating state based on the previous state" [level=3] [ref=e599]:
+                    - text: Updating state based on the previous state
+                    - link "Link for Updating state based on the previous state":
+                      - /url: "#updating-state-based-on-the-previous-state"
+                  - paragraph [ref=e600]:
+                    - text: Suppose the
+                    - code [ref=e601]: age
+                    - text: is
+                    - code [ref=e602]: "42"
+                    - text: . This handler calls
+                    - code [ref=e603]: setAge(age + 1)
+                    - text: "three times:"
+                  - code [ref=e609]:
+                    - generic [ref=e610]: "function handleClick() {"
+                    - generic [ref=e611]: setAge(age + 1); // setAge(42 + 1)
+                    - generic [ref=e612]: setAge(age + 1); // setAge(42 + 1)
+                    - generic [ref=e613]: setAge(age + 1); // setAge(42 + 1)
+                    - generic [ref=e614]: "}"
+                  - paragraph [ref=e615]:
+                    - text: However, after one click,
+                    - code [ref=e616]: age
+                    - text: will only be
+                    - code [ref=e617]: "43"
+                    - text: rather than
+                    - code [ref=e618]: "45"
+                    - text: "! This is because calling the"
+                    - code [ref=e619]: set
+                    - text: function
+                    - link "does not update" [ref=e620] [cursor=pointer]:
+                      - /url: /learn/state-as-a-snapshot
+                    - text: the
+                    - code [ref=e621]: age
+                    - text: state variable in the already running code. So each
+                    - code [ref=e622]: setAge(age + 1)
+                    - text: call becomes
+                    - code [ref=e623]: setAge(43)
+                    - text: .
+                  - paragraph [ref=e624]:
+                    - text: To solve this problem,
+                    - strong [ref=e625]:
+                      - text: you may pass an
+                      - emphasis [ref=e626]: updater function
+                    - text: to
+                    - code [ref=e627]: setAge
+                    - text: "instead of the next state:"
+                  - code [ref=e633]:
+                    - generic [ref=e634]: "function handleClick() {"
+                    - generic [ref=e635]: setAge(a => a + 1); // setAge(42 => 43)
+                    - generic [ref=e636]: setAge(a => a + 1); // setAge(43 => 44)
+                    - generic [ref=e637]: setAge(a => a + 1); // setAge(44 => 45)
+                    - generic [ref=e638]: "}"
+                  - paragraph [ref=e639]:
+                    - text: Here,
+                    - code [ref=e640]: a => a + 1
+                    - text: is your updater function. It takes the pending state and calculates the next state from it.
+                  - paragraph [ref=e641]:
+                    - text: React puts your updater functions in a
+                    - link "queue." [ref=e642] [cursor=pointer]:
+                      - /url: /learn/queueing-a-series-of-state-updates
+                    - text: "Then, during the next render, it will call them in the same order:"
+                  - list [ref=e643]:
+                    - listitem [ref=e644]:
+                      - code [ref=e645]: a => a + 1
+                      - text: will receive
+                      - code [ref=e646]: "42"
+                      - text: as the pending state and return
+                      - code [ref=e647]: "43"
+                      - text: as the next state.
+                    - listitem [ref=e648]:
+                      - code [ref=e649]: a => a + 1
+                      - text: will receive
+                      - code [ref=e650]: "43"
+                      - text: as the pending state and return
+                      - code [ref=e651]: "44"
+                      - text: as the next state.
+                    - listitem [ref=e652]:
+                      - code [ref=e653]: a => a + 1
+                      - text: will receive
+                      - code [ref=e654]: "44"
+                      - text: as the pending state and return
+                      - code [ref=e655]: "45"
+                      - text: as the next state.
+                  - paragraph [ref=e656]:
+                    - text: There are no other queued updates, so React will store
+                    - code [ref=e657]: "45"
+                    - text: as the current state in the end.
+                  - paragraph [ref=e658]:
+                    - text: By convention, it’s common to name the pending state argument for the first letter of the state variable name, like
+                    - code [ref=e659]: a
+                    - text: for
+                    - code [ref=e660]: age
+                    - text: . However, you may also call it like
+                    - code [ref=e661]: prevAge
+                    - text: or something else that you find clearer.
+                  - paragraph [ref=e662]:
+                    - text: React may
+                    - link "call your updaters twice" [ref=e663] [cursor=pointer]:
+                      - /url: "#my-initializer-or-updater-function-runs-twice"
+                    - text: in development to verify that they are
+                    - link "pure." [ref=e664] [cursor=pointer]:
+                      - /url: /learn/keeping-components-pure
+                  - group [ref=e665]:
+                    - generic [ref=e666]:
+                      - heading "Deep Dive" [level=5] [ref=e667]
+                      - heading "Is using an updater always preferred? Link for Is using an updater always preferred?" [level=4] [ref=e671]:
+                        - text: Is using an updater always preferred?
+                        - link "Link for Is using an updater always preferred?":
+                          - /url: "#is-using-an-updater-always-preferred"
+                      - button [ref=e672] [cursor=pointer]
+                - generic [ref=e679]:
+                  - generic [ref=e680]:
+                    - heading "The difference between passing an updater and passing the next state directly Link for The difference between passing an updater and passing the next state directly" [level=4] [ref=e681]:
+                      - text: The difference between passing an updater and passing the next state directly
+                      - link "Link for The difference between passing an updater and passing the next state directly":
+                        - /url: "#examples-updater"
+                    - generic [ref=e682]:
+                      - generic [ref=e684]:
+                        - button "1. Passing the updater function" [ref=e685] [cursor=pointer]
+                        - button "2. Passing the next state directly" [ref=e686] [cursor=pointer]
+                      - generic [ref=e687]:
+                        - button "Scroll left" [ref=e688] [cursor=pointer]
+                        - button "Scroll right" [ref=e693] [cursor=pointer]
+                  - generic [ref=e698]:
+                    - generic [ref=e699]:
+                      - 'heading "Example 1 of 2: Passing the updater function Link for this heading" [level=4] [ref=e700]':
+                        - generic [ref=e701]: "Example 1 of 2:"
+                        - text: Passing the updater function
+                        - link "Link for this heading":
+                          - /url: "#passing-the-updater-function"
+                      - paragraph [ref=e702]: This example passes the updater function, so the “+3” button works.
+                      - generic [ref=e705]:
+                        - generic [ref=e706]:
+                          - button "App.js" [ref=e710] [cursor=pointer]
+                          - generic [ref=e712]:
+                            - button "Download" [ref=e713] [cursor=pointer]
+                            - button "Reload" [ref=e717] [cursor=pointer]
+                            - button "Clear" [ref=e721] [cursor=pointer]
+                            - link "Fork" [ref=e726] [cursor=pointer]:
+                              - /url: https://codesandbox.io/api/v1/sandboxes/define?undefined&environment=create-react-app
+                        - generic [ref=e731]:
+                          - textbox "Code Editor for App.js" [ref=e734]:
+                            - generic [ref=e735]: "import { useState } from 'react'; export default function Counter() { const [age, setAge] = useState(42); function increment() { setAge(a => a + 1); } return ( <> <h1>Your age: {age}</h1> <button onClick={() => { increment(); increment(); increment(); }}>+3</button> <button onClick={() => { increment(); }}>+1</button> </> ); }"
+                          - iframe [ref=e738]
+                          - button "Show more" [ref=e739] [cursor=pointer]
+                    - button "Next Example" [ref=e746] [cursor=pointer]
+                - generic [ref=e749]:
+                  - separator [ref=e750]
+                  - heading "Updating objects and arrays in state Link for Updating objects and arrays in state" [level=3] [ref=e751]:
+                    - text: Updating objects and arrays in state
+                    - link "Link for Updating objects and arrays in state":
+                      - /url: "#updating-objects-and-arrays-in-state"
+                  - paragraph [ref=e752]:
+                    - text: You can put objects and arrays into state. In React, state is considered read-only, so
+                    - strong [ref=e753]:
+                      - text: you should
+                      - emphasis [ref=e754]: replace
+                      - text: it rather than
+                      - emphasis [ref=e755]: mutate
+                      - text: your existing objects
+                    - text: . For example, if you have a
+                    - code [ref=e756]: form
+                    - text: "object in state, don’t mutate it:"
+                  - code [ref=e762]:
+                    - generic [ref=e763]: "// 🚩 Don't mutate an object in state like this:"
+                    - generic [ref=e764]: form.firstName = 'Taylor';
+                  - paragraph [ref=e765]: "Instead, replace the whole object by creating a new one:"
+                  - code [ref=e771]:
+                    - generic [ref=e772]: // ✅ Replace state with a new object
+                    - generic [ref=e773]: "setForm({"
+                    - generic [ref=e774]: ...form,
+                    - generic [ref=e775]: "firstName: 'Taylor'"
+                    - generic [ref=e776]: "});"
+                  - paragraph [ref=e777]:
+                    - text: Read
+                    - link "updating objects in state" [ref=e778] [cursor=pointer]:
+                      - /url: /learn/updating-objects-in-state
+                    - text: and
+                    - link "updating arrays in state" [ref=e779] [cursor=pointer]:
+                      - /url: /learn/updating-arrays-in-state
+                    - text: to learn more.
+                - generic [ref=e781]:
+                  - generic [ref=e782]:
+                    - heading "Examples of objects and arrays in state Link for Examples of objects and arrays in state" [level=4] [ref=e783]:
+                      - text: Examples of objects and arrays in state
+                      - link "Link for Examples of objects and arrays in state":
+                        - /url: "#examples-objects"
+                    - generic [ref=e784]:
+                      - generic [ref=e786]:
+                        - button "1. Form (object)" [ref=e787] [cursor=pointer]
+                        - button "2. Form (nested object)" [ref=e788] [cursor=pointer]
+                        - button "3. List (array)" [ref=e789] [cursor=pointer]
+                        - button "4. Writing concise update logic with Immer" [ref=e790] [cursor=pointer]
+                      - generic [ref=e791]:
+                        - button "Scroll left" [ref=e792] [cursor=pointer]
+                        - button "Scroll right" [ref=e797] [cursor=pointer]
+                  - generic [ref=e802]:
+                    - generic [ref=e803]:
+                      - 'heading "Example 1 of 4: Form (object) Link for this heading" [level=4] [ref=e804]':
+                        - generic [ref=e805]: "Example 1 of 4:"
+                        - text: Form (object)
+                        - link "Link for this heading":
+                          - /url: "#form-object"
+                      - paragraph [ref=e806]:
+                        - text: In this example, the
+                        - code [ref=e807]: form
+                        - text: state variable holds an object. Each input has a change handler that calls
+                        - code [ref=e808]: setForm
+                        - text: with the next state of the entire form. The
+                        - code [ref=e809]: "{ ...form }"
+                        - text: spread syntax ensures that the state object is replaced rather than mutated.
+                      - generic [ref=e812]:
+                        - generic [ref=e813]:
+                          - button "App.js" [ref=e817] [cursor=pointer]
+                          - generic [ref=e819]:
+                            - button "Download" [ref=e820] [cursor=pointer]
+                            - button "Reload" [ref=e824] [cursor=pointer]
+                            - button "Clear" [ref=e828] [cursor=pointer]
+                            - link "Fork" [ref=e833] [cursor=pointer]:
+                              - /url: https://codesandbox.io/api/v1/sandboxes/define?undefined&environment=create-react-app
+                        - generic [ref=e838]:
+                          - textbox "Code Editor for App.js" [ref=e841]:
+                            - generic [ref=e842]: "import { useState } from 'react'; export default function Form() { const [form, setForm] = useState({ firstName: 'Barbara', lastName: 'Hepworth', email: 'bhepworth@sculpture.com', }); return ( <> <label> First name: <input value={form.firstName} onChange={e => { setForm({ ...form, firstName: e.target.value }); }} /> </label> <label> Last name: <input value={form.lastName} onChange={e => { setForm({ ...form, lastName: e.target.value }); }} /> </label> <label> Email: <input value={form.email} onChange={e => { setForm({ ...form, email: e.target.value }); }} /> </label> <p> {form.firstName}{' '} {form.lastName}{' '} ({form.email}) </p> </> ); }"
+                          - iframe [ref=e845]
+                          - button "Show more" [ref=e846] [cursor=pointer]
+                    - button "Next Example" [ref=e853] [cursor=pointer]
+                - generic [ref=e856]:
+                  - separator [ref=e857]
+                  - heading "Avoiding recreating the initial state Link for Avoiding recreating the initial state" [level=3] [ref=e858]:
+                    - text: Avoiding recreating the initial state
+                    - link "Link for Avoiding recreating the initial state":
+                      - /url: "#avoiding-recreating-the-initial-state"
+                  - paragraph [ref=e859]: React saves the initial state once and ignores it on the next renders.
+                  - code [ref=e865]:
+                    - generic [ref=e866]: "function TodoList() {"
+                    - generic [ref=e867]: const [todos, setTodos] = useState(createInitialTodos());
+                    - generic [ref=e868]: // ...
+                  - paragraph [ref=e869]:
+                    - text: Although the result of
+                    - code [ref=e870]: createInitialTodos()
+                    - text: is only used for the initial render, you’re still calling this function on every render. This can be wasteful if it’s creating large arrays or performing expensive calculations.
+                  - paragraph [ref=e871]:
+                    - text: To solve this, you may
+                    - strong [ref=e872]:
+                      - text: pass it as an
+                      - emphasis [ref=e873]: initializer
+                      - text: function
+                    - text: to
+                    - code [ref=e874]: useState
+                    - text: "instead:"
+                  - code [ref=e880]:
+                    - generic [ref=e881]: "function TodoList() {"
+                    - generic [ref=e882]: const [todos, setTodos] = useState(createInitialTodos);
+                    - generic [ref=e883]: // ...
+                  - paragraph [ref=e884]:
+                    - text: Notice that you’re passing
+                    - code [ref=e885]: createInitialTodos
+                    - text: ", which is the"
+                    - emphasis [ref=e886]: function itself
+                    - text: ", and not"
+                    - code [ref=e887]: createInitialTodos()
+                    - text: ", which is the result of calling it. If you pass a function to"
+                    - code [ref=e888]: useState
+                    - text: ", React will only call it during initialization."
+                  - paragraph [ref=e889]:
+                    - text: React may
+                    - link "call your initializers twice" [ref=e890] [cursor=pointer]:
+                      - /url: "#my-initializer-or-updater-function-runs-twice"
+                    - text: in development to verify that they are
+                    - link "pure." [ref=e891] [cursor=pointer]:
+                      - /url: /learn/keeping-components-pure
+                - generic [ref=e893]:
+                  - generic [ref=e894]:
+                    - heading "The difference between passing an initializer and passing the initial state directly Link for The difference between passing an initializer and passing the initial state directly" [level=4] [ref=e895]:
+                      - text: The difference between passing an initializer and passing the initial state directly
+                      - link "Link for The difference between passing an initializer and passing the initial state directly":
+                        - /url: "#examples-initializer"
+                    - generic [ref=e896]:
+                      - generic [ref=e898]:
+                        - button "1. Passing the initializer function" [ref=e899] [cursor=pointer]
+                        - button "2. Passing the initial state directly" [ref=e900] [cursor=pointer]
+                      - generic [ref=e901]:
+                        - button "Scroll left" [ref=e902] [cursor=pointer]
+                        - button "Scroll right" [ref=e907] [cursor=pointer]
+                  - generic [ref=e912]:
+                    - generic [ref=e913]:
+                      - 'heading "Example 1 of 2: Passing the initializer function Link for this heading" [level=4] [ref=e914]':
+                        - generic [ref=e915]: "Example 1 of 2:"
+                        - text: Passing the initializer function
+                        - link "Link for this heading":
+                          - /url: "#passing-the-initializer-function"
+                      - paragraph [ref=e916]:
+                        - text: This example passes the initializer function, so the
+                        - code [ref=e917]: createInitialTodos
+                        - text: function only runs during initialization. It does not run when component re-renders, such as when you type into the input.
+                      - generic [ref=e920]:
+                        - generic [ref=e921]:
+                          - button "App.js" [ref=e925] [cursor=pointer]
+                          - generic [ref=e927]:
+                            - button "Download" [ref=e928] [cursor=pointer]
+                            - button "Reload" [ref=e932] [cursor=pointer]
+                            - button "Clear" [ref=e936] [cursor=pointer]
+                            - link "Fork" [ref=e941] [cursor=pointer]:
+                              - /url: https://codesandbox.io/api/v1/sandboxes/define?undefined&environment=create-react-app
+                        - generic [ref=e946]:
+                          - textbox "Code Editor for App.js" [ref=e949]:
+                            - generic [ref=e950]: "import { useState } from 'react'; function createInitialTodos() { const initialTodos = []; for (let i = 0; i < 50; i++) { initialTodos.push({ id: i, text: 'Item ' + (i + 1) }); } return initialTodos; } export default function TodoList() { const [todos, setTodos] = useState(createInitialTodos); const [text, setText] = useState(''); return ( <> <input value={text} onChange={e => setText(e.target.value)} /> <button onClick={() => { setText(''); setTodos([{ id: todos.length, text: text }, ...todos]); }}>Add</button> <ul> {todos.map(item => ( <li key={item.id}> {item.text} </li> ))} </ul> </> ); }"
+                          - iframe [ref=e953]
+                          - button "Show more" [ref=e954] [cursor=pointer]
+                    - button "Next Example" [ref=e961] [cursor=pointer]
+                - generic [ref=e964]:
+                  - separator [ref=e965]
+                  - heading "Resetting state with a key Link for Resetting state with a key" [level=3] [ref=e966]:
+                    - text: Resetting state with a key
+                    - link "Link for Resetting state with a key":
+                      - /url: "#resetting-state-with-a-key"
+                  - paragraph [ref=e967]:
+                    - text: You’ll often encounter the
+                    - code [ref=e968]: key
+                    - text: attribute when
+                    - link "rendering lists." [ref=e969] [cursor=pointer]:
+                      - /url: /learn/rendering-lists
+                    - text: However, it also serves another purpose.
+                  - paragraph [ref=e970]:
+                    - text: You can
+                    - strong [ref=e971]:
+                      - text: reset a component’s state by passing a different
+                      - code [ref=e972]: key
+                      - text: to a component.
+                    - text: In this example, the Reset button changes the
+                    - code [ref=e973]: version
+                    - text: state variable, which we pass as a
+                    - code [ref=e974]: key
+                    - text: to the
+                    - code [ref=e975]: Form
+                    - text: . When the
+                    - code [ref=e976]: key
+                    - text: changes, React re-creates the
+                    - code [ref=e977]: Form
+                    - text: component (and all of its children) from scratch, so its state gets reset.
+                  - paragraph [ref=e978]:
+                    - text: Read
+                    - link "preserving and resetting state" [ref=e979] [cursor=pointer]:
+                      - /url: /learn/preserving-and-resetting-state
+                    - text: to learn more.
+                - generic [ref=e982]:
+                  - generic [ref=e983]:
+                    - button "App.js" [ref=e987] [cursor=pointer]
+                    - generic [ref=e989]:
+                      - button "Download" [ref=e990] [cursor=pointer]
+                      - button "Reload" [ref=e994] [cursor=pointer]
+                      - button "Clear" [ref=e998] [cursor=pointer]
+                      - link "Fork" [ref=e1003] [cursor=pointer]:
+                        - /url: https://codesandbox.io/api/v1/sandboxes/define?undefined&environment=create-react-app
+                  - generic [ref=e1008]:
+                    - textbox "Code Editor for App.js" [ref=e1011]:
+                      - generic [ref=e1012]: "import { useState } from 'react'; export default function App() { const [version, setVersion] = useState(0); function handleReset() { setVersion(version + 1); } return ( <> <button onClick={handleReset}>Reset</button> <Form key={version} /> </> ); } function Form() { const [name, setName] = useState('Taylor'); return ( <> <input value={name} onChange={e => setName(e.target.value)} /> <p>Hello, {name}.</p> </> ); }"
+                    - iframe [ref=e1015]
+                    - button "Show more" [ref=e1016] [cursor=pointer]
+                - generic [ref=e1022]:
+                  - separator [ref=e1023]
+                  - heading "Storing information from previous renders Link for Storing information from previous renders" [level=3] [ref=e1024]:
+                    - text: Storing information from previous renders
+                    - link "Link for Storing information from previous renders":
+                      - /url: "#storing-information-from-previous-renders"
+                  - paragraph [ref=e1025]: Usually, you will update state in event handlers. However, in rare cases you might want to adjust state in response to rendering — for example, you might want to change a state variable when a prop changes.
+                  - paragraph [ref=e1026]: "In most cases, you don’t need this:"
+                  - list [ref=e1027]:
+                    - listitem [ref=e1028]:
+                      - strong [ref=e1029]:
+                        - text: If the value you need can be computed entirely from the current props or other state,
+                        - link "remove that redundant state altogether." [ref=e1030] [cursor=pointer]:
+                          - /url: /learn/choosing-the-state-structure#avoid-redundant-state
+                      - text: If you’re worried about recomputing too often, the
+                      - link [ref=e1031] [cursor=pointer]:
+                        - /url: /reference/react/useMemo
+                        - code [ref=e1032]: useMemo
+                        - text: Hook
+                      - text: can help.
+                    - listitem [ref=e1033]:
+                      - text: If you want to reset the entire component tree’s state,
+                      - link [ref=e1034] [cursor=pointer]:
+                        - /url: "#resetting-state-with-a-key"
+                        - text: pass a different
+                        - code [ref=e1035]: key
+                        - text: to your component.
+                    - listitem [ref=e1036]: If you can, update all the relevant state in the event handlers.
+                  - paragraph [ref=e1037]:
+                    - text: In the rare case that none of these apply, there is a pattern you can use to update state based on the values that have been rendered so far, by calling a
+                    - code [ref=e1038]: set
+                    - text: function while your component is rendering.
+                  - paragraph [ref=e1039]:
+                    - text: Here’s an example. This
+                    - code [ref=e1040]: CountLabel
+                    - text: component displays the
+                    - code [ref=e1041]: count
+                    - text: "prop passed to it:"
+                  - code [ref=e1047]:
+                    - generic [ref=e1048]: "export default function CountLabel({ count }) {"
+                    - generic [ref=e1049]: "return <h1>{count}</h1>"
+                    - generic [ref=e1050]: "}"
+                  - paragraph [ref=e1051]:
+                    - text: Say you want to show whether the counter has
+                    - emphasis [ref=e1052]: increased or decreased
+                    - text: since the last change. The
+                    - code [ref=e1053]: count
+                    - text: prop doesn’t tell you this — you need to keep track of its previous value. Add the
+                    - code [ref=e1054]: prevCount
+                    - text: state variable to track it. Add another state variable called
+                    - code [ref=e1055]: trend
+                    - text: to hold whether the count has increased or decreased. Compare
+                    - code [ref=e1056]: prevCount
+                    - text: with
+                    - code [ref=e1057]: count
+                    - text: ", and if they’re not equal, update both"
+                    - code [ref=e1058]: prevCount
+                    - text: and
+                    - code [ref=e1059]: trend
+                    - text: . Now you can show both the current count prop and
+                    - emphasis [ref=e1060]: how it has changed since the last render
+                    - text: .
+                - generic [ref=e1063]:
+                  - generic [ref=e1064]:
+                    - tablist "Select active file" [ref=e1070]:
+                      - tab "App.js" [ref=e1071] [cursor=pointer]
+                      - tab "CountLabel.js" [selected] [ref=e1072] [cursor=pointer]
+                    - generic [ref=e1073]:
+                      - button "Reload" [ref=e1074] [cursor=pointer]
+                      - button "Clear" [ref=e1078] [cursor=pointer]
+                      - link "Fork" [ref=e1083] [cursor=pointer]:
+                        - /url: https://codesandbox.io/api/v1/sandboxes/define?undefined&environment=create-react-app
+                  - generic [ref=e1088]:
+                    - textbox "Code Editor for CountLabel.js" [ref=e1091]:
+                      - generic [ref=e1092]: "import { useState } from 'react'; export default function CountLabel({ count }) { const [prevCount, setPrevCount] = useState(count); const [trend, setTrend] = useState(null); if (prevCount !== count) { setPrevCount(count); setTrend(count > prevCount ? 'increasing' : 'decreasing'); } return ( <> <h1>{count}</h1> {trend && <p>The count is {trend}</p>} </> ); }"
+                    - iframe [ref=e1095]
+                    - button "Show more" [ref=e1096] [cursor=pointer]
+                - generic [ref=e1102]:
+                  - paragraph [ref=e1103]:
+                    - text: Note that if you call a
+                    - code [ref=e1104]: set
+                    - text: function while rendering, it must be inside a condition like
+                    - code [ref=e1105]: prevCount !== count
+                    - text: ", and there must be a call like"
+                    - code [ref=e1106]: setPrevCount(count)
+                    - text: inside of the condition. Otherwise, your component would re-render in a loop until it crashes. Also, you can only update the state of the
+                    - emphasis [ref=e1107]: currently rendering
+                    - text: component like this. Calling the
+                    - code [ref=e1108]: set
+                    - text: function of
+                    - emphasis [ref=e1109]: another
+                    - text: component during rendering is an error. Finally, your
+                    - code [ref=e1110]: set
+                    - text: call should still
+                    - link "update state without mutation" [ref=e1111] [cursor=pointer]:
+                      - /url: "#updating-objects-and-arrays-in-state"
+                    - text: — this doesn’t mean you can break other rules of
+                    - link "pure functions." [ref=e1112] [cursor=pointer]:
+                      - /url: /learn/keeping-components-pure
+                  - paragraph [ref=e1113]:
+                    - text: This pattern can be hard to understand and is usually best avoided. However, it’s better than updating state in an effect. When you call the
+                    - code [ref=e1114]: set
+                    - text: function during render, React will re-render that component immediately after your component exits with a
+                    - code [ref=e1115]: return
+                    - text: statement, and before rendering the children. This way, children don’t need to render twice. The rest of your component function will still execute (and the result will be thrown away). If your condition is below all the Hook calls, you may add an early
+                    - code [ref=e1116]: return;
+                    - text: to restart rendering earlier.
+                  - separator [ref=e1117]
+                  - heading "Troubleshooting Link for Troubleshooting" [level=2] [ref=e1118]:
+                    - text: Troubleshooting
+                    - link "Link for Troubleshooting":
+                      - /url: "#troubleshooting"
+                  - heading "I’ve updated the state, but logging gives me the old value Link for I’ve updated the state, but logging gives me the old value" [level=3] [ref=e1119]:
+                    - text: I’ve updated the state, but logging gives me the old value
+                    - link "Link for I’ve updated the state, but logging gives me the old value":
+                      - /url: "#ive-updated-the-state-but-logging-gives-me-the-old-value"
+                  - paragraph [ref=e1120]:
+                    - text: Calling the
+                    - code [ref=e1121]: set
+                    - text: function
+                    - strong [ref=e1122]: does not change state in the running code
+                    - text: ":"
+                  - code [ref=e1128]:
+                    - generic [ref=e1129]: "function handleClick() {"
+                    - generic [ref=e1130]: console.log(count); // 0
+                    - generic [ref=e1132]: setCount(count + 1); // Request a re-render with 1
+                    - generic [ref=e1133]: console.log(count); // Still 0!
+                    - generic [ref=e1135]: "setTimeout(() => {"
+                    - generic [ref=e1136]: console.log(count); // Also 0!
+                    - generic [ref=e1137]: "}, 5000);"
+                    - generic [ref=e1138]: "}"
+                  - paragraph [ref=e1139]:
+                    - text: This is because
+                    - link "states behaves like a snapshot." [ref=e1140] [cursor=pointer]:
+                      - /url: /learn/state-as-a-snapshot
+                    - text: Updating state requests another render with the new state value, but does not affect the
+                    - code [ref=e1141]: count
+                    - text: JavaScript variable in your already-running event handler.
+                  - paragraph [ref=e1142]:
+                    - text: If you need to use the next state, you can save it in a variable before passing it to the
+                    - code [ref=e1143]: set
+                    - text: "function:"
+                  - code [ref=e1149]:
+                    - generic [ref=e1150]: const nextCount = count + 1;
+                    - generic [ref=e1151]: setCount(nextCount);
+                    - generic [ref=e1153]: console.log(count); // 0
+                    - generic [ref=e1154]: console.log(nextCount); // 1
+                  - separator [ref=e1155]
+                  - heading "I’ve updated the state, but the screen doesn’t update Link for I’ve updated the state, but the screen doesn’t update" [level=3] [ref=e1156]:
+                    - text: I’ve updated the state, but the screen doesn’t update
+                    - link "Link for I’ve updated the state, but the screen doesn’t update":
+                      - /url: "#ive-updated-the-state-but-the-screen-doesnt-update"
+                  - paragraph [ref=e1157]:
+                    - text: React will
+                    - strong [ref=e1158]: ignore your update if the next state is equal to the previous state,
+                    - text: as determined by an
+                    - link [ref=e1159] [cursor=pointer]:
+                      - /url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+                      - code [ref=e1160]: Object.is
+                    - text: "comparison. This usually happens when you change an object or an array in state directly:"
+                  - code [ref=e1166]:
+                    - generic [ref=e1167]: "obj.x = 10; // 🚩 Wrong: mutating existing object"
+                    - generic [ref=e1168]: setObj(obj); // 🚩 Doesn't do anything
+                  - paragraph [ref=e1169]:
+                    - text: You mutated an existing
+                    - code [ref=e1170]: obj
+                    - text: object and passed it back to
+                    - code [ref=e1171]: setObj
+                    - text: ", so React ignored the update. To fix this, you need to ensure that you’re always"
+                    - link [ref=e1172] [cursor=pointer]:
+                      - /url: "#updating-objects-and-arrays-in-state"
+                      - emphasis [ref=e1173]: replacing
+                      - text: objects and arrays in state instead of
+                      - emphasis [ref=e1174]: mutating
+                      - text: them
+                    - text: ":"
+                  - code [ref=e1180]:
+                    - generic [ref=e1181]: "// ✅ Correct: creating a new object"
+                    - generic [ref=e1182]: "setObj({"
+                    - generic [ref=e1183]: ...obj,
+                    - generic [ref=e1184]: "x: 10"
+                    - generic [ref=e1185]: "});"
+                  - separator [ref=e1186]
+                  - 'heading "I’m getting an error: “Too many re-renders” Link for I’m getting an error: “Too many re-renders”" [level=3] [ref=e1187]':
+                    - text: "I’m getting an error: “Too many re-renders”"
+                    - 'link "Link for I’m getting an error: “Too many re-renders”"':
+                      - /url: "#im-getting-an-error-too-many-re-renders"
+                  - paragraph [ref=e1188]:
+                    - text: "You might get an error that says:"
+                    - code [ref=e1189]: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+                    - text: Typically, this means that you’re unconditionally setting state
+                    - emphasis [ref=e1190]: during render
+                    - text: ", so your component enters a loop: render, set state (which causes a render), render, set state (which causes a render), and so on. Very often, this is caused by a mistake in specifying an event handler:"
+                  - code [ref=e1196]:
+                    - generic [ref=e1197]: "// 🚩 Wrong: calls the handler during render"
+                    - generic [ref=e1198]: "return <button onClick={handleClick()}>Click me</button>"
+                    - generic [ref=e1200]: "// ✅ Correct: passes down the event handler"
+                    - generic [ref=e1201]: "return <button onClick={handleClick}>Click me</button>"
+                    - generic [ref=e1203]: "// ✅ Correct: passes down an inline function"
+                    - generic [ref=e1204]: "return <button onClick={(e) => handleClick(e)}>Click me</button>"
+                  - paragraph [ref=e1205]:
+                    - text: If you can’t find the cause of this error, click on the arrow next to the error in the console and look through the JavaScript stack to find the specific
+                    - code [ref=e1206]: set
+                    - text: function call responsible for the error.
+                  - separator [ref=e1207]
+                  - heading "My initializer or updater function runs twice Link for My initializer or updater function runs twice" [level=3] [ref=e1208]:
+                    - text: My initializer or updater function runs twice
+                    - link "Link for My initializer or updater function runs twice":
+                      - /url: "#my-initializer-or-updater-function-runs-twice"
+                  - paragraph [ref=e1209]:
+                    - text: In
+                    - link "Strict Mode" [ref=e1210] [cursor=pointer]:
+                      - /url: /reference/react/StrictMode
+                    - text: ", React will call some of your functions twice instead of once:"
+                  - code [ref=e1216]:
+                    - generic [ref=e1217]: "function TodoList() {"
+                    - generic [ref=e1218]: // This component function will run twice for every render.
+                    - generic [ref=e1220]: "const [todos, setTodos] = useState(() => {"
+                    - generic [ref=e1221]: // This initializer function will run twice during initialization.
+                    - generic [ref=e1222]: return createTodos();
+                    - generic [ref=e1223]: "});"
+                    - generic [ref=e1225]: "function handleClick() {"
+                    - generic [ref=e1226]: "setTodos(prevTodos => {"
+                    - generic [ref=e1227]: // This updater function will run twice for every click.
+                    - generic [ref=e1228]: return [...prevTodos, createTodo()];
+                    - generic [ref=e1229]: "});"
+                    - generic [ref=e1230]: "}"
+                    - generic [ref=e1231]: // ...
+                  - paragraph [ref=e1232]: This is expected and shouldn’t break your code.
+                  - paragraph [ref=e1233]:
+                    - text: This
+                    - strong [ref=e1234]: development-only
+                    - text: behavior helps you
+                    - link "keep components pure." [ref=e1235] [cursor=pointer]:
+                      - /url: /learn/keeping-components-pure
+                    - text: React uses the result of one of the calls, and ignores the result of the other call. As long as your component, initializer, and updater functions are pure, this shouldn’t affect your logic. However, if they are accidentally impure, this helps you notice the mistakes.
+                  - paragraph [ref=e1236]: "For example, this impure updater function mutates an array in state:"
+                  - code [ref=e1242]:
+                    - generic [ref=e1243]: "setTodos(prevTodos => {"
+                    - generic [ref=e1244]: "// 🚩 Mistake: mutating state"
+                    - generic [ref=e1245]: prevTodos.push(createTodo());
+                    - generic [ref=e1246]: "});"
+                  - paragraph [ref=e1247]:
+                    - text: Because React calls your updater function twice, you’ll see the todo was added twice, so you’ll know that there is a mistake. In this example, you can fix the mistake by
+                    - link "replacing the array instead of mutating it" [ref=e1248] [cursor=pointer]:
+                      - /url: "#updating-objects-and-arrays-in-state"
+                    - text: ":"
+                  - code [ref=e1254]:
+                    - generic [ref=e1255]: "setTodos(prevTodos => {"
+                    - generic [ref=e1256]: "// ✅ Correct: replacing with new state"
+                    - generic [ref=e1257]: return [...prevTodos, createTodo()];
+                    - generic [ref=e1258]: "});"
+                  - paragraph [ref=e1259]:
+                    - text: Now that this updater function is pure, calling it an extra time doesn’t make a difference in behavior. This is why React calling it twice helps you find mistakes.
+                    - strong [ref=e1260]: Only component, initializer, and updater functions need to be pure.
+                    - text: Event handlers don’t need to be pure, so React will never call your event handlers twice.
+                  - paragraph [ref=e1261]:
+                    - text: Read
+                    - link "keeping components pure" [ref=e1262] [cursor=pointer]:
+                      - /url: /learn/keeping-components-pure
+                    - text: to learn more.
+                  - separator [ref=e1263]
+                  - heading "I’m trying to set state to a function, but it gets called instead Link for I’m trying to set state to a function, but it gets called instead" [level=3] [ref=e1264]:
+                    - text: I’m trying to set state to a function, but it gets called instead
+                    - link "Link for I’m trying to set state to a function, but it gets called instead":
+                      - /url: "#im-trying-to-set-state-to-a-function-but-it-gets-called-instead"
+                  - paragraph [ref=e1265]: "You can’t put a function into state like this:"
+                  - code [ref=e1271]:
+                    - generic [ref=e1272]: const [fn, setFn] = useState(someFunction);
+                    - generic [ref=e1274]: "function handleClick() {"
+                    - generic [ref=e1275]: setFn(someOtherFunction);
+                    - generic [ref=e1276]: "}"
+                  - paragraph [ref=e1277]:
+                    - text: Because you’re passing a function, React assumes that
+                    - code [ref=e1278]: someFunction
+                    - text: is an
+                    - link "initializer function" [ref=e1279] [cursor=pointer]:
+                      - /url: "#avoiding-recreating-the-initial-state"
+                    - text: ", and that"
+                    - code [ref=e1280]: someOtherFunction
+                    - text: is an
+                    - link "updater function" [ref=e1281] [cursor=pointer]:
+                      - /url: "#updating-state-based-on-the-previous-state"
+                    - text: ", so it tries to call them and store the result. To actually"
+                    - emphasis [ref=e1282]: store
+                    - text: a function, you have to put
+                    - code [ref=e1283]: () =>
+                    - text: before them in both cases. Then React will store the functions you pass.
+                  - code [ref=e1289]:
+                    - generic [ref=e1290]: const [fn, setFn] = useState(() => someFunction);
+                    - generic [ref=e1292]: "function handleClick() {"
+                    - generic [ref=e1293]: setFn(() => someOtherFunction);
+                    - generic [ref=e1294]: "}"
+              - generic [ref=e1295]:
+                - link "Previous useRef" [ref=e1296] [cursor=pointer]:
+                  - /url: /reference/react/useRef
+                  - generic [ref=e1301]:
+                    - generic [ref=e1302]: Previous
+                    - generic [ref=e1303]: useRef
+                - link "Next useSyncExternalStore" [ref=e1304] [cursor=pointer]:
+                  - /url: /reference/react/useSyncExternalStore
+                  - generic [ref=e1309]:
+                    - generic [ref=e1310]: Next
+                    - generic [ref=e1311]: useSyncExternalStore
+        - generic [ref=e1312]:
+          - separator [ref=e1314]
+          - generic [ref=e1317]:
+            - generic [ref=e1318]:
+              - link "Meta Open Source" [ref=e1319] [cursor=pointer]:
+                - /url: https://opensource.fb.com/
+              - generic [ref=e1351]: Copyright © Meta Platforms, Inc
+              - generic [ref=e1352] [cursor=pointer]: uwu?
+            - generic [ref=e1353]:
+              - link "Learn React" [ref=e1355] [cursor=pointer]:
+                - /url: /learn
+              - link "Quick Start" [ref=e1357] [cursor=pointer]:
+                - /url: /learn
+              - link "Installation" [ref=e1359] [cursor=pointer]:
+                - /url: /learn/installation
+              - link "Describing the UI" [ref=e1361] [cursor=pointer]:
+                - /url: /learn/describing-the-ui
+              - link "Adding Interactivity" [ref=e1363] [cursor=pointer]:
+                - /url: /learn/adding-interactivity
+              - link "Managing State" [ref=e1365] [cursor=pointer]:
+                - /url: /learn/managing-state
+              - link "Escape Hatches" [ref=e1367] [cursor=pointer]:
+                - /url: /learn/escape-hatches
+            - generic [ref=e1368]:
+              - link "API Reference" [ref=e1370] [cursor=pointer]:
+                - /url: /reference/react
+              - link "React APIs" [ref=e1372] [cursor=pointer]:
+                - /url: /reference/react
+              - link "React DOM APIs" [ref=e1374] [cursor=pointer]:
+                - /url: /reference/react-dom
+            - generic [ref=e1375]:
+              - link "Community" [ref=e1377] [cursor=pointer]:
+                - /url: /community
+              - link "Code of Conduct" [ref=e1379] [cursor=pointer]:
+                - /url: https://github.com/react/react/blob/main/CODE_OF_CONDUCT.md
+              - link "Meet the Team" [ref=e1381] [cursor=pointer]:
+                - /url: /community/team
+              - link "Docs Contributors" [ref=e1383] [cursor=pointer]:
+                - /url: /community/docs-contributors
+              - link "Acknowledgements" [ref=e1385] [cursor=pointer]:
+                - /url: /community/acknowledgements
+            - generic [ref=e1386]:
+              - generic [ref=e1387]: More
+              - link "Blog" [ref=e1389] [cursor=pointer]:
+                - /url: /blog
+              - link "React Native" [ref=e1391] [cursor=pointer]:
+                - /url: https://reactnative.dev/
+              - link "Privacy" [ref=e1393] [cursor=pointer]:
+                - /url: https://opensource.facebook.com/legal/privacy
+              - link "Terms" [ref=e1395] [cursor=pointer]:
+                - /url: https://opensource.fb.com/legal/terms/
+              - generic [ref=e1396]:
+                - link "React on Facebook" [ref=e1397] [cursor=pointer]:
+                  - /url: https://www.facebook.com/react
+                - link "React on Twitter" [ref=e1401] [cursor=pointer]:
+                  - /url: https://twitter.com/reactjs
+                - link "React on Bluesky" [ref=e1405] [cursor=pointer]:
+                  - /url: https://bsky.app/profile/react.dev
+                  - img "Bluesky" [ref=e1406]
+                - link "React on Github" [ref=e1408] [cursor=pointer]:
+                  - /url: https://github.com/react/react
+  - alert [ref=e1411]

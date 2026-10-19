@@ -1,5 +1,5 @@
 /* ===== Zentrall — paleta del comercio =====
-   Solo define variables (sin estilos globales de body, h1, h2, etc.)
+   Solo define variables y utilidades (sin estilos globales de body, h1, h2, etc.)
    para no chocar con el resto del proyecto. */
 
 /* ===== MODO CLARO ===== */
@@ -58,39 +58,50 @@ html[data-theme-mode="dark"],
   --sombra-header: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== Marco líquido animado del hero ===== */
-@keyframes zentrall-morph {
+/* ===== Borde líquido animado del hero =====
+   Cada SVG mide 200% del ancho y contiene dos periodos de la onda,
+   así que moverlo -50% se repite sin cortes. */
+@keyframes zentrall-wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes zentrall-wave-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zentrall-bob {
   0%,
   100% {
-    border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
-  }
-  25% {
-    border-radius: 58% 42% 38% 62% / 55% 60% 40% 45%;
+    transform: translateY(0);
   }
   50% {
-    border-radius: 38% 62% 55% 45% / 60% 38% 62% 40%;
-  }
-  75% {
-    border-radius: 62% 38% 45% 55% / 40% 58% 42% 60%;
+    transform: translateY(5px);
   }
 }
 
-@keyframes zentrall-morph-back {
-  0%,
-  100% {
-    border-radius: 58% 42% 40% 60% / 50% 55% 45% 50%;
-    transform: rotate(0deg) scale(1);
-  }
-  33% {
-    border-radius: 40% 60% 55% 45% / 62% 40% 60% 38%;
-    transform: rotate(6deg) scale(1.03);
-  }
-  66% {
-    border-radius: 55% 45% 62% 38% / 42% 58% 42% 58%;
-    transform: rotate(-5deg) scale(0.99);
-  }
+.zentrall-wave-a {
+  animation:
+    zentrall-wave 16s linear infinite,
+    zentrall-bob 5s ease-in-out infinite;
 }
 
+.zentrall-wave-b {
+  animation:
+    zentrall-wave-reverse 22s linear infinite,
+    zentrall-bob 7s ease-in-out infinite reverse;
+}
+
+/* ===== Elementos flotantes ===== */
 @keyframes zentrall-float {
   0%,
   100% {
@@ -101,23 +112,22 @@ html[data-theme-mode="dark"],
   }
 }
 
-.zentrall-blob {
-  animation: zentrall-morph 9s ease-in-out infinite;
-  will-change: border-radius;
-}
-
-.zentrall-blob-back {
-  animation: zentrall-morph-back 12s ease-in-out infinite;
-  will-change: border-radius, transform;
-}
-
 .zentrall-float {
   animation: zentrall-float 5s ease-in-out infinite;
 }
 
+/* ===== Utilidades ===== */
+.zentrall-no-scrollbar {
+  scrollbar-width: none;
+}
+
+.zentrall-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .zentrall-blob,
-  .zentrall-blob-back,
+  .zentrall-wave-a,
+  .zentrall-wave-b,
   .zentrall-float {
     animation: none;
   }
