@@ -967,19 +967,43 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplac
 ;
 ;
 ;
-const pill = "flex items-center rounded-full border border-white/15 bg-black/35 text-white shadow-lg backdrop-blur-xl";
+const pillBase = "flex items-center rounded-full border border-white/15 text-white shadow-lg backdrop-blur-xl transition-colors duration-300";
 const iconBtn = "flex h-9 w-9 items-center justify-center rounded-full text-white/85 transition hover:bg-white/15 hover:text-white";
 function Header({ cartCount }) {
     const [open, setOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [offset, setOffset] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const update = ()=>{
+            const bar = document.getElementById("announcement-bar");
+            const barHeight = bar?.offsetHeight ?? 0;
+            setOffset(Math.max(0, barHeight - window.scrollY));
+            setScrolled(window.scrollY > 40);
+        };
+        update();
+        window.addEventListener("scroll", update, {
+            passive: true
+        });
+        window.addEventListener("resize", update);
+        return ()=>{
+            window.removeEventListener("scroll", update);
+            window.removeEventListener("resize", update);
+        };
+    }, []);
+    // Más opaco al bajar, para que se lea sobre fondos claros
+    const bg = scrolled ? "bg-black/70" : "bg-black/35";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         role: "banner",
-        className: "bg-transparent px-4 pt-3 md:px-6",
+        style: {
+            top: offset
+        },
+        className: "fixed inset-x-0 z-50 bg-transparent px-4 pt-3 md:px-6",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex items-start justify-between gap-3",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `${pill} gap-3 py-2 pl-5 pr-2`,
+                        className: `${pillBase} ${bg} gap-3 py-2 pl-5 pr-2`,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/",
@@ -991,7 +1015,7 @@ function Header({ cartCount }) {
                                         className: "h-8 w-auto object-contain"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 64,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1005,13 +1029,13 @@ function Header({ cartCount }) {
                                         children: "Zentrall"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 70,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 32,
+                                lineNumber: 60,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1025,28 +1049,28 @@ function Header({ cartCount }) {
                                                 size: 13
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                                lineNumber: 66,
+                                                lineNumber: 94,
                                                 columnNumber: 51
                                             }, this)
                                         ]
                                     }, link.label, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 57,
+                                        lineNumber: 85,
                                         columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 55,
+                                lineNumber: 83,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                        lineNumber: 31,
+                        lineNumber: 59,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `${pill} gap-1 p-2`,
+                        className: `${pillBase} ${bg} gap-1 p-2`,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/explorar",
@@ -1056,12 +1080,12 @@ function Header({ cartCount }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 103,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 74,
+                                lineNumber: 102,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1072,12 +1096,12 @@ function Header({ cartCount }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 110,
                                     columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 77,
+                                lineNumber: 105,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1089,7 +1113,7 @@ function Header({ cartCount }) {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 117,
                                         columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1097,18 +1121,18 @@ function Header({ cartCount }) {
                                         children: cartCount
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 118,
                                         columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 84,
+                                lineNumber: 112,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$theme$2d$toggle$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ThemeToggle"], {}, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 95,
+                                lineNumber: 123,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1117,7 +1141,7 @@ function Header({ cartCount }) {
                                 children: "Entrar"
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 97,
+                                lineNumber: 125,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1129,30 +1153,30 @@ function Header({ cartCount }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 138,
                                     columnNumber: 33
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$577$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 110,
+                                    lineNumber: 138,
                                     columnNumber: 51
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 104,
+                                lineNumber: 132,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                        lineNumber: 73,
+                        lineNumber: 101,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                lineNumber: 29,
+                lineNumber: 57,
                 columnNumber: 13
             }, this),
             open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1164,18 +1188,18 @@ function Header({ cartCount }) {
                         children: link.label
                     }, link.label, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                        lineNumber: 118,
+                        lineNumber: 146,
                         columnNumber: 25
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                lineNumber: 116,
+                lineNumber: 144,
                 columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-        lineNumber: 28,
+        lineNumber: 52,
         columnNumber: 9
     }, this);
 }
@@ -1188,17 +1212,47 @@ __turbopack_context__.s([
     ()=>Hero
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$577$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.577.0_react@19.2.3/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$data$2f$home$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/marketplace/data/home-data.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/marketplace/lib/constants.ts [app-ssr] (ecmascript)");
+"use client";
+;
 ;
 ;
 ;
 ;
 ;
 function Hero() {
+    const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const el = sectionRef.current;
+        if (!el) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        let raf = 0;
+        const update = ()=>{
+            raf = 0;
+            const range = el.offsetHeight * 0.6; // al 60% del hero ya no se ve
+            const p = Math.min(Math.max(window.scrollY / range, 0), 1);
+            el.style.setProperty("--hero-p", p.toFixed(3));
+        };
+        const onScroll = ()=>{
+            if (!raf) raf = requestAnimationFrame(update);
+        };
+        update();
+        window.addEventListener("scroll", onScroll, {
+            passive: true
+        });
+        window.addEventListener("resize", onScroll);
+        return ()=>{
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("resize", onScroll);
+            if (raf) cancelAnimationFrame(raf);
+        };
+    }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        ref: sectionRef,
         className: "relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#0d0c1d] text-white",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1209,7 +1263,7 @@ function Hero() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 11,
+                lineNumber: 49,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1217,7 +1271,7 @@ function Hero() {
                 className: "absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/35 to-transparent"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 19,
+                lineNumber: 57,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1225,12 +1279,16 @@ function Hero() {
                 className: "absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-transparent to-black/45"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 23,
+                lineNumber: 61,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 "aria-hidden": "true",
-                className: "pointer-events-none absolute inset-0 z-0 overflow-hidden",
+                className: "pointer-events-none absolute inset-0 z-0 overflow-hidden will-change-transform",
+                style: {
+                    opacity: "calc(1 - var(--hero-p, 0))",
+                    transform: "translateY(calc(var(--hero-p, 0) * -60px))"
+                },
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "pointer-events-auto absolute right-[7%] top-[22%] objeto-flotante",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -1239,21 +1297,25 @@ function Hero() {
                         className: "hero-floating-image w-56 sm:w-72 lg:w-135"
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 33,
+                        lineNumber: 75,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                    lineNumber: 32,
+                    lineNumber: 74,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 28,
+                lineNumber: 66,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["wrap"]} relative pb-28 pt-40 md:pb-40`,
+                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["wrap"]} relative pb-28 pt-40 will-change-transform md:pb-40`,
+                style: {
+                    opacity: "calc(1 - var(--hero-p, 0))",
+                    transform: "translateY(calc(var(--hero-p, 0) * -110px))"
+                },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["serif"]} m-0 mt-4 max-w-xl text-5xl font-normal leading-[1.08] tracking-tight text-white sm:text-6xl`,
@@ -1264,13 +1326,13 @@ function Hero() {
                                 children: "a un solo click."
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 45,
+                                lineNumber: 95,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 41,
+                        lineNumber: 91,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1278,7 +1340,7 @@ function Hero() {
                         children: "Productos y negocios únicos de Guayaquil, reunidos en un solo lugar. Todo lo que buscas, más cerca de lo que imaginas."
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 50,
+                        lineNumber: 100,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1293,13 +1355,13 @@ function Hero() {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 110,
                                         columnNumber: 39
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 56,
+                                lineNumber: 106,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1308,17 +1370,17 @@ function Hero() {
                                 children: "Explorar tiendas"
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 62,
+                                lineNumber: 112,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 55,
+                        lineNumber: 105,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                        className: "mt-10 hidden flex-wrap gap-x-8 gap-y- sm:flex",
+                        className: "mt-10 hidden flex-wrap gap-x-8 gap-y-3 sm:flex",
                         children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$data$2f$home$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["heroFeatures"].map(({ icon: Icon, title, detail })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                 className: "flex items-center gap-2.5",
                                 children: [
@@ -1327,7 +1389,7 @@ function Hero() {
                                         className: "text-white/80"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 123,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1338,7 +1400,7 @@ function Hero() {
                                                 children: title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                                lineNumber: 75,
+                                                lineNumber: 125,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1346,30 +1408,30 @@ function Hero() {
                                                 children: detail
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                                lineNumber: 76,
+                                                lineNumber: 126,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 124,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, title, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 72,
+                                lineNumber: 122,
                                 columnNumber: 25
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 70,
+                        lineNumber: 120,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 40,
+                lineNumber: 84,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1387,12 +1449,12 @@ function Hero() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                            lineNumber: 93,
+                            lineNumber: 143,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 88,
+                        lineNumber: 138,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1406,24 +1468,24 @@ function Hero() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                            lineNumber: 105,
+                            lineNumber: 155,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 100,
+                        lineNumber: 150,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 84,
+                lineNumber: 134,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-        lineNumber: 9,
+        lineNumber: 44,
         columnNumber: 9
     }, this);
 }
@@ -2217,34 +2279,34 @@ function MarketplaceHomePage() {
         className: "zentrall-home relative min-w-0 bg-[var(--color-fondo)] text-[var(--color-texto)]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-x-0 top-0 z-30",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$header$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Header"], {
-                    cartCount: cartCount
-                }, void 0, false, {
-                    fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                    lineNumber: 25,
-                    columnNumber: 9
-                }, this)
+                className: "absolute inset-x-0 top-0 z-40"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
                 lineNumber: 24,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$header$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Header"], {
+                cartCount: cartCount
+            }, void 0, false, {
+                fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
+                lineNumber: 27,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$hero$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Hero"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 29,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$offer$2d$banner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["OfferBanner"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 30,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$categories$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Categories"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 31,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$product$2d$section$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ProductSection"], {
@@ -2253,7 +2315,7 @@ function MarketplaceHomePage() {
                         onAdd: addToCart
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 32,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$product$2d$section$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ProductSection"], {
@@ -2263,33 +2325,33 @@ function MarketplaceHomePage() {
                         onAdd: addToCart
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 37,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$promo$2d$banners$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PromoBanners"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$testimonials$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Testimonials"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 44,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$benefits$2d$strip$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BenefitsStrip"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 45,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                lineNumber: 28,
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                lineNumber: 47,
+                lineNumber: 48,
                 columnNumber: 7
             }, this)
         ]

@@ -7,9 +7,10 @@ import {
   Footer,
   Header,
   Hero,
-  OfferBanner,
   ProductSection,
   PromoBanners,
+  Reveal,
+  SmoothScroll,
   Testimonials,
 } from "../components/home";
 import { bestSellers, newArrivals } from "../data/home-data";
@@ -20,29 +21,47 @@ export function MarketplaceHomePage() {
 
   return (
     <div className="zentrall-home relative min-w-0 bg-[var(--color-fondo)] text-[var(--color-texto)]">
-      {/* Barra + menú flotan encima del hero a pantalla completa */}
-      <div className="absolute inset-x-0 top-0 z-30">
-        <Header cartCount={cartCount} />
-      </div>
+      <SmoothScroll />
+
+      {/* Barra de anuncios: flota sobre el hero y se va con el scroll */}
+      <div className="absolute inset-x-0 top-0 z-40"></div>
+      {/* Header: fixed, acompaña siempre al scroll */}
+      <Header cartCount={cartCount} />
 
       <main>
         <Hero />
-        <OfferBanner />
-        <Categories />
-        <ProductSection
-          title="Más vendidos"
-          products={bestSellers}
-          onAdd={addToCart}
+        <div
+          aria-hidden
+          className="pointer-events-none relative z-10 -mt-px h-[2px] bg-[var(--color-fondo)]"
         />
-        <ProductSection
-          title="Nuevas llegadas"
-          products={newArrivals}
-          isNew
-          onAdd={addToCart}
-        />
-        <PromoBanners />
-        <Testimonials />
-        <BenefitsStrip />
+        <Reveal>
+          <Categories />
+        </Reveal>
+        <Reveal>
+          <ProductSection
+            title="Más vendidos"
+            products={bestSellers}
+            variant="wide"
+            onAdd={addToCart}
+          />
+        </Reveal>
+        <Reveal>
+          <ProductSection
+            title="Nuevas llegadas"
+            products={newArrivals}
+            isNew
+            onAdd={addToCart}
+          />
+        </Reveal>
+        <Reveal>
+          <PromoBanners />
+        </Reveal>
+        <Reveal>
+          <Testimonials />
+        </Reveal>
+        <Reveal>
+          <BenefitsStrip />
+        </Reveal>
       </main>
       <Footer />
     </div>

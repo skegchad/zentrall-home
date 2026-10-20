@@ -1,12 +1,84 @@
-[00:00:00.916] Server  LOG     ✓ Ready in 635ms
-[00:00:01.365] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:12.809] Server  LOG     ✓ Compiled in 361ms
-[00:00:19.732] Server  LOG     ✓ Compiled in 54ms
-[00:00:22.927] Server  LOG     ✓ Compiled in 55ms
-[00:00:26.644] Server  LOG     ✓ Compiled in 576ms
-[00:00:42.008] Server  LOG     ✓ Compiled in 59ms
-[00:00:49.657] Server  LOG     ✓ Compiled in 48ms
-[00:02:03.450] Server  LOG     ✓ Compiled in 371ms
-[00:16:01.533] Server  LOG     ✓ Compiled in 31ms
-[00:21:37.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:24:15.450] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:21.894] Server  LOG     ✓ Ready in 15.4s
+[00:00:24.953] Server  LOG     ○ Compiling / ...
+[00:00:33.385] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:54.542] Server  LOG     ✓ Compiled in 63ms
+[00:00:57.030] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:43.064] Server  LOG     ✓ Compiled in 54ms
+[00:01:49.418] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:53.598] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:54.363] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:57.570] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:16.411] Server  LOG     ✓ Compiled in 921ms
+[00:04:18.969] Server  LOG     ✓ Compiled in 192ms
+[00:04:35.023] Server  LOG     ✓ Finished filesystem cache database compaction in 10.8s
+[00:07:29.460] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:43.709] Server  LOG     ✓ Compiled in 148ms
+[00:08:06.789] Server  LOG     ✓ Compiled in 89ms
+[00:08:11.973] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:13.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:34.158] Server  LOG     ✓ Compiled in 31ms
+[00:09:51.715] Server  LOG     ✓ Compiled in 303ms
+[00:09:59.224] Server  LOG     ✓ Compiled in 76ms
+[00:10:12.834] Server  LOG     ✓ Compiled in 36ms
+[00:10:13.479] Browser ERROR   uncaughtError: ReferenceError: greenPanel is not defined
+[00:10:32.113] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:32.124] Server  LOG     ✓ Compiled in 37ms
+[00:10:32.465] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:33.911] Server  LOG     ✓ Compiled in 37ms
+[00:10:45.823] Server  LOG     ✓ Compiled in 31ms
+[00:11:16.530] Server  LOG     ✓ Compiled in 37ms
+[00:11:44.862] Server  LOG     ✓ Compiled in 170ms
+[00:11:55.222] Server  LOG     ✓ Compiled in 36ms
+[00:12:49.171] Server  LOG     ✓ Compiled in 124ms
+[00:12:49.473] Browser ERROR   ./src/modules/marketplace/components/home/product-section.tsx:19:7
+Ecmascript file had an error
+  17 | };
+  18 |
+> 19 | const greenPanel =
+     |       ^^^^^^^^^^
+  20 |   "rounded-3xl border border-[color:var(--color-panel-borde,rgba(63,157,107,0.3))] bg-[var(--color-panel,#dcf0e4)]";
+  21 | const layouts = {
+  22 |   // 2 → 3 → 4 → 5 tarjetas visibles
+
+the name `greenPanel` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/home/product-section.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/home-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/home-page.tsx [Server Component]
+    ./src/app/(marketplace)/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/home/product-section.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/home-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/home-page.tsx [Server Component]
+    ./src/app/(marketplace)/page.tsx [Server Component]
+[00:13:19.324] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:57.252] Server  LOG     ✓ Compiled in 51ms
+[00:22:15.282] Server  LOG     ✓ Compiled in 34ms
+[00:22:30.219] Server  LOG     ✓ Compiled in 30ms
+[00:24:19.227] Server  LOG     ✓ Compiled in 5.9s
+[00:24:19.397] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:22.936] Server  WARN    ⚠ Cross origin request detected from unimpeded-kept-hubcap.ngrok-free.dev to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:26:23.295] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:20.547] Server  LOG     ✓ Compiled in 61ms
+[00:28:31.889] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:33.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:37.286] Server  LOG     ✓ Compiled in 54ms
+[00:28:42.085] Server  LOG     ✓ Compiled in 52ms
+[00:28:43.821] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:45.358] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:33.006] Server  LOG     ✓ Compiled in 50ms
+[00:29:38.167] Server  LOG     ✓ Compiled in 56ms
+[00:29:45.730] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:47.144] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:01.068] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:39.032] Server  LOG     ✓ Compiled in 50ms
+[00:30:45.070] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:47.718] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:15.376] Server  LOG     ✓ Compiled in 33ms
+[00:33:08.368] Server  LOG     ✓ Compiled in 34ms
+[00:33:35.628] Server  LOG     ✓ Compiled in 31ms
+[00:34:05.300] Server  LOG     ✓ Compiled in 31ms

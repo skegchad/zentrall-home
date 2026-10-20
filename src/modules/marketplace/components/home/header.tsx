@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
 import { navLinks } from "../../data/home-data";
@@ -8,27 +8,55 @@ import { serif } from "../../lib/constants";
 import { logo } from "../../lib/constants";
 import { ThemeToggle } from "./theme-toggle";
 
-const pill =
-    "flex items-center rounded-full border border-white/15 bg-black/35 text-white shadow-lg backdrop-blur-xl";
+const pillBase =
+    "flex items-center rounded-full border border-white/15 text-white shadow-lg backdrop-blur-xl transition-colors duration-300";
 
 const iconBtn =
     "flex h-9 w-9 items-center justify-center rounded-full text-white/85 transition hover:bg-white/15 hover:text-white";
 
 /**
- * Dos píldoras flotantes sobre el hero:
+ * Dos píldoras flotantes que acompañan al scroll (position: fixed):
  *  - izquierda: logo + navegación
  *  - derecha: buscar, guardados, carrito, tema y "Entrar"
+ *
+ * Mientras la barra de anuncios (#announcement-bar) sigue visible, el header
+ * se queda justo debajo de ella; cuando ésta sale de pantalla, se pega arriba.
  * Se usa <div role="banner"> (no <header>) para que ningún estilo global
  * del tag <header> le ponga fondo o posición.
  */
 export function Header({ cartCount }: { cartCount: number }) {
     const [open, setOpen] = useState(false);
+    const [offset, setOffset] = useState(0);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const update = () => {
+            const bar = document.getElementById("announcement-bar");
+            const barHeight = bar?.offsetHeight ?? 0;
+            setOffset(Math.max(0, barHeight - window.scrollY));
+            setScrolled(window.scrollY > 40);
+        };
+        update();
+        window.addEventListener("scroll", update, { passive: true });
+        window.addEventListener("resize", update);
+        return () => {
+            window.removeEventListener("scroll", update);
+            window.removeEventListener("resize", update);
+        };
+    }, []);
+
+    // Más opaco al bajar, para que se lea sobre fondos claros
+    const bg = scrolled ? "bg-black/70" : "bg-black/35";
 
     return (
-        <div role="banner" className="bg-transparent px-4 pt-3 md:px-6">
+        <div
+            role="banner"
+            style={{ top: offset }}
+            className="fixed inset-x-0 z-50 bg-transparent px-4 pt-3 md:px-6"
+        >
             <div className="flex items-start justify-between gap-3">
                 {/* Izquierda */}
-                <div className={`${pill} gap-3 py-2 pl-5 pr-2`}>
+                <div className={`${pillBase} ${bg} gap-3 py-2 pl-5 pr-2`}>
                     <Link
                         href="/"
                         className="flex shrink-0 items-center gap-2 pr-2 leading-none"
@@ -70,7 +98,7 @@ export function Header({ cartCount }: { cartCount: number }) {
                 </div>
 
                 {/* Derecha */}
-                <div className={`${pill} gap-1 p-2`}>
+                <div className={`${pillBase} ${bg} gap-1 p-2`}>
                     <Link href="/explorar" aria-label="Buscar" className={iconBtn}>
                         <Search size={18} />
                     </Link>

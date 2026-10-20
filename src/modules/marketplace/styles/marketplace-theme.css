@@ -2424,7 +2424,7 @@ html[data-theme-mode="dark"] .marketplace-shell {
 }
 
 .footer-columna a {
-  color: white;
+  color: rgb(255, 255, 255);
   opacity: 0.85;
   font-size: 0.9rem;
   text-decoration: none;
@@ -2506,11 +2506,6 @@ html[data-theme-mode="dark"] .marketplace-shell {
   filter: drop-shadow(0 20px 35px rgb(0 0 0 / 20%));
 }
 
-.hero-floating-image:hover {
-  scale: 1.12;
-  filter: drop-shadow(0 28px 45px rgb(0 0 0 / 30%));
-}
-
 @keyframes hero-float {
   0%,
   100% {
@@ -2527,4 +2522,22 @@ html[data-theme-mode="dark"] .marketplace-shell {
     animation: none;
     transition: none;
   }
+}
+.zentrall-objeto {
+  transform-origin: center;
+  transition: transform 900ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+}
+
+.zentrall-objeto:hover {
+  transform: scale(1.08);
+}
+
+/* La sombra también cambia despacio */
+.zentrall-objeto .hero-floating-image {
+  transition: filter 900ms ease;
+}
+
+.zentrall-objeto:hover .hero-floating-image {
+  filter: drop-shadow(0 28px 45px rgb(0 0 0 / 30%));
 }

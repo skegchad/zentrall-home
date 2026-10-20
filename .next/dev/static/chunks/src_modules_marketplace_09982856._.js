@@ -335,6 +335,10 @@ __turbopack_context__.s([
     ()=>HERO_IMAGE,
     "PROMO_CODE",
     ()=>PROMO_CODE,
+    "hero_object",
+    ()=>hero_object,
+    "logo",
+    ()=>logo,
     "serif",
     ()=>serif,
     "wrap",
@@ -342,6 +346,8 @@ __turbopack_context__.s([
 ]);
 const HERO_IMAGE = "/assets/img/hero.png";
 const PROMO_CODE = "ZENTRALL15";
+const logo = "/brand/zentrall-isotipo.svg";
+const hero_object = "/assets/img/hero-object.png";
 const serif = "font-[Georgia,'Times_New_Roman',serif]";
 const wrap = "mx-auto w-full max-w-7xl px-5 md:px-8";
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -568,215 +574,297 @@ __turbopack_context__.s([
     ()=>Footer
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$data$2f$home$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/marketplace/data/home-data.ts [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/marketplace/lib/constants.ts [app-client] (ecmascript)");
-;
-var _s = __turbopack_context__.k.signature();
-"use client";
+/*import { FaYoutube, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa'*/ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/marketplace/lib/constants.ts [app-client] (ecmascript)");
 ;
 ;
 ;
-;
+const columnas = [
+    {
+        titulo: 'Zentrall',
+        enlaces: [
+            {
+                nombre: 'Inicio',
+                ruta: '/'
+            },
+            {
+                nombre: 'Servicios',
+                ruta: '/servicios'
+            },
+            {
+                nombre: 'Planes',
+                ruta: '/planes'
+            },
+            {
+                nombre: 'Conócenos',
+                ruta: '/conocenos'
+            }
+        ]
+    },
+    {
+        titulo: 'Para clientes',
+        enlaces: [
+            {
+                nombre: 'Tiendas',
+                ruta: '/tiendas'
+            },
+            {
+                nombre: 'Explorar',
+                ruta: '/explorar'
+            }
+        ]
+    },
+    {
+        titulo: 'Para empresas',
+        enlaces: [
+            {
+                nombre: 'Registrarse',
+                ruta: '/login'
+            },
+            {
+                nombre: 'Planes y precios',
+                ruta: '/planes'
+            }
+        ]
+    },
+    {
+        titulo: 'Protegemos tus datos',
+        enlaces: [
+            {
+                nombre: 'Protección de datos',
+                ruta: '/'
+            },
+            {
+                nombre: 'Política de cookies',
+                ruta: '/'
+            },
+            {
+                nombre: 'Términos y condiciones',
+                ruta: '/'
+            }
+        ]
+    }
+];
 function Footer() {
-    _s();
-    const [sent, setSent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-        className: "mt-12 border-t border-[var(--color-borde)] bg-[var(--color-footer)]",
+        className: "footer",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["wrap"]} grid gap-10 py-12 lg:grid-cols-[1.2fr_repeat(3,0.8fr)_1.3fr]`,
+                className: "footer-olas",
+                "aria-hidden": "true",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                    viewBox: "0 0 1440 120",
+                    preserveAspectRatio: "none",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            className: "ola ola-3",
+                            d: "M0,0 L0,70 C120,100 240,100 360,75 C480,50 600,35 720,60 C840,85 960,105 1080,85 C1200,65 1320,50 1440,70 L1440,0 Z"
+                        }, void 0, false, {
+                            fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                            lineNumber: 45,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            className: "ola ola-2",
+                            d: "M0,0 L0,55 C150,85 300,90 450,65 C600,40 720,30 860,55 C1000,80 1140,90 1290,65 C1350,55 1400,50 1440,55 L1440,0 Z"
+                        }, void 0, false, {
+                            fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                            lineNumber: 49,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            className: "ola ola-1",
+                            d: "M0,0 L0,40 C140,70 280,75 420,55 C560,35 700,25 840,45 C980,65 1120,75 1260,55 C1340,44 1400,38 1440,42 L1440,0 Z"
+                        }, void 0, false, {
+                            fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                            lineNumber: 53,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                    lineNumber: 44,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                lineNumber: 43,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "footer-contenido",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "footer-grid",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serif"]} m-0 text-3xl font-medium italic tracking-tight text-[var(--color-texto)]`,
-                                children: "Zentrall"
-                            }, void 0, false, {
-                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 17,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mt-3 max-w-[14rem] text-xs leading-5 text-[var(--color-texto-suave)]",
-                                children: "Productos y negocios locales seleccionados para el lugar que amas llamar hogar."
-                            }, void 0, false, {
-                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 22,
-                                columnNumber: 11
-                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-4 flex gap-2",
+                                className: "footer-marca",
                                 children: [
-                                    "IG",
-                                    "FB",
-                                    "TT",
-                                    "YT"
-                                ].map((label)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-borde)] text-[10px] font-bold text-[var(--color-texto)]",
-                                        children: label
-                                    }, label, false, {
-                                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                        lineNumber: 28,
-                                        columnNumber: 15
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 26,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                        lineNumber: 16,
-                        columnNumber: 9
-                    }, this),
-                    __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$data$2f$home$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["footerColumns"].map((column)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "m-0 text-[11px] font-bold uppercase tracking-wider text-[var(--color-texto)]",
-                                    children: column.title
-                                }, void 0, false, {
-                                    fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                    lineNumber: 40,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "mt-3 flex flex-col gap-2 p-0",
-                                    children: column.links.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "list-none",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/",
-                                                className: "text-xs text-[var(--color-texto-suave)] transition hover:text-[var(--color-primario)]",
-                                                children: link
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                        href: "/",
+                                        className: "footer-logo",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["logo"],
+                                                alt: "Zentrall"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                                lineNumber: 46,
-                                                columnNumber: 19
+                                                lineNumber: 64,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "Zentrall"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                                lineNumber: 65,
+                                                columnNumber: 15
                                             }, this)
-                                        }, link, false, {
-                                            fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                            lineNumber: 45,
-                                            columnNumber: 17
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                    lineNumber: 43,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, column.title, true, {
-                            fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                            lineNumber: 39,
-                            columnNumber: 11
-                        }, this)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "m-0 text-[11px] font-bold uppercase tracking-wider text-[var(--color-texto)]",
-                                children: "Mantente inspirado"
-                            }, void 0, false, {
-                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 59,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mt-3 text-xs leading-5 text-[var(--color-texto-suave)]",
-                                children: "Suscríbete para recibir ofertas exclusivas, novedades y rutas para disfrutar la ciudad."
-                            }, void 0, false, {
-                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 62,
-                                columnNumber: 11
-                            }, this),
-                            sent ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mt-3 text-xs font-semibold text-[var(--color-primario)]",
-                                children: "¡Gracias por suscribirte! 💌"
-                            }, void 0, false, {
-                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 67,
-                                columnNumber: 13
-                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                onSubmit: (event)=>{
-                                    event.preventDefault();
-                                    setSent(true);
-                                },
-                                className: "mt-3 flex overflow-hidden rounded-md border border-[var(--color-borde)] bg-[var(--color-superficie)]",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        type: "email",
-                                        required: true,
-                                        "aria-label": "Correo electrónico",
-                                        placeholder: "Tu correo",
-                                        className: "min-w-0 flex-1 bg-transparent px-3 py-2.5 text-xs text-[var(--color-texto)] outline-none placeholder:text-[var(--color-texto-suave)]"
-                                    }, void 0, false, {
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                        lineNumber: 78,
-                                        columnNumber: 15
+                                        lineNumber: 63,
+                                        columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        type: "submit",
-                                        className: "bg-[var(--color-descuento)] px-4 text-[10px] font-bold uppercase tracking-wider text-white transition hover:opacity-90",
-                                        children: "Suscribirme"
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        children: "Soluciones tecnológicas para mejorar la eficiencia y productividad de nuestros clientes."
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                        lineNumber: 85,
-                                        columnNumber: 15
+                                        lineNumber: 67,
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 71,
-                                columnNumber: 13
+                                lineNumber: 62,
+                                columnNumber: 11
+                            }, this),
+                            columnas.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "footer-columna",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                            children: c.titulo
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                            lineNumber: 75,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                            children: c.enlaces.map((e)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                        href: e.ruta,
+                                                        children: e.nombre
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                                        lineNumber: 79,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                }, e.nombre, false, {
+                                                    fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                                    lineNumber: 78,
+                                                    columnNumber: 19
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                            lineNumber: 76,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, c.titulo, true, {
+                                    fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                    lineNumber: 74,
+                                    columnNumber: 13
+                                }, this))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                        lineNumber: 61,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {}, void 0, false, {
+                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                        lineNumber: 87,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "footer-inferior",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                children: [
+                                    "Guayaquil: Escribe aquí tu dirección.",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                        lineNumber: 92,
+                                        columnNumber: 13
+                                    }, this),
+                                    "© ",
+                                    new Date().getFullYear(),
+                                    " Zentrall. Todos los derechos reservados."
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                lineNumber: 90,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-4 flex flex-wrap gap-2",
+                                className: "footer-redes",
                                 children: [
-                                    "Visa",
-                                    "Mastercard",
-                                    "Transferencia",
-                                    "Efectivo"
-                                ].map((method)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "rounded border border-[var(--color-borde)] bg-[var(--color-tarjeta)] px-2 py-1 text-[9px] font-bold text-[var(--color-texto-suave)]",
-                                        children: method
-                                    }, method, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        "aria-label": "YouTube"
+                                    }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                        lineNumber: 95,
-                                        columnNumber: 15
-                                    }, this))
-                            }, void 0, false, {
+                                        lineNumber: 96,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        "aria-label": "LinkedIn"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                        lineNumber: 97,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        "aria-label": "Facebook"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                        lineNumber: 98,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        "aria-label": "Instagram"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
+                                        lineNumber: 99,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                                lineNumber: 93,
+                                lineNumber: 95,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                        lineNumber: 58,
+                        lineNumber: 89,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                lineNumber: 13,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "border-t border-[var(--color-borde)] py-4 text-center text-[11px] text-[var(--color-texto-suave)]",
-                children: "© 2026 Zentrall. Todos los derechos reservados."
-            }, void 0, false, {
-                fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-                lineNumber: 106,
+                lineNumber: 60,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/footer.tsx",
-        lineNumber: 12,
+        lineNumber: 41,
         columnNumber: 5
     }, this);
 }
-_s(Footer, "w1r8qcELTw7JaSiaZyfNUqRzIeA=");
 _c = Footer;
 var _c;
 __turbopack_context__.k.register(_c, "Footer");
@@ -927,46 +1015,83 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const pill = "flex items-center rounded-full border border-white/15 bg-black/35 text-white shadow-lg backdrop-blur-xl";
+const pillBase = "flex items-center rounded-full border border-white/15 text-white shadow-lg backdrop-blur-xl transition-colors duration-300";
 const iconBtn = "flex h-9 w-9 items-center justify-center rounded-full text-white/85 transition hover:bg-white/15 hover:text-white";
 function Header({ cartCount }) {
     _s();
     const [open, setOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [offset, setOffset] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Header.useEffect": ()=>{
+            const update = {
+                "Header.useEffect.update": ()=>{
+                    const bar = document.getElementById("announcement-bar");
+                    const barHeight = bar?.offsetHeight ?? 0;
+                    setOffset(Math.max(0, barHeight - window.scrollY));
+                    setScrolled(window.scrollY > 40);
+                }
+            }["Header.useEffect.update"];
+            update();
+            window.addEventListener("scroll", update, {
+                passive: true
+            });
+            window.addEventListener("resize", update);
+            return ({
+                "Header.useEffect": ()=>{
+                    window.removeEventListener("scroll", update);
+                    window.removeEventListener("resize", update);
+                }
+            })["Header.useEffect"];
+        }
+    }["Header.useEffect"], []);
+    // Más opaco al bajar, para que se lea sobre fondos claros
+    const bg = scrolled ? "bg-black/70" : "bg-black/35";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         role: "banner",
-        className: "bg-transparent px-4 pt-3 md:px-6",
+        style: {
+            top: offset
+        },
+        className: "fixed inset-x-0 z-50 bg-transparent px-4 pt-3 md:px-6",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex items-start justify-between gap-3",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `${pill} gap-3 py-2 pl-5 pr-2`,
+                        className: `${pillBase} ${bg} gap-3 py-2 pl-5 pr-2`,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/",
-                                className: "shrink-0 pr-2 leading-none",
+                                className: "flex shrink-0 items-center gap-2 pr-2 leading-none",
                                 children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                        src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["logo"],
+                                        alt: "Logo de Zentrall",
+                                        className: "h-8 w-auto object-contain"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
+                                        lineNumber: 64,
+                                        columnNumber: 25
+                                    }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serif"]} block text-2xl font-medium italic tracking-tight text-white`,
+                                        className: "text-2xl font-medium tracking-tight text-white",
+                                        style: {
+                                            fontFamily: "sans-serif",
+                                            fontSize: "1.15rem",
+                                            fontWeight: 700,
+                                            letterSpacing: "0.02em"
+                                        },
                                         children: "Zentrall"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 32,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "mt-1 hidden text-[7px] font-semibold uppercase tracking-[0.25em] text-white/60 lg:block",
-                                        children: "Compra · Descubre · Vive"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 37,
-                                        columnNumber: 13
+                                        lineNumber: 70,
+                                        columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 31,
-                                columnNumber: 11
+                                lineNumber: 60,
+                                columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                                 className: "hidden items-center gap-1 text-xs font-medium xl:flex",
@@ -979,28 +1104,28 @@ function Header({ cartCount }) {
                                                 size: 13
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                                lineNumber: 54,
-                                                columnNumber: 35
+                                                lineNumber: 94,
+                                                columnNumber: 51
                                             }, this)
                                         ]
                                     }, link.label, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 44,
-                                        columnNumber: 15
+                                        lineNumber: 85,
+                                        columnNumber: 29
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 42,
-                                columnNumber: 11
+                                lineNumber: 83,
+                                columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                        lineNumber: 30,
-                        columnNumber: 9
+                        lineNumber: 59,
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `${pill} gap-1 p-2`,
+                        className: `${pillBase} ${bg} gap-1 p-2`,
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/explorar",
@@ -1010,13 +1135,13 @@ function Header({ cartCount }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 63,
-                                    columnNumber: 13
+                                    lineNumber: 103,
+                                    columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 62,
-                                columnNumber: 11
+                                lineNumber: 102,
+                                columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/guardados",
@@ -1026,13 +1151,13 @@ function Header({ cartCount }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 70,
-                                    columnNumber: 13
+                                    lineNumber: 110,
+                                    columnNumber: 25
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 65,
-                                columnNumber: 11
+                                lineNumber: 105,
+                                columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/carrito",
@@ -1043,27 +1168,27 @@ function Header({ cartCount }) {
                                         size: 18
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 77,
-                                        columnNumber: 13
+                                        lineNumber: 117,
+                                        columnNumber: 25
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-[var(--color-descuento)] px-1 text-[9px] font-bold text-white",
                                         children: cartCount
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                        lineNumber: 78,
-                                        columnNumber: 13
+                                        lineNumber: 118,
+                                        columnNumber: 25
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 72,
-                                columnNumber: 11
+                                lineNumber: 112,
+                                columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$theme$2d$toggle$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThemeToggle"], {}, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 83,
-                                columnNumber: 11
+                                lineNumber: 123,
+                                columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/login",
@@ -1071,8 +1196,8 @@ function Header({ cartCount }) {
                                 children: "Entrar"
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 85,
-                                columnNumber: 11
+                                lineNumber: 125,
+                                columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
@@ -1083,31 +1208,31 @@ function Header({ cartCount }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 98,
-                                    columnNumber: 21
+                                    lineNumber: 138,
+                                    columnNumber: 33
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$577$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                    lineNumber: 98,
-                                    columnNumber: 39
+                                    lineNumber: 138,
+                                    columnNumber: 51
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                                lineNumber: 92,
-                                columnNumber: 11
+                                lineNumber: 132,
+                                columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                        lineNumber: 61,
-                        columnNumber: 9
+                        lineNumber: 101,
+                        columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                lineNumber: 28,
-                columnNumber: 7
+                lineNumber: 57,
+                columnNumber: 13
             }, this),
             open && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-2 flex flex-col gap-1 rounded-3xl border border-white/15 bg-black/60 p-3 text-white shadow-lg backdrop-blur-xl xl:hidden",
@@ -1118,22 +1243,22 @@ function Header({ cartCount }) {
                         children: link.label
                     }, link.label, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                        lineNumber: 106,
-                        columnNumber: 13
+                        lineNumber: 146,
+                        columnNumber: 25
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-                lineNumber: 104,
-                columnNumber: 9
+                lineNumber: 144,
+                columnNumber: 17
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/header.tsx",
-        lineNumber: 27,
-        columnNumber: 5
+        lineNumber: 52,
+        columnNumber: 9
     }, this);
 }
-_s(Header, "xG1TONbKtDWtdOTrXaTAsNhPg/Q=");
+_s(Header, "dwHmC82XlIHF+IHMxDkkL0LcV+I=");
 _c = Header;
 var _c;
 __turbopack_context__.k.register(_c, "Header");
@@ -1149,17 +1274,57 @@ __turbopack_context__.s([
     ()=>Hero
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$577$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.577.0_react@19.2.3/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$data$2f$home$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/marketplace/data/home-data.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/modules/marketplace/lib/constants.ts [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
+"use client";
 ;
 ;
 ;
 ;
 ;
 function Hero() {
+    _s();
+    const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Hero.useEffect": ()=>{
+            const el = sectionRef.current;
+            if (!el) return;
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            let raf = 0;
+            const update = {
+                "Hero.useEffect.update": ()=>{
+                    raf = 0;
+                    const range = el.offsetHeight * 0.6; // al 60% del hero ya no se ve
+                    const p = Math.min(Math.max(window.scrollY / range, 0), 1);
+                    el.style.setProperty("--hero-p", p.toFixed(3));
+                }
+            }["Hero.useEffect.update"];
+            const onScroll = {
+                "Hero.useEffect.onScroll": ()=>{
+                    if (!raf) raf = requestAnimationFrame(update);
+                }
+            }["Hero.useEffect.onScroll"];
+            update();
+            window.addEventListener("scroll", onScroll, {
+                passive: true
+            });
+            window.addEventListener("resize", onScroll);
+            return ({
+                "Hero.useEffect": ()=>{
+                    window.removeEventListener("scroll", onScroll);
+                    window.removeEventListener("resize", onScroll);
+                    if (raf) cancelAnimationFrame(raf);
+                }
+            })["Hero.useEffect"];
+        }
+    }["Hero.useEffect"], []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        ref: sectionRef,
         className: "relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#0d0c1d] text-white",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1170,36 +1335,60 @@ function Hero() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 11,
-                columnNumber: 7
+                lineNumber: 49,
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 "aria-hidden": true,
                 className: "absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/35 to-transparent"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 19,
-                columnNumber: 7
+                lineNumber: 57,
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 "aria-hidden": true,
                 className: "absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-transparent to-black/45"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 23,
-                columnNumber: 7
+                lineNumber: 61,
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["wrap"]} relative pb-28 pt-40 md:pb-36`,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-[10px] font-semibold uppercase tracking-[0.25em] text-[color-mix(in_srgb,var(--color-descuento)_75%,white)]",
-                        children: "Descubre tu ciudad"
+                "aria-hidden": "true",
+                className: "pointer-events-none absolute inset-0 z-0 overflow-hidden will-change-transform",
+                style: {
+                    opacity: "calc(1 - var(--hero-p, 0))",
+                    transform: "translateY(calc(var(--hero-p, 0) * -60px))"
+                },
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "pointer-events-auto absolute right-[7%] top-[22%] objeto-flotante",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                        src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["hero_object"],
+                        alt: "",
+                        className: "hero-floating-image w-56 sm:w-72 lg:w-135"
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 29,
-                        columnNumber: 9
-                    }, this),
+                        lineNumber: 75,
+                        columnNumber: 21
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
+                    lineNumber: 74,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
+                lineNumber: 66,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["wrap"]} relative pb-28 pt-40 will-change-transform md:pb-40`,
+                style: {
+                    opacity: "calc(1 - var(--hero-p, 0))",
+                    transform: "translateY(calc(var(--hero-p, 0) * -110px))"
+                },
+                children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serif"]} m-0 mt-4 max-w-xl text-5xl font-normal leading-[1.08] tracking-tight text-white sm:text-6xl`,
                         children: [
@@ -1209,22 +1398,22 @@ function Hero() {
                                 children: "a un solo click."
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 36,
-                                columnNumber: 11
+                                lineNumber: 95,
+                                columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 32,
-                        columnNumber: 9
+                        lineNumber: 91,
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "mt-5 max-w-sm text-sm leading-6 text-white/85",
                         children: "Productos y negocios únicos de Guayaquil, reunidos en un solo lugar. Todo lo que buscas, más cerca de lo que imaginas."
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 41,
-                        columnNumber: 9
+                        lineNumber: 100,
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mt-7 flex flex-wrap items-center gap-3",
@@ -1238,14 +1427,14 @@ function Hero() {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 51,
-                                        columnNumber: 27
+                                        lineNumber: 110,
+                                        columnNumber: 39
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 47,
-                                columnNumber: 11
+                                lineNumber: 106,
+                                columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/tiendas",
@@ -1253,17 +1442,17 @@ function Hero() {
                                 children: "Explorar tiendas"
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 53,
-                                columnNumber: 11
+                                lineNumber: 112,
+                                columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 46,
-                        columnNumber: 9
+                        lineNumber: 105,
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                        className: "mt-10 hidden flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-5 sm:flex",
+                        className: "mt-10 hidden flex-wrap gap-x-8 gap-y-3 sm:flex",
                         children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$data$2f$home$2d$data$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["heroFeatures"].map(({ icon: Icon, title, detail })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                 className: "flex items-center gap-2.5",
                                 children: [
@@ -1272,8 +1461,8 @@ function Hero() {
                                         className: "text-white/80"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 64,
-                                        columnNumber: 15
+                                        lineNumber: 123,
+                                        columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-[10px] leading-tight",
@@ -1283,39 +1472,39 @@ function Hero() {
                                                 children: title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                                lineNumber: 66,
-                                                columnNumber: 17
+                                                lineNumber: 125,
+                                                columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-white/60",
                                                 children: detail
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                                lineNumber: 67,
-                                                columnNumber: 17
+                                                lineNumber: 126,
+                                                columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 65,
-                                        columnNumber: 15
+                                        lineNumber: 124,
+                                        columnNumber: 29
                                     }, this)
                                 ]
                             }, title, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 63,
-                                columnNumber: 13
+                                lineNumber: 122,
+                                columnNumber: 25
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 61,
-                        columnNumber: 9
+                        lineNumber: 120,
+                        columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 28,
-                columnNumber: 7
+                lineNumber: 84,
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 "aria-hidden": true,
@@ -1332,13 +1521,13 @@ function Hero() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                            lineNumber: 84,
-                            columnNumber: 11
+                            lineNumber: 143,
+                            columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 79,
-                        columnNumber: 9
+                        lineNumber: 138,
+                        columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                         viewBox: "0 0 2880 120",
@@ -1351,27 +1540,28 @@ function Hero() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                            lineNumber: 96,
-                            columnNumber: 11
+                            lineNumber: 155,
+                            columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 91,
-                        columnNumber: 9
+                        lineNumber: 150,
+                        columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 75,
-                columnNumber: 7
+                lineNumber: 134,
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-        lineNumber: 9,
-        columnNumber: 5
+        lineNumber: 44,
+        columnNumber: 9
     }, this);
 }
+_s(Hero, "O9MYfDkQexHh+zrn37J6HLSAdf8=");
 _c = Hero;
 var _c;
 __turbopack_context__.k.register(_c, "Hero");
@@ -2265,41 +2455,39 @@ function MarketplaceHomePage() {
         className: "zentrall-home relative min-w-0 bg-[var(--color-fondo)] text-[var(--color-texto)]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-x-0 top-0 z-30",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnnouncementBar"], {}, void 0, false, {
-                        fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 26,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Header"], {
-                        cartCount: cartCount
-                    }, void 0, false, {
-                        fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 27,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
+                className: "absolute inset-x-0 top-0 z-40",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$index$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnnouncementBar"], {}, void 0, false, {
+                    fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
+                    lineNumber: 26,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
                 lineNumber: 25,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Header"], {
+                cartCount: cartCount
+            }, void 0, false, {
+                fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$hero$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Hero"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 31,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$offer$2d$banner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["OfferBanner"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 32,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$categories$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Categories"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 33,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$product$2d$section$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ProductSection"], {
@@ -2308,7 +2496,7 @@ function MarketplaceHomePage() {
                         onAdd: addToCart
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 34,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$product$2d$section$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ProductSection"], {
@@ -2318,33 +2506,33 @@ function MarketplaceHomePage() {
                         onAdd: addToCart
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$promo$2d$banners$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PromoBanners"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 45,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$testimonials$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Testimonials"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$benefits$2d$strip$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BenefitsStrip"], {}, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                        lineNumber: 47,
+                        lineNumber: 48,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$home$2f$footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/pages/home-page.tsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 7
             }, this)
         ]

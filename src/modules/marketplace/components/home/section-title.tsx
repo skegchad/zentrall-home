@@ -1,14 +1,24 @@
 import type { ReactNode } from "react";
-import { Sparkles } from "lucide-react";
+import { serif } from "../../lib/constants";
 
-export function SectionTitle({ children }: { children: ReactNode }) {
+type SectionTitleProps = {
+  children: ReactNode;
+  eyebrow?: string;
+};
+
+export function SectionTitle({ children, eyebrow }: SectionTitleProps) {
   return (
-    <div className="mb-6 flex items-center justify-center gap-3">
-      <Sparkles size={12} className="text-[var(--color-primario)]" />
-      <h2 className="m-0 text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-texto)]">
+    <div className="mb-6 flex flex-col items-start text-left">
+      {eyebrow && (
+        <span className="font-mono text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-primario)]">
+          {eyebrow}
+        </span>
+      )}
+      <h1
+        className={`${serif} m-0 mt-4 max-w-xl text-5xl font-[620] leading-[1.02] tracking-[-0.02em] text-[var(--color-texto)] sm:text-6xl`}
+      >
         {children}
-      </h2>
-      <Sparkles size={12} className="text-[var(--color-primario)]" />
+      </h1>
     </div>
   );
 }

@@ -6,7 +6,7 @@
 :root {
   --color-fondo: #f6f5fb;
   --color-header: rgba(255, 255, 255, 0.85);
-  --color-footer: #dedce8;
+  --color-footer: #716a91;
   --color-superficie: #ffffff;
   --color-tarjeta: #ffffff;
   --color-borde: #e3e1f0;
@@ -27,6 +27,8 @@
   --sombra-suave: 0 2px 8px rgba(20, 20, 50, 0.08), 0 8px 24px rgba(20, 20, 50, 0.08);
   --sombra-media: 0 4px 12px rgba(20, 20, 50, 0.1), 0 16px 40px rgba(20, 20, 50, 0.14);
   --sombra-header: 0 2px 12px rgba(20, 20, 50, 0.1);
+  --color-panel: #EDF7F1;
+  --color-panel-borde: #8AD0AB4d;
 }
 
 /* ===== MODO OSCURO =====
@@ -56,6 +58,8 @@ html[data-theme-mode="dark"],
   --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.35);
   --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.4), 0 16px 40px rgba(0, 0, 0, 0.5);
   --sombra-header: 0 2px 12px rgba(0, 0, 0, 0.5);
+  --color-panel: #8AD0AB4d;
+  --color-panel-borde: #00473E59;
 }
 
 /* ===== Borde líquido animado del hero =====
@@ -90,17 +94,18 @@ html[data-theme-mode="dark"],
 }
 
 .zentrall-wave-a {
+  will-change: transform, translate;
   animation:
-    zentrall-wave 16s linear infinite,
-    zentrall-bob 5s ease-in-out infinite;
+    wave-drift-left 20s linear infinite,
+    wave-tide-a 12s ease-in-out infinite alternate;
 }
 
 .zentrall-wave-b {
+  will-change: transform, translate;
   animation:
-    zentrall-wave-reverse 22s linear infinite,
-    zentrall-bob 7s ease-in-out infinite reverse;
+    wave-drift-left 20s linear infinite -2s, /* desfase pequeño */
+    wave-tide-b 12s ease-in-out infinite alternate;
 }
-
 /* ===== Elementos flotantes ===== */
 @keyframes zentrall-float {
   0%,
@@ -125,10 +130,69 @@ html[data-theme-mode="dark"],
   display: none;
 }
 
+/* Desplazamiento horizontal: el SVG mide 200% y el patrón se repite
+   cada 50%, por eso el bucle es continuo y sin saltos */
+@keyframes wave-drift-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes wave-drift-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes wave-tide-a {
+  from { translate: 0 0; }
+  to   { translate: 0 10px; }
+}
+
+@keyframes wave-tide-b {
+  from { translate: 0 10px; }
+  to   { translate: 0 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .zentrall-wave-a,
-  .zentrall-wave-b,
-  .zentrall-float {
+  .zentrall-wave-b {
     animation: none;
+  }
+}
+/* ===== Scroll suave (Lenis) ===== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* ===== Aparecer / desaparecer al hacer scroll ===== */
+.zentrall-reveal {
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.zentrall-reveal[data-state="below"] {
+  opacity: 0;
+  transform: translate3d(0, 48px, 0);
+}
+
+.zentrall-reveal[data-state="above"] {
+  opacity: 0;
+  transform: translate3d(0, -32px, 0);
+}
+
+.zentrall-reveal[data-state="in"] {
+  opacity: 1;
+  transform: none;
+  transition-delay: var(--reveal-delay, 0ms); /* el retraso solo aplica al entrar */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zentrall-reveal {
+    transition: none;
   }
 }

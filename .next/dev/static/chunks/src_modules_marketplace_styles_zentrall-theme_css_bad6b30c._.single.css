@@ -2,7 +2,7 @@
 :root {
   --color-fondo: #f6f5fb;
   --color-header: #ffffffd9;
-  --color-footer: #dedce8;
+  --color-footer: #716a91;
   --color-superficie: #fff;
   --color-tarjeta: #fff;
   --color-borde: #e3e1f0;
@@ -23,6 +23,8 @@
   --sombra-suave: 0 2px 8px #14143214, 0 8px 24px #14143214;
   --sombra-media: 0 4px 12px #1414321a, 0 16px 40px #14143224;
   --sombra-header: 0 2px 12px #1414321a;
+  --color-panel: #edf7f1;
+  --color-panel-borde: #8ad0ab4d;
 }
 
 :root[data-tema="dark"], html[data-theme-mode="dark"], .marketplace-shell[data-marketplace-theme="dark"] {
@@ -48,6 +50,8 @@
   --sombra-suave: 0 2px 8px #00000059, 0 8px 24px #00000059;
   --sombra-media: 0 4px 12px #0006, 0 16px 40px #00000080;
   --sombra-header: 0 2px 12px #00000080;
+  --color-panel: #8ad0ab4d;
+  --color-panel-borde: #00473e59;
 }
 
 @keyframes zentrall-wave {
@@ -81,11 +85,13 @@
 }
 
 .zentrall-wave-a {
-  animation: 16s linear infinite zentrall-wave, 5s ease-in-out infinite zentrall-bob;
+  will-change: transform, translate;
+  animation: 20s linear infinite wave-drift-left, 12s ease-in-out infinite alternate wave-tide-a;
 }
 
 .zentrall-wave-b {
-  animation: 22s linear infinite zentrall-wave-reverse, 7s ease-in-out infinite reverse zentrall-bob;
+  will-change: transform, translate;
+  animation: 20s linear -2s infinite wave-drift-left, 12s ease-in-out infinite alternate wave-tide-b;
 }
 
 @keyframes zentrall-float {
@@ -110,22 +116,85 @@
   display: none;
 }
 
+@keyframes wave-drift-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes wave-drift-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes wave-tide-a {
+  from {
+    translate: 0;
+  }
+
+  to {
+    translate: 0 10px;
+  }
+}
+
+@keyframes wave-tide-b {
+  from {
+    translate: 0 10px;
+  }
+
+  to {
+    translate: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .zentrall-wave-a, .zentrall-wave-b, .zentrall-float {
+  .zentrall-wave-a, .zentrall-wave-b {
     animation: none;
   }
 }
 
-.logo {
-  letter-spacing: .02em;
-  color: var(--color-texto);
-  white-space: nowrap;
-  align-items: center;
-  gap: .6rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-decoration: none;
-  display: flex;
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.zentrall-reveal {
+  will-change: opacity, transform;
+  transition: opacity .9s cubic-bezier(.22, 1, .36, 1), transform .9s cubic-bezier(.22, 1, .36, 1);
+}
+
+.zentrall-reveal[data-state="below"] {
+  opacity: 0;
+  transform: translate3d(0, 48px, 0);
+}
+
+.zentrall-reveal[data-state="above"] {
+  opacity: 0;
+  transform: translate3d(0, -32px, 0);
+}
+
+.zentrall-reveal[data-state="in"] {
+  opacity: 1;
+  transition-delay: var(--reveal-delay, 0s);
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zentrall-reveal {
+    transition: none;
+  }
 }
 
 /*# sourceMappingURL=src_modules_marketplace_styles_zentrall-theme_css_bad6b30c._.single.css.map*/
