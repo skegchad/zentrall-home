@@ -13,4 +13,4 @@ export const cardSurface =
 
 /** Contenedor de categorías y productos: verde claro en claro, turquesa en oscuro */
 export const greenPanel =
-  "rounded-3xl border border-[color:var(--color-panel-borde,rgba(63,157,107,0.3))] bg-[var(--color-panel,#dcf0e4)]";
+  "border border-[color:var(--color-panel-borde,rgba(63,157,107,0.3))] bg-[var(--color-panel,#dcf0e4)]";

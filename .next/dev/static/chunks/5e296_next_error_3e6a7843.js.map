@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USUARIO/Downloads/zentrall-home-copia/node_modules/.pnpm/next%4016.1.6_%40babel%2Bcore%407.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/error.js"],"sourcesContent":["module.exports = require('./dist/pages/_error')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}}]
-}

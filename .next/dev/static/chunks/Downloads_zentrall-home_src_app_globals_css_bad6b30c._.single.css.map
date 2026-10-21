@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Downloads/zentrall-home/src/app/globals.css"],"sourcesContent":["@import \"tailwindcss\";\r\n@import \"../modules/marketplace/styles/marketplace-theme.css\";\r\n\r\n"],"names":[],"mappings":""}}]
-}

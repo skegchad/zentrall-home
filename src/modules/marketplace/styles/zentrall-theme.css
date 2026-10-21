@@ -196,3 +196,53 @@ html.lenis body {
     transition: none;
   }
 }
+
+/* ===== Tiendas (slideshow, hero, filtros) ===== */
+:root {
+  --tienda-fondo: #eef7f2;            /* verde clarito, casi igual a --color-fondo */
+  --tienda-fondo-2: #e2f1e8;
+  --tienda-velo: 238, 247, 242;       /* rgb del degradado sobre la imagen */
+  --tienda-texto: var(--color-texto);
+  --tienda-texto-suave: var(--color-texto-suave);
+  --tienda-borde: var(--color-panel-borde);
+  --tienda-linea: rgba(27, 27, 47, 0.1);
+  --tienda-inactivo: rgba(27, 27, 47, 0.18);
+  --tienda-panel: rgba(255, 255, 255, 0.75);
+  --tienda-acento: var(--color-descuento);
+  --tienda-sobre-acento: #ffffff;
+  --tienda-whatsapp: #128c7e;
+  --tienda-sobre-whatsapp: #ffffff;
+}
+
+:root[data-tema="dark"],
+html[data-theme-mode="dark"],
+.marketplace-shell[data-marketplace-theme="dark"] {
+  --tienda-fondo: #0b1f16;
+  --tienda-fondo-2: #17382a;
+  --tienda-velo: 11, 31, 22;
+  --tienda-texto: #f5ecd9;
+  --tienda-texto-suave: rgba(245, 236, 217, 0.75);
+  --tienda-borde: rgba(245, 236, 217, 0.2);
+  --tienda-linea: rgba(245, 236, 217, 0.1);
+  --tienda-inactivo: rgba(245, 236, 217, 0.25);
+  --tienda-panel: rgba(11, 31, 22, 0.7);
+  --tienda-acento: #e8672b;
+  --tienda-sobre-acento: #0b1f16;
+  --tienda-whatsapp: #25d366;
+  --tienda-sobre-whatsapp: #0b1f16;
+}
+:root {
+  --tienda-nuevo: #067b72;
+  --tienda-estrella: #d98a00;
+  --ph-l1: 82%;   /* degradado de respaldo sin imagen: luminosidad */
+  --ph-l2: 68%;
+}
+
+:root[data-tema="dark"],
+html[data-theme-mode="dark"],
+.marketplace-shell[data-marketplace-theme="dark"] {
+  --tienda-nuevo: #3dd1bd;
+  --tienda-estrella: #fcd34d;
+  --ph-l1: 30%;
+  --ph-l2: 15%;
+}
