@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import {
   BenefitsStrip,
   Categories,
@@ -8,10 +9,11 @@ import {
   Header,
   Hero,
   ProductSection,
-  PromoBanners,
   Reveal,
   SmoothScroll,
+  StoresSection,
   Testimonials,
+  TodaysPlan,
 } from "../components/home";
 import { bestSellers, newArrivals } from "../data/home-data";
 
@@ -54,11 +56,19 @@ export function MarketplaceHomePage() {
           />
         </Reveal>
         <Reveal>
-          <PromoBanners />
-        </Reveal>
-        <Reveal>
-          <Testimonials />
-        </Reveal>
+  <StoresSection />
+  </Reveal>
+
+  <Reveal>
+    <TodaysPlan
+      products={bestSellers}
+      onAdd={addToCart}
+    />
+  </Reveal>
+
+  <Reveal>
+    <Testimonials />
+</Reveal>
         <Reveal>
           <BenefitsStrip />
         </Reveal>

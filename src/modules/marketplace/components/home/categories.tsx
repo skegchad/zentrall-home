@@ -7,6 +7,12 @@ export function Categories() {
   return (
     <section className={`${wrap} pt-10`}>
       <SectionTitle>Compra por categoría</SectionTitle>
+      <div
+        aria-hidden="true"
+        className="mt-3 h-[6px] w-full max-w-[500px] bg-[repeating-linear-gradient(135deg,var(--color-descuento)_0_4px,var(--color-borde)_4px_8px)]"
+      />
+      <br></br>
+      <br></br>
       <div className="zentrall-no-scrollbar -mt-2 flex gap-6 overflow-x-auto pb-2 pt-2 lg:justify-between">
         {categories.map(({ name, icon: Icon }) => (
           <Link

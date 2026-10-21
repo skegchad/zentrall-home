@@ -3,13 +3,13 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-/** Scroll con inercia: acelera al empezar y frena suave al terminar. */
+
 export function SmoothScroll() {
     useEffect(() => {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
         const lenis = new Lenis({
-            duration: 1.4, // más alto = más lento y "flotado"
+            duration: 1.8,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ease-out exponencial
             smoothWheel: true,
         });
