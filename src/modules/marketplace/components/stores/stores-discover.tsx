@@ -3,6 +3,7 @@ import type { AffiliatedStore } from "../../data/stores-data";
 import { getStoreStatus, type StoreStatus } from "../../lib/stores-utils";
 import { StoreLogoTile } from "./store-logo-tile";
 import { ArrowRightIcon } from "./stores-icons";
+import {serif} from "../../lib/constants";
 
 const DOT: Record<StoreStatus, string> = {
   open: "bg-emerald-400",
@@ -21,7 +22,7 @@ export function StoresDiscover({ stores, now }: Props) {
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-6 flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-[var(--color-texto)]">Para descubrir hoy</h2>
+            <h2 className={`${serif} max-w-[16ch] text-[clamp(3rem,5vw,5rem)] font-extrabold leading-[0.92] tracking-[-0.03em] text-[var(--color-texto)]`}>Para descubrir hoy</h2>
             <p className="mt-1 text-sm text-[var(--color-texto-suave)]">
               Una selección del directorio local
             </p>

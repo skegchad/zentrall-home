@@ -48,20 +48,20 @@ export function StorePage() {
           className="pointer-events-none relative z-10 -mt-px h-[2px] bg-[var(--color-fondo)]"
         />
         <Reveal>
-            <StoresHero />
+          <StoresHero />
         </Reveal>
         {/* Filtros rápidos + slideshow */}
         <Reveal>
-            <StoresFilterBar value={quickFilter} onChange={setQuickFilter} counts={counts} />
-            <StoresSlideshow key={quickFilter} stores={slideshowStores} />
+          <StoresFilterBar value={quickFilter} onChange={setQuickFilter} counts={counts} />
+          <StoresSlideshow key={quickFilter} stores={slideshowStores} />
         </Reveal>
         {/* Tarjetas de todos los negocios */}
         <Reveal>
-            <StoresDiscover stores={AFFILIATED_STORES} now={now} />
+          <StoresDiscover stores={AFFILIATED_STORES} now={now} />
         </Reveal>
         {/* Buscador + directorio completo */}
         <Reveal>
-            <StoresDirectory stores={AFFILIATED_STORES} now={now} />
+          <StoresDirectory stores={AFFILIATED_STORES} now={now} />
         </Reveal>
       </main>
       <Footer />

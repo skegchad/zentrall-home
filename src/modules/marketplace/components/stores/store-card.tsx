@@ -53,7 +53,7 @@ export function StoreCard({ store, now }: Props) {
         {store.background ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={store.background} alt="" className="absolute inset-0 h-full w-full object-cover" />
-        ) : ( 
+        ) : (
           <div
             aria-hidden
             className="absolute inset-0"
@@ -129,23 +129,24 @@ export function StoreCard({ store, now }: Props) {
           </span>
         )}
 
-        {/* Queda por encima del enlace que cubre toda la tarjeta */}
-        <a
-          href={`https://wa.me/${store.whatsapp}?text=${message}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Escribir por WhatsApp a ${store.name}`}
-          className="relative z-10 flex items-center gap-2 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] transition-transform hover:-translate-y-0.5"
-          style={{
-            fontFamily: MONO,
-            background: "var(--tienda-whatsapp)",
-            color: "var(--tienda-sobre-acento)",
-            borderRadius: 10,
-          }}
-        >
-          <WhatsAppIcon className="h-4 w-4" />
-          WhatsApp
-        </a>
+        {store.whatsapp && (
+          <a
+            href={`https://wa.me/${store.whatsapp}?text=${message}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Escribir por WhatsApp a ${store.name}`}
+            className="relative z-10 flex items-center gap-2 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] transition-transform hover:-translate-y-0.5"
+            style={{
+              fontFamily: MONO,
+              background: "var(--tienda-whatsapp)",
+              color: "var(--tienda-sobre-acento)",
+              borderRadius: 10,
+            }}
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            WhatsApp
+          </a>
+        )}  
       </div>
     </article>
   );

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { AffiliatedStore } from "../../data/stores-data";
 import { storeMatchesQuery } from "../../lib/stores-utils";
+import { serif } from "../../lib/constants";
 import { StoreCard } from "./store-card";
 import { SearchIcon } from "./stores-icons";
 const ALL = "Todas";
@@ -37,7 +38,7 @@ export function StoresDirectory({ stores, now }: Props) {
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[var(--color-primario)]">
               Directorio local
             </p>
-            <h2 className="mt-1 text-3xl font-extrabold tracking-tight text-[var(--color-texto)] md:text-4xl">
+            <h2 className={` ${serif} mt-1 text-5xl font-extrabold tracking-tight text-[var(--color-texto)] md:text-6xl`}>
               Todas las tiendas
             </h2>
           </div>

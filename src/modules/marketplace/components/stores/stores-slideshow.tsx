@@ -4,9 +4,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { AffiliatedStore } from "../../data/stores-data";
 import { WhatsAppIcon } from "./stores-icons";
+import {serif} from "../../lib/constants";
+
 
 const AUTOPLAY_MS = 7000;
-const DISPLAY_FONT = "var(--font-display, 'Fraunces', Georgia, serif)";
 const BODY_FONT = "var(--font-body, 'Space Grotesk', system-ui, sans-serif)";
 const MONO_FONT = "var(--font-mono, ui-monospace, monospace)";
 
@@ -22,7 +23,7 @@ function StoreLogo({ store }: { store: AffiliatedStore }) {
     <div
       className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-full border backdrop-blur-sm md:h-24 md:w-24"
       style={{
-        fontFamily: DISPLAY_FONT,
+        fontFamily: `${serif}`,
         borderColor: "var(--tienda-borde)",
         background: "var(--tienda-panel)",
       }}
@@ -175,7 +176,7 @@ export function StoresSlideshow({ stores }: { stores: AffiliatedStore[] }) {
                         </p>
                         <h2
                           className="text-4xl font-bold leading-none tracking-tight md:text-6xl"
-                          style={{ color: "var(--tienda-texto)", fontFamily: DISPLAY_FONT }}
+                          style={{ color: "var(--tienda-texto)", fontFamily: `${serif}` }}
                         >
                           {store.name}
                         </h2>

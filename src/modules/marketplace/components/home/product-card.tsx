@@ -75,12 +75,19 @@ export function ProductCard({ product, isNew, onAdd }: ProductCardProps) {
             <p className="text-lg font-bold text-[var(--color-texto)]">
               ${product.price.toFixed(2)}
             </p>
-            <div className="mt-1 flex items-center gap-1">
+
+            <div className="mt-1 flex flex-wrap items-center gap-1.5">
               <Stars rating={product.rating} />
+
+              <span className="text-[11px] font-semibold text-[var(--color-texto)]">
+                {product.rating.toFixed(1)}
+              </span>
+
               <span className="text-[11px] text-[var(--color-texto-suave)]">
                 ({product.reviews.toLocaleString("es-EC")})
               </span>
             </div>
+
           </div>
 
           <button

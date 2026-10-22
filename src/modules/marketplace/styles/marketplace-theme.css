@@ -720,7 +720,8 @@ html[data-theme-mode="dark"] .marketplace-shell {
   opacity: 0.95;
   pointer-events: none;
   animation: borderFlow 6s linear infinite;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(to bottom, black, transparent);
+    -webkit-mask: linear-gradient(to bottom, black, transparent);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
