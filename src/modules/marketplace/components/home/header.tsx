@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Heart, Menu, Search, ShoppingBag, X } from "lucide-react";
+import { FiIcon } from "../fi-icon";
 import { navLinks } from "../../data/home-data";
 import { logo } from "../../lib/constants";
 import { ThemeToggle } from "./theme-toggle";
@@ -90,14 +90,13 @@ export function Header({ cartCount }: { cartCount: number }) {
                             <Link
                                 key={link.label}
                                 href={link.href}
-                                className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 transition ${
-                                    link.active
+                                className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 transition ${link.active
                                         ? "bg-white/15 text-white"
                                         : "text-white/70 hover:bg-white/10 hover:text-white"
-                                }`}
+                                    }`}
                             >
                                 {link.label}
-                                {link.dropdown && <ChevronDown size={13} />}
+                                {link.dropdown && <FiIcon name="angle-small-down" size={13} />}
                             </Link>
                         ))}
                     </nav>
@@ -110,7 +109,7 @@ export function Header({ cartCount }: { cartCount: number }) {
                         aria-label="Buscar"
                         className={iconBtn}
                     >
-                        <Search size={18} />
+                        <FiIcon name="search" size={16} />
                     </Link>
 
                     <Link
@@ -118,7 +117,7 @@ export function Header({ cartCount }: { cartCount: number }) {
                         aria-label="Guardados"
                         className={`${iconBtn} hidden md:flex`}
                     >
-                        <Heart size={18} />
+                        <FiIcon name="heart" />
                     </Link>
 
                     <Link
@@ -126,7 +125,7 @@ export function Header({ cartCount }: { cartCount: number }) {
                         aria-label="Carrito"
                         className={`${iconBtn} relative`}
                     >
-                        <ShoppingBag size={18} />
+                        <FiIcon name="shopping-bag" />
                         <span className="absolute right-0 top-0 flex h-4 min-w-4 items-center justify-center rounded-full bg-[var(--color-descuento)] px-1 text-[9px] font-bold text-white">
                             {cartCount}
                         </span>
@@ -150,7 +149,7 @@ export function Header({ cartCount }: { cartCount: number }) {
                         onClick={() => setOpen((value) => !value)}
                         className={`${iconBtn} xl:hidden`}
                     >
-                        {open ? <X size={18} /> : <Menu size={18} />}
+                        {<FiIcon name={open ? "cross" : "menu-burger"} />}
                     </button>
                 </div>
             </div>
@@ -163,12 +162,11 @@ export function Header({ cartCount }: { cartCount: number }) {
                             key={link.label}
                             href={link.href}
                             onClick={() => setOpen(false)}
-                            className={`flex items-center justify-between gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition hover:bg-white/10 ${
-                                link.active ? "bg-white/10 text-white" : "text-white/80"
-                            }`}
+                            className={`flex items-center justify-between gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition hover:bg-white/10 ${link.active ? "bg-white/10 text-white" : "text-white/80"
+                                }`}
                         >
                             {link.label}
-                            {link.dropdown && <ChevronDown size={15} />}
+                            {link.dropdown && <i className="fi fi-rr-home"></i>}
                         </Link>
                     ))}
 
@@ -179,7 +177,7 @@ export function Header({ cartCount }: { cartCount: number }) {
                         onClick={() => setOpen(false)}
                         className="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm text-white/85 transition hover:bg-white/10 md:hidden"
                     >
-                        <Heart size={18} />
+                        <i className="fi-sr-shopping-bag"></i>
                         Guardados
                     </Link>
 

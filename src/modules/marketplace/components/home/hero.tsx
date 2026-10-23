@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { heroFeatures } from "../../data/home-data";
 import { HERO_IMAGE, serif, wrap, hero_object } from "../../lib/constants";
+import { FiIcon } from "../fi-icon";
 
 export function Hero() {
     const sectionRef = useRef<HTMLElement>(null);
@@ -123,9 +124,9 @@ export function Hero() {
 
                 {/* Características */}
                 <ul className="mt-10 hidden flex-wrap gap-x-8 gap-y-3 sm:flex">
-                    {heroFeatures.map(({ icon: Icon, title, detail }) => (
+                    {heroFeatures.map(({ icon: icon, title, detail }) => (
                         <li key={title} className="flex items-center gap-2.5">
-                            <Icon size={18} className="text-white/80" />
+                            <FiIcon name={icon} size={18} className="text-white/80" />
                             <span className="text-[10px] leading-tight">
                                 <span className="block font-semibold">{title}</span>
                                 <span className="text-white/60">{detail}</span>

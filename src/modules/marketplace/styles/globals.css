@@ -1,3 +1,13 @@
 @import "tailwindcss";
 @import "./marketplace-theme.css";
 
+@theme inline {
+  --font-subtitulo: var(--font-coustard), Georgia, serif;
+  --font-cuerpo: var(--font-sanchez), Georgia, serif;
+}
+
+@layer base {
+  body, p { font-family: var(--font-sanchez), Georgia, serif !important; }
+  h1, h2 { font-family: "Arvo", Georgia, serif; }
+  h3, h4 { font-family: var(--font-coustard), Georgia, serif; }
+}

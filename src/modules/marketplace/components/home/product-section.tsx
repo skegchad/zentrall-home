@@ -107,10 +107,10 @@ export function ProductSection({
       {/* Contenedor verde suave con el carrusel */}
       <div className={`${greenPanel} p-4 sm:p-5`}>
         <div
-          ref={trackRef}
-          onScroll={updateButtons}
-          className={`flex snap-x snap-mandatory ${layout.gap} overflow-x-auto scroll-smooth py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden`}
-        >
+            ref={trackRef}
+            onScroll={updateButtons}
+            className={`-mx-4 -mt-4 -mb-4 flex snap-x snap-mandatory ${layout.gap} overflow-x-auto scroll-smooth px-4 pb-6 pt-6 [scroll-padding-inline:1rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-5 sm:px-5 sm:[scroll-padding-inline:1.25rem]`}
+          >
           {products.map((product) => (
             <div
               key={product.id}

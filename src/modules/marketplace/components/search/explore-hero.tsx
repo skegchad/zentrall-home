@@ -10,7 +10,7 @@ const ICONS: Record<QuickRouteId, typeof Percent> = {
   entrega: Truck,
 };
 
-const DISPLAY = "var(--font-display, 'Fraunces', Georgia, serif)";
+const DISPLAY = "var(--font-display, 'Arvo', Georgia, serif)";
 const MONO = "var(--font-mono, ui-monospace, monospace)";
 
 export type QuickRouteView = { id: QuickRouteId; label: string; count: number };

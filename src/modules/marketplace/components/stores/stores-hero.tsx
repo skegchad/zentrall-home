@@ -7,7 +7,7 @@ export function StoresHero() {
             className="max-w-[16ch] text-[clamp(3rem,8vw,6.5rem)] font-extrabold leading-[0.92] tracking-[-0.03em]"
             style={{
               color: "var(--color-texto)",
-              fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)",
+              fontFamily: "var(--font-display, 'Arvo', Georgia, serif)",
             }}
           >
             Las tiendas de la ciudad, en movimiento

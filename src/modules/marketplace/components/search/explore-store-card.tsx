@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import type { ExploreStore } from "../../data/explore-data";
 import { ExplorePlaceholder } from "./explore-placeholder";
+import { FaWhatsapp } from 'react-icons/fa'
 
 const MONO = "var(--font-mono, ui-monospace, monospace)";
 
@@ -77,7 +78,7 @@ export function ExploreStoreCard({ store: s }: { store: ExploreStore }) {
             className={`${waBase} bg-[var(--tienda-whatsapp)] text-[var(--tienda-sobre-whatsapp)] hover:-translate-y-0.5`}
             style={{ fontFamily: MONO }}
           >
-            <MessageCircle size={14} aria-hidden />
+            <FaWhatsapp size={14} aria-hidden />
             WhatsApp
           </a>
         ) : (

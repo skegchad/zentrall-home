@@ -7,7 +7,8 @@ import {
   type StoreStatus,
 } from "../../lib/stores-utils";
 import { StoreLogoTile } from "./store-logo-tile";
-import { StarIcon, TruckIcon, WhatsAppIcon } from "./stores-icons";
+import { StarIcon, TruckIcon} from "./stores-icons";
+import { FaWhatsapp } from 'react-icons/fa';
 
 const MONO = "var(--font-mono, ui-monospace, monospace)";
 const BODY = "var(--font-body, 'Space Grotesk', system-ui, sans-serif)";
@@ -37,10 +38,7 @@ export function StoreCard({ store, now }: Props) {
         className="mb-4 flex items-center justify-between gap-3 text-[10px] uppercase tracking-[0.2em] text-[var(--color-texto-suave)]"
         style={{ fontFamily: MONO }}
       >
-        <span className="flex items-center gap-2">
-          <span aria-hidden className={`h-1.5 w-1.5 rounded-full ${DOT[status]}`} />
-          {STATUS_LABEL[status]}
-        </span>
+
         {store.deliveryToday && (
           <span className="flex items-center gap-1.5 text-[var(--color-precio)]">
             <TruckIcon className="h-3.5 w-3.5" />
@@ -62,12 +60,11 @@ export function StoreCard({ store, now }: Props) {
         )}
         <div aria-hidden className="absolute inset-0 bg-black/25" />
 
-        {/* Sello central = logo de la tienda */}
+        {/* Logo tipo sticker, pegado a la esquina inferior derecha */}
         <StoreLogoTile
           store={store}
-          className="absolute left-1/2 top-1/2 h-[26%] w-[26%] min-h-14 min-w-14 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-[var(--tienda-acento)]"
+          className="absolute bottom-3 right-3 z-10 h-[26%] w-[26%] min-h-14 min-w-14 rounded-full border-[3px] border-[var(--tienda-acento)] shadow-lg transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105"
         />
-
       </div>
 
       {/* Meta: categoría · productos · estado de la tienda */}
@@ -75,8 +72,6 @@ export function StoreCard({ store, now }: Props) {
         className="mt-5 text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-precio)]"
         style={{ fontFamily: MONO }}
       >
-        {store.category} · {store.products.length} productos
-        {store.verified && <> · ✓ Verificada</>}
         {store.isNew && <> · Nueva</>}
       </p>
 
@@ -97,16 +92,6 @@ export function StoreCard({ store, now }: Props) {
       >
         {store.description}
       </p>
-
-      {/* Horario */}
-      {hours && (
-        <p
-          className="mt-3 text-[11px] leading-relaxed text-[var(--color-texto-suave)]"
-          style={{ fontFamily: MONO }}
-        >
-          Horario · {hours}
-        </p>
-      )}
 
       {/* Línea punteada */}
       <div aria-hidden className="mb-4 mt-4 border-t border-dashed border-[var(--color-borde)]" />
@@ -143,10 +128,10 @@ export function StoreCard({ store, now }: Props) {
               borderRadius: 10,
             }}
           >
-            <WhatsAppIcon className="h-4 w-4" />
+            <FaWhatsapp className="h-4 w-4" />
             WhatsApp
           </a>
-        )}  
+        )}
       </div>
     </article>
   );

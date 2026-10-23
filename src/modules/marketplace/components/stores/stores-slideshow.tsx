@@ -4,7 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { AffiliatedStore } from "../../data/stores-data";
 import { WhatsAppIcon } from "./stores-icons";
-import {serif} from "../../lib/constants";
+import { serif } from "../../lib/constants";
+import { FaWhatsapp } from 'react-icons/fa'
 
 
 const AUTOPLAY_MS = 7000;
@@ -89,7 +90,7 @@ export function StoresSlideshow({ stores }: { stores: AffiliatedStore[] }) {
         style={{
           background: "var(--tienda-fondo)",
           borderColor: "var(--tienda-borde)",
-          borderRadius: 10 ,
+          borderRadius: 10,
         }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
@@ -117,9 +118,8 @@ export function StoresSlideshow({ stores }: { stores: AffiliatedStore[] }) {
                 aria-hidden={!active}
                 aria-roledescription="diapositiva"
                 aria-label={`${i + 1} de ${total}: ${store.name}`}
-                className={`relative col-start-1 row-start-1 min-h-[560px] transition-opacity duration-700 ease-out md:min-h-[520px] ${
-                  active ? "opacity-100" : "pointer-events-none opacity-0"
-                }`}
+                className={`relative col-start-1 row-start-1 min-h-[560px] transition-opacity duration-700 ease-out md:min-h-[520px] ${active ? "opacity-100" : "pointer-events-none opacity-0"
+                  }`}
               >
                 {/* Fondo del negocio */}
                 {store.background ? (
@@ -211,7 +211,7 @@ export function StoresSlideshow({ stores }: { stores: AffiliatedStore[] }) {
                         tabIndex={active ? 0 : -1}
                         className="inline-flex items-center gap-2 border border-[color-mix(in_srgb,var(--tienda-whatsapp)_60%,transparent)] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[var(--tienda-whatsapp)] transition-colors hover:bg-[var(--tienda-whatsapp)] hover:text-[var(--tienda-sobre-whatsapp)]"
                       >
-                        <WhatsAppIcon className="h-5 w-5" />
+                        <FaWhatsapp className="h-5 w-5" />
                         WhatsApp
                       </a>
                     </div>

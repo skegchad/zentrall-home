@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { Check, Heart, Minus, Plus, ShoppingBag } from "lucide-react";
 import type { CatalogProduct } from "../../data/catalog-data";
+import { FaWhatsapp } from "react-icons/fa";
 
 const FOCUS =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-primario)]";
@@ -85,14 +86,14 @@ export function ProductPurchase({ product, onAddToCart }: Props) {
         <button
           type="button"
           onClick={handleAddToCart}
-          className={`inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radio)] bg-[var(--color-primario)] px-6 text-sm font-bold text-[var(--color-sobre-primario)] transition hover:-translate-y-0.5 hover:brightness-105 ${FOCUS}`}
+          className={`bg-[var(--tienda-whatsapp)] text-[var(--tienda-sobre-whatsapp)] inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radio)] bg-[var(--color-primario)] px-6 text-sm font-bold text-[var(--color-sobre-primario)] transition hover:-translate-y-0.5 hover:brightness-105 ${FOCUS}`}
         >
           {added ? (
             <Check size={17} aria-hidden />
           ) : (
-            <ShoppingBag size={17} aria-hidden />
+            <FaWhatsapp size={17} aria-hidden />
           )}
-          {added ? "Agregado al carrito" : "Agregar al carrito"}
+          {added ? "Contactar por Whatsapp" : "Contactar por Whatsapp"}
         </button>
 
         <button

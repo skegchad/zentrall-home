@@ -21,7 +21,7 @@ export function ProductInfo({ product, onAddToCart }: Props) {
 
       <h1
         className="mt-2 text-[clamp(2rem,4.2vw,3rem)] font-bold leading-[1.05] tracking-tight"
-        style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
+        style={{ fontFamily: "var(--font-display, 'Arvo', Georgia, serif)" }}
       >
         {product.name}
       </h1>
@@ -45,7 +45,7 @@ export function ProductInfo({ product, onAddToCart }: Props) {
       <div className="mt-8">
         <h2
           className="border-b border-[var(--color-borde)] pb-3 text-lg font-bold"
-          style={{ fontFamily: "var(--font-display, 'Fraunces', Georgia, serif)" }}
+          style={{ fontFamily: "var(--font-display, 'Arvo', Georgia, serif)" }}
         >
           Descripción
         </h2>

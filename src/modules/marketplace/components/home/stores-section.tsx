@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -59,8 +58,6 @@ export function StoresSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
       >
-        <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[var(--tienda-acento)] opacity-[0.07] blur-3xl" />
-        <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-emerald-500 opacity-[0.07] blur-3xl" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -78,9 +75,9 @@ export function StoresSection() {
             </p>
 
             <h2
-                className={`${serif} text-2xl font-extrabold tracking-tight text-[var(--tienda-texto)] sm:text-5xl lg:text-6xl`}
+              className={`${serif} text-2xl font-extrabold tracking-tight text-[var(--tienda-texto)] sm:text-5xl lg:text-6xl`}
             >
-                Negocios en Zentrall
+              Negocios en Zentrall
             </h2>
 
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-[var(--tienda-texto-suave)] sm:text-base">
@@ -134,7 +131,7 @@ export function StoresSection() {
           <div
             ref={trackRef}
             onScroll={updateButtons}
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="-mx-4 -mt-4 -mb-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-10 pt-4 [scroll-padding-inline:1rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {stores.map((store) => (
               <div

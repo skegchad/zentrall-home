@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { ExploreProduct } from "../../data/explore-data";
 import { ExploreProductCard } from "./explore-product-card";
 
-const DISPLAY = "var(--font-display, 'Fraunces', Georgia, serif)";
+const DISPLAY = "var(--font-display, 'Arvo', Georgia, serif)";
 const MONO = "var(--font-mono, ui-monospace, monospace)";
 
 type Props = {

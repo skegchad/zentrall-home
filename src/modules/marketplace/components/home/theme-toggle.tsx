@@ -1,7 +1,7 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "../../hooks/use-theme";
+import { FiIcon } from "../fi-icon";
 
 export function ThemeToggle() {
   const { theme, toggle } = useTheme();
@@ -15,7 +15,7 @@ export function ThemeToggle() {
       title={isDark ? "Modo claro" : "Modo oscuro"}
       className="flex h-9 w-9 items-center justify-center rounded-full text-white/85 transition hover:bg-white/15 hover:text-white"
     >
-      {isDark ? <Sun size={18} /> : <Moon size={18} />}
+      {isDark ? <FiIcon name="moon" /> : <FiIcon name="sun" />}
     </button>
   );
 }

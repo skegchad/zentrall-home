@@ -1,7 +1,7 @@
 import type { ExploreStore } from "../../data/explore-data";
 import { ExploreStoreCard } from "./explore-store-card";
 
-const DISPLAY = "var(--font-display, 'Fraunces', Georgia, serif)";
+const DISPLAY = "var(--font-display, 'Arvo', Georgia, serif)";
 const MONO = "var(--font-mono, ui-monospace, monospace)";
 
 type Props = {

@@ -246,3 +246,4 @@ html[data-theme-mode="dark"],
   --ph-l1: 30%;
   --ph-l2: 15%;
 }
+:root { --font-display: 'Arvo', Georgia, serif; }

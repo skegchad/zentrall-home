@@ -1,24 +1,5 @@
 // src/modules/marketplace/data/home-data.ts
 
-import {
-  BadgeCheck,
-  Dumbbell,
-  Gift,
-  Headphones,
-  House,
-  Laptop,
-  RotateCcw,
-  ShieldCheck,
-  Shirt,
-  Sparkles,
-  Sprout,
-  Store,
-  Tag,
-  Truck,
-  Utensils,
-  Wrench,
-} from "lucide-react";
-
 import { catalogProducts } from "./catalog-data";
 import type { Product } from "../types";
 
@@ -32,40 +13,39 @@ export const navLinks = [
 
 export const heroFeatures = [
   {
-    icon: BadgeCheck,
+    icon: "check-circle",
     title: "Calidad local",
     detail: "Negocios verificados",
   },
   {
-    icon: Store,
+    icon: "shop",
     title: "Hecho en Guayaquil",
     detail: "Apoya lo nuestro",
   },
   {
-    icon: ShieldCheck,
+    icon: "shield-check",
     title: "Pago seguro",
     detail: "100% protegido",
   },
   {
-    icon: Headphones,
+    icon: "headphones",
     title: "Soporte cercano",
     detail: "Aquí para ayudarte",
   },
 ];
 
 export const categories = [
-  { name: "Gastronomía", icon: Utensils },
-  { name: "Moda", icon: Shirt },
-  { name: "Tecnología", icon: Laptop },
-  { name: "Belleza", icon: Sparkles },
-  { name: "Servicios", icon: Wrench },
-  { name: "Regalos", icon: Gift },
-  { name: "Hogar", icon: House },
-  { name: "Plantas", icon: Sprout },
-  { name: "Deportes", icon: Dumbbell },
-  { name: "Ofertas", icon: Tag },
+  { name: "Gastronomía", icon: "utensils" },
+  { name: "Moda", icon: "shirt" },
+  { name: "Tecnología", icon: "laptop" },
+  { name: "Belleza", icon: "sparkles" },
+  { name: "Servicios", icon: "wrench-simple" },
+  { name: "Regalos", icon: "gift" },
+  { name: "Hogar", icon: "home" },
+  { name: "Plantas", icon: "leaf" },
+  { name: "Deportes", icon: "dumbbell-fitness" },
+  { name: "Ofertas", icon: "brand" },
 ];
-
 
 const toHomeProduct = (
   product: (typeof catalogProducts)[number],
@@ -81,7 +61,6 @@ const toHomeProduct = (
   description: product.description,
   image: product.image,
 });
-
 
 // Selecciones provisionales para completar el diseño.
 // No representan rankings ni fechas reales de lanzamiento.
@@ -116,22 +95,22 @@ export const testimonials = [
 
 export const benefits = [
   {
-    icon: Truck,
+    icon: "truck-side",
     title: "Envío a domicilio",
     detail: "En toda la ciudad",
   },
   {
-    icon: RotateCcw,
+    icon: "rotate-left",
     title: "Cambios fáciles",
     detail: "30 días sin complicaciones",
   },
   {
-    icon: ShieldCheck,
+    icon: "shield-check",
     title: "Pagos seguros",
     detail: "Seguro y encriptado",
   },
   {
-    icon: Headphones,
+    icon: "headphones",
     title: "Soporte destacado",
     detail: "Estamos para ayudarte",
   },

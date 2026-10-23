@@ -151,7 +151,7 @@ export function TodaysPlan({ products, onAdd }: TodaysPlanProps) {
         <div
           ref={trackRef}
           onScroll={updateButtons}
-          className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-1 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-4"
+          className="-mx-4 -mt-4 -mb-6 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-4 pb-10 pt-4 [scroll-padding-inline:1rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-4"
         >
           {products.map((product) => (
             <article

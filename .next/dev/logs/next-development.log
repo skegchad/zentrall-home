@@ -1,68 +1,361 @@
-[00:00:05.599] Server  LOG     ✓ Ready in 4.1s
-[00:00:45.448] Server  LOG     ○ Compiling / ...
-[00:00:56.257] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:28.080] Browser ERROR   ./src/modules/marketplace/components/home/smooth-scroll.tsx
-Error:   × Unterminated string constant
-    ╭─[C:\Users\USUARIO\Downloads\zentrall-home\src\modules\marketplace\components\home\smooth-scroll.tsx:12:1]
-  9 │         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
- 10 │ 
- 11 │         const lenis = new Lenis({
- 12 │             duration: 1.4,tado"
-    ·                               ─
- 13 │             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ease-out exponencial
- 14 │             smoothWheel: true,
- 14 │         });
-    ╰────
-  × Unexpected token `string literal`. Expected ... , *,  (, [, :, , ?, =, an identifier, public, protected, private, readonly, <.
-    ╭─[C:\Users\USUARIO\Downloads\zentrall-home\src\modules\marketplace\components\home\smooth-scroll.tsx:12:1]
-  9 │         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
- 10 │ 
- 11 │         const lenis = new Lenis({
- 12 │             duration: 1.4,tado"
-    ·                               ─
- 13 │             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ease-out exponencial
- 14 │             smoothWheel: true,
- 14 │         });
-    ╰────
+[00:00:04.469] Server  LOG     ✓ Ready in 2.9s
+[00:00:05.394] Browser ERROR   uncaughtError: ReferenceError: FaWhatsApp is not defined
+[00:00:07.718] Server  ERROR   ⨯ ReferenceError: FaWhatsApp is not defined
+[00:00:13.267] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.852] Browser ERROR   uncaughtError: ReferenceError: FaWhatsApp is not defined
+[00:00:52.852] Server  LOG     ✓ Compiled in 164ms
+[00:00:52.865] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:05.703] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:09.358] Server  LOG     ✓ Compiled in 239ms
+[00:01:15.783] Server  LOG     ✓ Compiled in 324ms
+[00:01:16.507] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:215:35
+Parsing ecmascript source code failed
+  213 |                         className="inline-flex items-center gap-2 border border-[color-mix(in_srgb,var(--tienda-whatsapp)_60%,transparent)] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-[var(--tienda-whatsapp)] transition-colors hover:bg-[var(--tienda-whatsapp)] hover:text-[var(--tienda-sobre-whatsapp)]"
+  214 |                       >
+> 215 |                         FaWhatsapp><FaWhatsapp className="h-5 w-5" />
+      |                                   ^
+  216 |                         WhatsApp
+  217 |                       </a>
+  218 |                     </div>
 
-Caused by:
-    Syntax Error
+Unexpected token. Did you mean `{'>'}` or `&gt;`?
 
-Import trace for requested module:
-./src/modules/marketplace/components/home/smooth-scroll.tsx
-./src/modules/marketplace/components/home/index.ts
-./src/modules/marketplace/pages/home-page.tsx
-[00:03:29.824] Browser ERROR   ./src/modules/marketplace/components/home/smooth-scroll.tsx
-Error:   × Unterminated string constant
-    ╭─[C:\Users\USUARIO\Downloads\zentrall-home\src\modules\marketplace\components\home\smooth-scroll.tsx:12:1]
-  9 │         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
- 10 │ 
- 11 │         const lenis = new Lenis({
- 12 │             duration: 1.4,tado"
-    ·                               ─
- 13 │             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ease-out exponencial
- 14 │             smoothWheel: true,
- 14 │         });
-    ╰────
-  × Unexpected token `string literal`. Expected ... , *,  (, [, :, , ?, =, an identifier, public, protected, private, readonly, <.
-    ╭─[C:\Users\USUARIO\Downloads\zentrall-home\src\modules\marketplace\components\home\smooth-scroll.tsx:12:1]
-  9 │         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
- 10 │ 
- 11 │         const lenis = new Lenis({
- 12 │             duration: 1.4,tado"
-    ·                               ─
- 13 │             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // ease-out exponencial
- 14 │             smoothWheel: true,
- 14 │         });
-    ╰────
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
 
-Caused by:
-    Syntax Error
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:19.523] Server  LOG     ✓ Compiled in 263ms
+[00:01:20.717] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp><FaWhatsapp className="h-5 w-5" />
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
 
-Import trace for requested module:
-./src/modules/marketplace/components/home/smooth-scroll.tsx
-./src/modules/marketplace/components/home/index.ts
-./src/modules/marketplace/pages/home-page.tsx
-[00:04:20.021] Server  LOG     ○ Compiling /tiendas ...
-[00:05:22.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:24.883] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:20.717] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp><FaWhatsapp className="h-5 w-5" />
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:20.717] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp><FaWhatsapp className="h-5 w-5" />
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:30.677] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp><FaWhatsapp/>
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:30.990] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp className="h-5 w-5" ><FaWhatsapp/>
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:36.692] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp className="h-5 w-5" ><FaWhatsapp/>
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:36.692] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp className="h-5 w-5" ><FaWhatsapp/>
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:01:36.692] Browser ERROR   ./src/modules/marketplace/components/stores/stores-slideshow.tsx:217:27
+Parsing ecmascript source code failed
+  215 |                         <FaWhatsapp className="h-5 w-5" ><FaWhatsapp/>
+  216 |                         WhatsApp
+> 217 |                       </a>
+      |                           ^
+> 218 |                     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^
+  219 |                   </div>
+  220 |
+  221 |                   {/* Derecha: productos */}
+
+Expected '</', got 'jsx text'
+
+Import traces:
+  Client Component Browser:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component Browser]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/stores/stores-slideshow.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Client Component SSR]
+    ./src/modules/marketplace/pages/store-page.tsx [Server Component]
+    ./src/app/tiendas/page.tsx [Server Component]
+[00:02:18.815] Server  LOG     ✓ Compiled in 191ms
+[00:02:23.993] Server  LOG     ✓ Compiled in 708ms
+[00:02:26.272] Server  LOG     ✓ Compiled in 293ms
+[00:02:30.716] Server  LOG     ✓ Compiled in 357ms
+[00:02:39.878] Server  LOG     ✓ Compiled in 239ms
+[00:03:21.358] Server  LOG     ✓ Compiled in 1338ms
+[00:03:39.178] Server  LOG     ✓ Compiled in 463ms
+[00:04:42.738] Server  LOG     ✓ Compiled in 259ms
+[00:04:55.322] Server  LOG     ✓ Compiled in 451ms
+[00:06:22.631] Server  LOG     ✓ Compiled in 223ms
+[00:06:23.516] Browser ERROR   ./src/modules/marketplace/components/product-detail/product-purchase.tsx:7:2
+Parsing ecmascript source code failed
+   5 | import { Check, Heart, Minus, Plus, ShoppingBag } from "lucide-react";
+   6 | import type { CatalogProduct } from "../../data/catalog-data";
+>  7 | ${waBase} bg-[var(--tienda-whatsapp)] text-[var(--tienda-sobre-whatsapp)]
+     |  ^
+   8 |
+   9 | const FOCUS =
+  10 |   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-primario)]";
+
+Expected ';', '}' or <eof>
+
+Import traces:
+  Server Component:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx
+    ./src/modules/marketplace/components/product-detail/index.ts
+    ./src/app/(marketplace)/producto/[id]/page.tsx
+
+  Client Component Browser:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-info.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Server Component]
+    ./src/app/(marketplace)/producto/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-info.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Server Component]
+    ./src/app/(marketplace)/producto/[id]/page.tsx [Server Component]
+[00:06:24.392] Server  LOG     ✓ Compiled in 414ms
+[00:06:26.936] Server  LOG     ✓ Compiled in 482ms
+[00:06:27.447] Server  ERROR   ⨯ Failed to generate static paths for /producto/[id]:
+[00:06:27.561] Server  ERROR   Error: Could not parse module '[project]/src/modules/marketplace/components/product-detail/product-purchase.tsx'
+
+Expected 'from', got 'const'
+[00:06:28.515] Browser ERROR   ./src/modules/marketplace/components/product-detail/product-purchase.tsx:9:1
+Parsing ecmascript source code failed
+   7 | import 
+   8 |
+>  9 | const FOCUS =
+     | ^^^^^
+  10 |   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-primario)]";
+  11 |
+  12 | type Props = {
+
+Expected 'from', got 'const'
+
+Import traces:
+  Server Component:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx
+    ./src/modules/marketplace/components/product-detail/index.ts
+    ./src/app/(marketplace)/producto/[id]/page.tsx
+
+  Client Component Browser:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-info.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Server Component]
+    ./src/app/(marketplace)/producto/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-info.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Server Component]
+    ./src/app/(marketplace)/producto/[id]/page.tsx [Server Component]
+[00:06:29.859] Browser ERROR   ./src/modules/marketplace/components/product-detail/product-purchase.tsx:9:1
+Parsing ecmascript source code failed
+   7 | import {}
+   8 |
+>  9 | const FOCUS =
+     | ^^^^^
+  10 |   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-primario)]";
+  11 |
+  12 | type Props = {
+
+Expected 'from', got 'const'
+
+Import traces:
+  Server Component:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx
+    ./src/modules/marketplace/components/product-detail/index.ts
+    ./src/app/(marketplace)/producto/[id]/page.tsx
+
+  Client Component Browser:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-info.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Client Component Browser]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Server Component]
+    ./src/app/(marketplace)/producto/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/modules/marketplace/components/product-detail/product-purchase.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-info.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Client Component SSR]
+    ./src/modules/marketplace/components/product-detail/product-detail.tsx [Server Component]
+    ./src/app/(marketplace)/producto/[id]/page.tsx [Server Component]
+[00:06:31.706] Server  LOG     ✓ Compiled in 384ms
+[00:06:48.821] Server  LOG     ✓ Compiled in 277ms
+[00:06:49.518] Browser ERROR   uncaughtError: ReferenceError: waBase is not defined
+[00:06:54.734] Server  LOG     ✓ Compiled in 347ms
+[00:06:54.868] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:01.285] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:16.271] Server  LOG     ✓ Compiled in 137ms
+[00:07:24.050] Server  LOG     ✓ Compiled in 368ms
+[00:07:34.663] Server  LOG     ✓ Compiled in 357ms

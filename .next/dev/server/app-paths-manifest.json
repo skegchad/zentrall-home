@@ -1,4 +1,6 @@
 {
   "/(marketplace)/page": "app/(marketplace)/page.js",
+  "/(marketplace)/producto/[id]/page": "app/(marketplace)/producto/[id]/page.js",
+  "/explorar/page": "app/explorar/page.js",
   "/tiendas/page": "app/tiendas/page.js"
 }
