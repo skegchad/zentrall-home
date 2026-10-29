@@ -22,6 +22,8 @@ import {
   type SortKey,
 } from "../lib/explore-utils";
 
+import { AFFILIATED_STORES } from "../data/stores-data";
+
 export function SearchPage() {
   const [cartCount] = useState(0);
   const [tab, setTab] = useState<ExploreTab>("productos");
@@ -133,12 +135,12 @@ export function SearchPage() {
                   />
                 </Reveal>
                 <Reveal>
-                  <ExploreStoresSection stores={exploreStores} />
+                  <ExploreStoresSection stores={AFFILIATED_STORES} />
                 </Reveal>
               </>
             )
           ) : stores.length ? (
-            <ExploreStoresSection stores={stores} panel={false} />
+            <ExploreStoresSection stores={AFFILIATED_STORES} panel={false} />
           ) : (
             <ExploreEmpty onReset={reset} />
           )}

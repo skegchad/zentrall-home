@@ -1,11 +1,9 @@
-
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Header, Footer } from "../home";
-import type { CatalogProduct } from "../../data/catalog-data";
+import { catalogStores, type CatalogProduct } from "../../data/catalog-data";
 import { ProductGallery } from "./product-gallery";
 import { ProductInfo } from "./product-info";
 
@@ -19,15 +17,11 @@ type Props = {
 };
 
 export function ProductDetail({ product }: Props) {
-  const [cartCount, setCartCount] = useState(0);
-
-  function handleAddToCart(quantity: number) {
-    setCartCount((current) => current + quantity);
-  }
+  const store = catalogStores.find((s) => s.id === product.storeId);
 
   return (
     <div className="zentrall-home min-h-screen bg-[var(--color-fondo)] text-[var(--color-texto)]">
-      <Header cartCount={cartCount} />
+      <Header cartCount={0} />
 
       <main className="pb-20 pt-28">
         <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6">
@@ -43,10 +37,7 @@ export function ProductDetail({ product }: Props) {
           <div className="grid gap-8 md:grid-cols-[1.05fr_1fr] lg:gap-14">
             <ProductGallery product={product} />
 
-            <ProductInfo
-              product={product}
-              onAddToCart={handleAddToCart}
-            />
+            <ProductInfo product={product} whatsapp={store?.whatsapp} />
           </div>
         </div>
       </main>

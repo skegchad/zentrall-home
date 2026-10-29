@@ -9,4 +9,6 @@ export type Product = {
   category?: string;
   description?: string;
   image?: string;
+  uuid?: string;
+  href?: string;
 };

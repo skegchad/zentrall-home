@@ -16,29 +16,36 @@ type ProductCardWideProps = {
 export function ProductCardWide({ product, onAdd }: ProductCardWideProps) {
   const [saved, setSaved] = useState(false);
 
+  // Requiere uuid?: string y href?: string en el tipo Product (types/index.ts)
+  const href =
+    product.href ?? (product.uuid ? `/producto/${product.uuid}` : "/explorar");
+
   return (
     <article
       className={`${serif} ${cardSurface} group relative flex h-full overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-[var(--sombra-media)]`}
     >
-      {/* Imagen (izquierda) */}
-      <Link
-        href="/explorar"
-        className="relative block min-h-[11rem] w-[40%] shrink-0 self-stretch"
-      >
-        {product.image ? (
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            sizes="(min-width: 1024px) 14vw, (min-width: 640px) 20vw, 40vw"
-            className="object-contain p-4 transition duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div
-            className={`absolute inset-3 rounded-xl bg-gradient-to-br ${product.tint}`}
-          />
-        )}
-      </Link>
+      {/* Imagen (izquierda): el marco se estira al alto de la tarjeta */}
+      <div className="w-[40%] shrink-0 self-stretch p-3">
+        <Link
+          href={href}
+          aria-label={`Ver ${product.name}`}
+          className="relative block h-full min-h-[10rem] w-full transform-gpu overflow-hidden rounded-xl"
+        >
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              sizes="(min-width: 1024px) 14vw, (min-width: 640px) 20vw, 40vw"
+              className="object-cover transition duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${product.tint}`}
+            />
+          )}
+        </Link>
+      </div>
 
       {/* Insignia */}
       <span className="pointer-events-none absolute left-3 top-3 rounded-lg bg-[var(--color-texto)] px-2.5 py-1 text-xs font-semibold leading-none text-[var(--color-fondo)]">
@@ -93,7 +100,6 @@ export function ProductCardWide({ product, onAdd }: ProductCardWideProps) {
                 ({product.reviews.toLocaleString("es-EC")})
               </span>
             </div>
-
           </div>
 
           <button

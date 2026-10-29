@@ -1,4 +1,3 @@
-
 import type { CatalogProduct } from "../../data/catalog-data";
 import { ProductRating } from "./product-rating";
 import { ProductPurchase } from "./product-purchase";
@@ -6,10 +5,10 @@ import { ProductStore } from "./product-store";
 
 type Props = {
   product: CatalogProduct;
-  onAddToCart: (quantity: number) => void;
+  whatsapp?: string;
 };
 
-export function ProductInfo({ product, onAddToCart }: Props) {
+export function ProductInfo({ product, whatsapp }: Props) {
   return (
     <section className="flex flex-col">
       <p
@@ -40,7 +39,7 @@ export function ProductInfo({ product, onAddToCart }: Props) {
         )}
       </div>
 
-      <ProductPurchase product={product} onAddToCart={onAddToCart} />
+      <ProductPurchase product={product} whatsapp={whatsapp} />
 
       <div className="mt-8">
         <h2

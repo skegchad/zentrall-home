@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "2c286a2f72b74a52b635a0bc1374dd0b",
-    "previewModeSigningKey": "09f3e3424e3ea309574afd16b7477a962643c71c738cd9dd218b668207c54f53",
-    "previewModeEncryptionKey": "bc4d98c394550d18180416c9e835949175616ee351f0a4c22407ef20df1c6e57"
-  }
-}
+{"version":4,"routes":{"/tiendas/dz":{},"/tiendas/dovi":{}},"dynamicRoutes":{"/tiendas/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/tiendas/[id]","routeRegex":"^\\/tiendas\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"678c428ec745924201aa52b8f7a78dd3","previewModeSigningKey":"5799d4be769aecbbe9221da1bf6847b61416a79bc19f147e338ff6ae54df20ea","previewModeEncryptionKey":"fc0201ef811a7d6d999d5a5eec2d7c3b1da074fb180305ace0683cd88e3a92c3"}}

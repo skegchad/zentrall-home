@@ -17,12 +17,16 @@ type ProductCardProps = {
 export function ProductCard({ product, isNew, onAdd }: ProductCardProps) {
   const [saved, setSaved] = useState(false);
 
+  // Requiere uuid?: string y href?: string en el tipo Product (types/index.ts)
+  const href =
+    product.href ?? (product.uuid ? `/producto/${product.uuid}` : "/explorar");
+
   return (
     <article
       className={`${serif} ${cardSurface} group relative flex h-full flex-col rounded-2xl p-3 transition duration-300 hover:-translate-y-1 hover:shadow-[var(--sombra-media)]`}
     >
       {/* Imagen */}
-      <Link href="/explorar" className="block">
+      <Link href={href} className="block" aria-label={`Ver ${product.name}`}>
         <div className="relative aspect-square w-full">
           {product.image ? (
             <Image
@@ -87,7 +91,6 @@ export function ProductCard({ product, isNew, onAdd }: ProductCardProps) {
                 ({product.reviews.toLocaleString("es-EC")})
               </span>
             </div>
-
           </div>
 
           <button

@@ -1,8 +1,7 @@
-
 "use client";
 
-import { useEffect, useState } from "react";
-import { Check, Heart, Minus, Plus, ShoppingBag } from "lucide-react";
+import { useState } from "react";
+import { Heart, Minus, Plus } from "lucide-react";
 import type { CatalogProduct } from "../../data/catalog-data";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -11,27 +10,24 @@ const FOCUS =
 
 type Props = {
   product: CatalogProduct;
-  onAddToCart: (quantity: number) => void;
+  /** Número de WhatsApp de la tienda, con código de país (ej. 593999999999) */
+  whatsapp?: string;
 };
 
-export function ProductPurchase({ product, onAddToCart }: Props) {
+export function ProductPurchase({ product, whatsapp }: Props) {
   const [qty, setQty] = useState(1);
   const [favorite, setFavorite] = useState(false);
-  const [added, setAdded] = useState(false);
-
-  useEffect(() => {
-    if (!added) return;
-
-    const timer = setTimeout(() => setAdded(false), 1800);
-    return () => clearTimeout(timer);
-  }, [added]);
 
   const total = product.price * qty;
 
-  function handleAddToCart() {
-    onAddToCart(qty);
-    setAdded(true);
-  }
+  // Deja solo dígitos, por si el dato viene como "https://wa.me/593..." o con "+"
+  const phone = (whatsapp ?? "").replace(/\D/g, "");
+
+  const message = encodeURIComponent(
+    `Hola, estoy interesado en el producto ${product.name}, con id ${product.uuid}.`,
+  );
+
+  const whatsappHref = phone ? `https://wa.me/${phone}?text=${message}` : null;
 
   return (
     <>
@@ -83,18 +79,31 @@ export function ProductPurchase({ product, onAddToCart }: Props) {
       </div>
 
       <div className="mt-6 grid gap-3">
-        <button
-          type="button"
-          onClick={handleAddToCart}
-          className={`bg-[var(--tienda-whatsapp)] text-[var(--tienda-sobre-whatsapp)] inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radio)] bg-[var(--color-primario)] px-6 text-sm font-bold text-[var(--color-sobre-primario)] transition hover:-translate-y-0.5 hover:brightness-105 ${FOCUS}`}
-        >
-          {added ? (
-            <Check size={17} aria-hidden />
-          ) : (
+        {whatsappHref ? (
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Contactar por WhatsApp sobre ${product.name}`}
+            className={`inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radio)] px-6 text-sm font-bold transition hover:-translate-y-0.5 hover:brightness-105 ${FOCUS}`}
+            style={{
+              background: "var(--tienda-whatsapp)",
+              color: "var(--tienda-sobre-acento)",
+            }}
+          >
             <FaWhatsapp size={17} aria-hidden />
-          )}
-          {added ? "Contactar por Whatsapp" : "Contactar por Whatsapp"}
-        </button>
+            Contactar por WhatsApp
+          </a>
+        ) : (
+          <button
+            type="button"
+            disabled
+            className="inline-flex h-12 cursor-not-allowed items-center justify-center gap-2 rounded-[var(--radio)] border border-[var(--color-borde)] px-6 text-sm font-bold text-[var(--color-texto-suave)] opacity-60"
+          >
+            <FaWhatsapp size={17} aria-hidden />
+            WhatsApp no disponible
+          </button>
+        )}
 
         <button
           type="button"
@@ -106,11 +115,7 @@ export function ProductPurchase({ product, onAddToCart }: Props) {
               : "border-[var(--color-borde)] bg-[var(--color-tarjeta)] text-[var(--color-texto)] hover:border-[var(--color-primario)]"
           }`}
         >
-          <Heart
-            size={17}
-            aria-hidden
-            fill={favorite ? "currentColor" : "none"}
-          />
+          <Heart size={17} aria-hidden fill={favorite ? "currentColor" : "none"} />
           {favorite ? "En favoritos" : "Guardar en favoritos"}
         </button>
       </div>

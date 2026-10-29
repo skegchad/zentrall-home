@@ -28,6 +28,7 @@ const catalogProducts = [
         rating: 0,
         reviews: 0,
         href: "/producto/c02521e8-83b3-4004-91fa-cb755667f199",
+        image: "/producto/c02521e8-83b3-4004-91fa-cb755667f199.png",
         tint: "from-stone-100 to-amber-100"
     },
     {
@@ -147,7 +148,7 @@ const catalogStores = [
         category: "General",
         description: placeholderDescription,
         hours: null,
-        whatsapp: "",
+        whatsapp: "593991234567",
         deliveryToday: false,
         isNew: false,
         verified: false,
@@ -158,12 +159,14 @@ const catalogStores = [
     },
     {
         id: "dovi",
+        logo: "/tiendas/dovi/logo.png",
+        cover: "/tiendas/dovi/hero-banner.png",
         slug: "dovi",
         name: "DOVI INSUMOS",
         category: "Velas",
         description: placeholderDescription,
         hours: null,
-        whatsapp: "https://wa.me/",
+        whatsapp: "593987654321",
         deliveryToday: false,
         isNew: false,
         verified: false,
@@ -1490,6 +1493,60 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplac
 ;
 ;
 ;
+/**
+ * Escala del hero en pantallas grandes (>= 1024px).
+ *
+ * Todo se mide con una unidad `--u` que vale 16px hasta 1366px de ancho
+ * (el diseño que ya se ve bien en 768p) y crece con el ancho de la ventana.
+ * Así, en 1920, 2560 o 4K el hero se ve igual que en 1366 pero más grande:
+ * mismas proporciones, mismo orden, nada desalineado.
+ *
+ * Está en CSS propio (no en clases de Tailwind) para que nada lo pise.
+ */ const HERO_CSS = `
+.hero-root { --u: clamp(1rem, 1.1713vw, 2.75rem); }
+
+@media (min-width: 1024px) {
+  .hero-root { padding-bottom: calc(var(--u) * 7); }
+
+  .hero-wrap {
+    max-width: calc(var(--u) * 80);
+    padding-inline: calc(var(--u) * 2);
+  }
+
+  .hero-content { padding-top: calc(var(--u) * 10); padding-bottom: calc(var(--u) * 10); }
+
+  .hero-title {
+    margin-top: var(--u);
+    max-width: calc(var(--u) * 36);
+    font-size: calc(var(--u) * 3.75);
+  }
+
+  .hero-text {
+    margin-top: calc(var(--u) * 1.25);
+    max-width: calc(var(--u) * 24);
+    font-size: var(--u);
+  }
+
+  .hero-cta { margin-top: calc(var(--u) * 1.75); gap: calc(var(--u) * 0.75); }
+  .hero-btn {
+    gap: calc(var(--u) * 0.5);
+    padding: calc(var(--u) * 0.875) calc(var(--u) * 1.75);
+    font-size: calc(var(--u) * 0.75);
+  }
+  .hero-btn svg { width: calc(var(--u) * 0.95); height: calc(var(--u) * 0.95); }
+
+  .hero-feats { margin-top: calc(var(--u) * 2.5); column-gap: calc(var(--u) * 2); row-gap: calc(var(--u) * 0.75); }
+  .hero-feat { gap: calc(var(--u) * 0.625); }
+  .hero-feat > svg, .hero-feat > span:first-child:not(.hero-feat-text) { width: calc(var(--u) * 1.125); height: calc(var(--u) * 1.125); }
+  .hero-feat-text { font-size: calc(var(--u) * 0.625); }
+
+  /* Objeto: pegado al borde derecho de la columna, mismo 22% de altura de siempre */
+  .hero-obj { top: 22%; right: 0; }
+  .hero-obj-img { width: min(calc(var(--u) * 33.75), 72vh); }
+
+  .hero-waves { height: calc(var(--u) * 7); }
+}
+`;
 function Hero() {
     const sectionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -1519,8 +1576,15 @@ function Hero() {
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         ref: sectionRef,
-        className: "relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#0d0c1d] pb-16 text-white md:pb-28",
+        className: "hero-root relative isolate flex min-h-[100svh] items-end overflow-hidden bg-[#0d0c1d] pb-16 text-white md:pb-28",
         children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("style", {
+                children: HERO_CSS
+            }, void 0, false, {
+                fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
+                lineNumber: 103,
+                columnNumber: 13
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 "aria-hidden": "true",
                 className: "absolute inset-0 -z-20 bg-cover bg-center",
@@ -1529,7 +1593,7 @@ function Hero() {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 48,
+                lineNumber: 106,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1537,7 +1601,7 @@ function Hero() {
                 className: "absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/35 to-transparent"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 57,
+                lineNumber: 115,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1545,7 +1609,7 @@ function Hero() {
                 className: "absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-transparent to-black/45"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 61,
+                lineNumber: 119,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1556,35 +1620,42 @@ function Hero() {
                     transform: "translateY(calc(var(--hero-p, 0) * -60px))"
                 },
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "zentrall-objeto pointer-events-auto absolute right-[7%] top-[22%]",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                        src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["hero_object"],
-                        alt: "",
-                        className: "hero-floating-image w-72 object-contain lg:w-135"
+                    className: "hero-wrap relative mx-auto h-full w-full max-w-7xl px-5 md:px-8 lg:px-12",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "zentrall-objeto hero-obj pointer-events-auto absolute right-[7%] top-[22%]",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["hero_object"],
+                            alt: "",
+                            className: "hero-floating-image hero-obj-img w-72"
+                        }, void 0, false, {
+                            fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
+                            lineNumber: 135,
+                            columnNumber: 25
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 77,
+                        lineNumber: 134,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                    lineNumber: 76,
+                    lineNumber: 133,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 68,
+                lineNumber: 125,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["wrap"]} relative z-20 w-full pb-8 pt-32 will-change-transform sm:pb-10 sm:pt-40 md:pb-40 md:pt-40`,
+                className: "hero-wrap hero-content relative z-20 mx-auto w-full max-w-7xl px-5 pb-8 pt-32 will-change-transform sm:pb-10 sm:pt-40 md:px-8 md:pb-40 md:pt-40 lg:px-12",
                 style: {
                     opacity: "calc(1 - var(--hero-p, 0))",
                     transform: "translateY(calc(var(--hero-p, 0) * -110px))"
                 },
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["serif"]} m-0 mt-4 max-w-xl text-4xl font-[620] leading-[1.08] tracking-tight text-white min-[380px]:text-5xl sm:text-6xl`,
+                        className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["serif"]} hero-title m-0 mt-4 max-w-xl text-4xl font-[620] leading-[1.08] tracking-tight text-white min-[380px]:text-5xl sm:text-6xl`,
                         children: [
                             "Todas tus compras",
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1592,63 +1663,63 @@ function Hero() {
                                 children: "a un solo click."
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 98,
+                                lineNumber: 156,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 94,
+                        lineNumber: 152,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "mt-5 max-w-sm text-sm leading-6 text-white/85 sm:text-base",
+                        className: "hero-text mt-5 max-w-sm text-sm leading-6 text-white/85 sm:text-base",
                         children: "Productos y negocios únicos de Guayaquil, reunidos en un solo lugar. Todo lo que buscas, más cerca de lo que imaginas."
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 103,
+                        lineNumber: 161,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-7 flex flex-wrap items-center gap-3",
+                        className: "hero-cta mt-7 flex flex-wrap items-center gap-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/explorar",
-                                className: "inline-flex items-center gap-2 rounded-full bg-[var(--color-primario)] px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--color-sobre-primario)] shadow-lg transition hover:opacity-90 sm:px-7",
+                                className: "hero-btn inline-flex items-center gap-2 rounded-full bg-[var(--color-primario)] px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-[var(--color-sobre-primario)] shadow-lg transition hover:opacity-90 sm:px-7",
                                 children: [
                                     "Comprar ahora ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$577$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                         size: 15
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 172,
                                         columnNumber: 39
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 110,
+                                lineNumber: 168,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/tiendas",
-                                className: "inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/5 px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur transition hover:bg-white/15 sm:px-7",
+                                className: "hero-btn inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/5 px-5 py-3.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur transition hover:bg-white/15 sm:px-7",
                                 children: "Explorar tiendas"
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 117,
+                                lineNumber: 175,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 109,
+                        lineNumber: 167,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                        className: "mt-10 hidden flex-wrap gap-x-8 gap-y-3 sm:flex",
+                        className: "hero-feats mt-10 hidden flex-wrap gap-x-8 gap-y-3 sm:flex",
                         children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$data$2f$home$2d$data$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["heroFeatures"].map(({ icon: icon, title, detail })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                className: "flex items-center gap-2.5",
+                                className: "hero-feat flex items-center gap-2.5",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$fi$2d$icon$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["FiIcon"], {
                                         name: icon,
@@ -1656,18 +1727,18 @@ function Hero() {
                                         className: "text-white/80"
                                     }, void 0, false, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 187,
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-[10px] leading-tight",
+                                        className: "hero-feat-text text-[10px] leading-tight",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "block font-semibold",
                                                 children: title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 189,
                                                 columnNumber: 33
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1675,52 +1746,52 @@ function Hero() {
                                                 children: detail
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 190,
                                                 columnNumber: 33
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 188,
                                         columnNumber: 29
                                     }, this)
                                 ]
                             }, title, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                                lineNumber: 128,
+                                lineNumber: 186,
                                 columnNumber: 25
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 126,
+                        lineNumber: 184,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         "aria-hidden": "true",
-                        className: " mt-6 flex justify-center sm:mt-8 md:hidden",
+                        className: "mt-6 flex justify-center sm:mt-8 md:hidden",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                             src: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["hero_object"],
                             alt: "",
                             className: "hero-floating-image w-40 max-w-[55vw] object-contain min-[380px]:w-44 sm:w-56"
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                            lineNumber: 143,
+                            lineNumber: 198,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 139,
+                        lineNumber: 197,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 87,
+                lineNumber: 145,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 "aria-hidden": "true",
-                className: "pointer-events-none absolute inset-x-0 bottom-0 z-30 h-20 overflow-hidden md:h-28",
+                className: "hero-waves pointer-events-none absolute inset-x-0 bottom-0 z-30 h-20 overflow-hidden md:h-28",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                         viewBox: "0 0 2880 120",
@@ -1733,12 +1804,12 @@ function Hero() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                            lineNumber: 162,
+                            lineNumber: 217,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 157,
+                        lineNumber: 212,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1752,24 +1823,24 @@ function Hero() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                            lineNumber: 176,
+                            lineNumber: 231,
                             columnNumber: 21
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                        lineNumber: 171,
+                        lineNumber: 226,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-                lineNumber: 152,
+                lineNumber: 207,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/hero.tsx",
-        lineNumber: 43,
+        lineNumber: 99,
         columnNumber: 9
     }, this);
 }
@@ -1863,12 +1934,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplac
 ;
 function ProductCard({ product, isNew, onAdd }) {
     const [saved, setSaved] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Requiere uuid?: string y href?: string en el tipo Product (types/index.ts)
+    const href = product.href ?? (product.uuid ? `/producto/${product.uuid}` : "/explorar");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["serif"]} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["cardSurface"]} group relative flex h-full flex-col rounded-2xl p-3 transition duration-300 hover:-translate-y-1 hover:shadow-[var(--sombra-media)]`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                href: "/explorar",
+                href: href,
                 className: "block",
+                "aria-label": `Ver ${product.name}`,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "relative aspect-square w-full",
                     children: product.image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1879,23 +1953,23 @@ function ProductCard({ product, isNew, onAdd }) {
                         className: "object-contain p-3 transition duration-500 group-hover:scale-105"
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                        lineNumber: 28,
+                        lineNumber: 32,
                         columnNumber: 13
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: `absolute inset-2 rounded-xl bg-gradient-to-br ${product.tint}`
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                        lineNumber: 36,
+                        lineNumber: 40,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                    lineNumber: 26,
+                    lineNumber: 30,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                lineNumber: 25,
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
             isNew && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1903,7 +1977,7 @@ function ProductCard({ product, isNew, onAdd }) {
                 children: "Nuevo"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                lineNumber: 45,
+                lineNumber: 49,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1916,12 +1990,12 @@ function ProductCard({ product, isNew, onAdd }) {
                     className: saved ? "fill-[var(--color-descuento)] text-[var(--color-descuento)]" : ""
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                    lineNumber: 57,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                lineNumber: 51,
+                lineNumber: 55,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1932,7 +2006,7 @@ function ProductCard({ product, isNew, onAdd }) {
                         children: product.name
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                        lineNumber: 69,
+                        lineNumber: 73,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1949,7 +2023,7 @@ function ProductCard({ product, isNew, onAdd }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 79,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1959,7 +2033,7 @@ function ProductCard({ product, isNew, onAdd }) {
                                                 rating: product.rating
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 84,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1967,7 +2041,7 @@ function ProductCard({ product, isNew, onAdd }) {
                                                 children: product.rating.toFixed(1)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 86,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1979,19 +2053,19 @@ function ProductCard({ product, isNew, onAdd }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 90,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                lineNumber: 74,
+                                lineNumber: 78,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2003,30 +2077,30 @@ function ProductCard({ product, isNew, onAdd }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                    lineNumber: 99,
+                                    lineNumber: 102,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                                lineNumber: 93,
+                                lineNumber: 96,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                        lineNumber: 73,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-                lineNumber: 68,
+                lineNumber: 72,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/product-card.tsx",
-        lineNumber: 21,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }
@@ -2056,32 +2130,42 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplac
 ;
 function ProductCardWide({ product, onAdd }) {
     const [saved, setSaved] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Requiere uuid?: string y href?: string en el tipo Product (types/index.ts)
+    const href = product.href ?? (product.uuid ? `/producto/${product.uuid}` : "/explorar");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["serif"]} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$constants$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["cardSurface"]} group relative flex h-full overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-[var(--sombra-media)]`,
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                href: "/explorar",
-                className: "relative block min-h-[11rem] w-[40%] shrink-0 self-stretch",
-                children: product.image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                    src: product.image,
-                    alt: product.name,
-                    fill: true,
-                    sizes: "(min-width: 1024px) 14vw, (min-width: 640px) 20vw, 40vw",
-                    className: "object-contain p-4 transition duration-500 group-hover:scale-105"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "w-[40%] shrink-0 self-stretch p-3",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                    href: href,
+                    "aria-label": `Ver ${product.name}`,
+                    className: "relative block h-full min-h-[10rem] w-full transform-gpu overflow-hidden rounded-xl",
+                    children: product.image ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        src: product.image,
+                        alt: product.name,
+                        fill: true,
+                        sizes: "(min-width: 1024px) 14vw, (min-width: 640px) 20vw, 40vw",
+                        className: "object-cover transition duration-500 group-hover:scale-105"
+                    }, void 0, false, {
+                        fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
+                        lineNumber: 35,
+                        columnNumber: 13
+                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: `absolute inset-0 bg-gradient-to-br ${product.tint}`
+                    }, void 0, false, {
+                        fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
+                        lineNumber: 43,
+                        columnNumber: 13
+                    }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
                     lineNumber: 29,
-                    columnNumber: 11
-                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: `absolute inset-3 rounded-xl bg-gradient-to-br ${product.tint}`
-                }, void 0, false, {
-                    fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                    lineNumber: 37,
-                    columnNumber: 11
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                lineNumber: 24,
+                lineNumber: 28,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2089,7 +2173,7 @@ function ProductCardWide({ product, onAdd }) {
                 children: "Más vendido"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                lineNumber: 44,
+                lineNumber: 51,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2102,12 +2186,12 @@ function ProductCardWide({ product, onAdd }) {
                     className: saved ? "fill-[var(--color-descuento)] text-[var(--color-descuento)]" : ""
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                    lineNumber: 55,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                lineNumber: 49,
+                lineNumber: 56,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2118,7 +2202,7 @@ function ProductCardWide({ product, onAdd }) {
                         children: product.category ?? product.store
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                        lineNumber: 67,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2126,7 +2210,7 @@ function ProductCardWide({ product, onAdd }) {
                         children: product.name
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                        lineNumber: 70,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this),
                     product.description && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2134,7 +2218,7 @@ function ProductCardWide({ product, onAdd }) {
                         children: product.description
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                        lineNumber: 74,
+                        lineNumber: 81,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2151,7 +2235,7 @@ function ProductCardWide({ product, onAdd }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 88,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2161,7 +2245,7 @@ function ProductCardWide({ product, onAdd }) {
                                                 rating: product.rating
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 93,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2169,7 +2253,7 @@ function ProductCardWide({ product, onAdd }) {
                                                 children: product.rating.toFixed(1)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 95,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2181,19 +2265,19 @@ function ProductCardWide({ product, onAdd }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                                lineNumber: 92,
+                                                lineNumber: 99,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 92,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                lineNumber: 80,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2205,30 +2289,30 @@ function ProductCardWide({ product, onAdd }) {
                                     size: 18
                                 }, void 0, false, {
                                     fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                    lineNumber: 105,
+                                    lineNumber: 111,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                                lineNumber: 99,
+                                lineNumber: 105,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                        lineNumber: 79,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-                lineNumber: 66,
+                lineNumber: 73,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/home/product-card-wide.tsx",
-        lineNumber: 20,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }
@@ -3132,14 +3216,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$re
 ;
 const MONO = "var(--font-mono, ui-monospace, monospace)";
 const BODY = "var(--font-body, 'Space Grotesk', system-ui, sans-serif)";
-const DOT = {
-    open: "bg-emerald-400",
-    closed: "bg-rose-400",
-    unknown: "bg-slate-400"
-};
-function StoreCard({ store, now }) {
-    const status = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$stores$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getStoreStatus"])(store, now);
-    const hours = store.hours ? `${store.hours.open} – ${store.hours.close}` : null;
+function StoreCard({ store }) {
     const message = encodeURIComponent(`Hola ${store.name}, vi su tienda en Zentrall y quisiera más información.`);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
         className: "group relative flex h-full flex-col rounded-3xl border border-[var(--color-borde)] bg-[var(--color-tarjeta)] p-5 transition-all [box-shadow:var(--sombra-suave)] hover:-translate-y-1 hover:border-[var(--color-primario)] hover:[box-shadow:var(--sombra-media)]",
@@ -3156,68 +3233,84 @@ function StoreCard({ store, now }) {
                             className: "h-3.5 w-3.5"
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                            lineNumber: 44,
+                            lineNumber: 30,
                             columnNumber: 13
                         }, this),
                         "Entrega hoy"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                    lineNumber: 43,
+                    lineNumber: 29,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                lineNumber: 37,
+                lineNumber: 24,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative aspect-[5/4] overflow-hidden rounded-2xl border border-[var(--color-borde)] [box-shadow:var(--sombra-suave)]",
+                className: "relative aspect-[5/4]",
                 children: [
-                    store.background ? // eslint-disable-next-line @next/next/no-img-element
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                        src: store.background,
-                        alt: "",
-                        className: "absolute inset-0 h-full w-full object-cover"
-                    }, void 0, false, {
-                        fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                        lineNumber: 53,
-                        columnNumber: 11
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        "aria-hidden": true,
-                        className: "absolute inset-0",
-                        style: {
-                            backgroundImage: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$stores$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["placeholderGradient"])(store.name)
-                        }
-                    }, void 0, false, {
-                        fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                        lineNumber: 55,
-                        columnNumber: 11
-                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        "aria-hidden": true,
-                        className: "absolute inset-0 bg-black/25"
-                    }, void 0, false, {
+                        className: "absolute inset-0 overflow-hidden rounded-2xl border border-[var(--color-borde)] [box-shadow:var(--sombra-suave)]",
+                        children: [
+                            store.background ? // eslint-disable-next-line @next/next/no-img-element
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                src: store.background,
+                                alt: "",
+                                className: "absolute inset-0 h-full w-full object-cover"
+                            }, void 0, false, {
+                                fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
+                                lineNumber: 42,
+                                columnNumber: 13
+                            }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                "aria-hidden": true,
+                                className: "absolute inset-0",
+                                style: {
+                                    backgroundImage: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$lib$2f$stores$2d$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["placeholderGradient"])(store.name)
+                                }
+                            }, void 0, false, {
+                                fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
+                                lineNumber: 44,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                "aria-hidden": true,
+                                className: "absolute inset-0 bg-black/25"
+                            }, void 0, false, {
+                                fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
+                                lineNumber: 50,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                        lineNumber: 61,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$stores$2f$store$2d$logo$2d$tile$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["StoreLogoTile"], {
-                        store: store,
-                        className: "absolute bottom-3 right-3 z-10 h-[26%] w-[26%] min-h-14 min-w-14 rounded-full border-[3px] border-[var(--tienda-acento)] shadow-lg transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105"
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute -bottom-4 -right-3 z-10 aspect-square w-[24%] min-w-14 overflow-hidden rounded-full border-2 border-[var(--tienda-acento)] bg-[var(--color-tarjeta)] shadow-lg transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$stores$2f$store$2d$logo$2d$tile$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["StoreLogoTile"], {
+                            store: store,
+                            className: "h-full w-full !rounded-none !border-0"
+                        }, void 0, false, {
+                            fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
+                            lineNumber: 55,
+                            columnNumber: 11
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                        lineNumber: 64,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                lineNumber: 50,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "mt-5 text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-precio)]",
+                className: "mt-7 text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--color-precio)]",
                 style: {
                     fontFamily: MONO
                 },
@@ -3226,7 +3319,7 @@ function StoreCard({ store, now }) {
                 }, void 0, false)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                lineNumber: 71,
+                lineNumber: 63,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3240,12 +3333,12 @@ function StoreCard({ store, now }) {
                     children: store.name
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                    lineNumber: 83,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                lineNumber: 79,
+                lineNumber: 71,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3256,7 +3349,7 @@ function StoreCard({ store, now }) {
                 children: store.description
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                lineNumber: 89,
+                lineNumber: 81,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3264,20 +3357,20 @@ function StoreCard({ store, now }) {
                 className: "mb-4 mt-4 border-t border-dashed border-[var(--color-borde)]"
             }, void 0, false, {
                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                lineNumber: 97,
+                lineNumber: 89,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "mt-auto flex items-center justify-between gap-3",
                 children: [
-                    store.rating !== null ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    store.rating != null ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex items-baseline gap-2",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$modules$2f$marketplace$2f$components$2f$stores$2f$stores$2d$icons$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["StarIcon"], {
                                 className: "h-4 w-4 self-center text-[var(--tienda-estrella)]"
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                                lineNumber: 103,
+                                lineNumber: 95,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3288,7 +3381,7 @@ function StoreCard({ store, now }) {
                                 children: store.rating.toFixed(1)
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                                lineNumber: 104,
+                                lineNumber: 96,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3298,18 +3391,18 @@ function StoreCard({ store, now }) {
                                 },
                                 children: [
                                     "(",
-                                    store.reviewCount,
+                                    store.reviewCount ?? 0,
                                     ")"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                                lineNumber: 107,
+                                lineNumber: 99,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                        lineNumber: 102,
+                        lineNumber: 94,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "text-xs text-[var(--color-texto-suave)]",
@@ -3319,7 +3412,7 @@ function StoreCard({ store, now }) {
                         children: "Sin reseñas"
                     }, void 0, false, {
                         fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                        lineNumber: 112,
+                        lineNumber: 104,
                         columnNumber: 11
                     }, this),
                     store.whatsapp && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -3339,26 +3432,26 @@ function StoreCard({ store, now }) {
                                 className: "h-4 w-4"
                             }, void 0, false, {
                                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                                lineNumber: 131,
+                                lineNumber: 123,
                                 columnNumber: 13
                             }, this),
                             "WhatsApp"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                        lineNumber: 118,
+                        lineNumber: 110,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-                lineNumber: 100,
+                lineNumber: 92,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/modules/marketplace/components/stores/store-card.tsx",
-        lineNumber: 35,
+        lineNumber: 22,
         columnNumber: 5
     }, this);
 }
@@ -4109,6 +4202,8 @@ __turbopack_context__.s([
     ()=>StoresHero
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.6_@babel+core@7.2_4ccaf965d42dba01b2528b2f6f1925d7/node_modules/next/image.js [app-ssr] (ecmascript)");
+;
 ;
 function StoresHero() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4117,7 +4212,7 @@ function StoresHero() {
             className: "mx-auto max-w-[1400px]",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between",
+                    className: "flex flex-col gap-8 lg:flex-row lg:items-stretch lg:justify-between",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                             className: "max-w-[16ch] text-[clamp(3rem,8vw,6.5rem)] font-extrabold leading-[0.92] tracking-[-0.03em]",
@@ -4128,25 +4223,53 @@ function StoresHero() {
                             children: "Las tiendas de la ciudad, en movimiento"
                         }, void 0, false, {
                             fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
-                            lineNumber: 6,
+                            lineNumber: 8,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "max-w-sm pb-2 text-base leading-relaxed",
-                            style: {
-                                color: "var(--color-texto-suave)",
-                                fontFamily: "var(--font-body, 'Space Grotesk', system-ui, sans-serif)"
-                            },
-                            children: "Conoce a los negocios afiliados a Zentrall. Mira sus productos, entra a su tienda o escríbeles directo por WhatsApp."
-                        }, void 0, false, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex w-full flex-col gap-6 lg:max-w-[400px]",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative aspect-[4/3] w-full overflow-hidden rounded-[14px] border border-[var(--color-borde)] bg-[var(--color-tarjeta)] lg:aspect-auto lg:min-h-0 lg:flex-1",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        src: "/images/tiendas-hero.jpg",
+                                        alt: "Negocios afiliados a Zentrall",
+                                        fill: true,
+                                        priority: true,
+                                        sizes: "(min-width: 1024px) 400px, 100vw",
+                                        className: "object-cover"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
+                                        lineNumber: 21,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
+                                    lineNumber: 20,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "pb-2 text-base leading-relaxed",
+                                    style: {
+                                        color: "var(--color-texto-suave)",
+                                        fontFamily: "var(--font-body, 'Space Grotesk', system-ui, sans-serif)"
+                                    },
+                                    children: "Conoce a los negocios afiliados a Zentrall. Mira sus productos, entra a su tienda o escríbeles directo por WhatsApp."
+                                }, void 0, false, {
+                                    fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
+                                    lineNumber: 31,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
-                            lineNumber: 16,
+                            lineNumber: 18,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
-                    lineNumber: 5,
+                    lineNumber: 7,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$6_$40$babel$2b$core$40$7$2e$2_4ccaf965d42dba01b2528b2f6f1925d7$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4157,18 +4280,18 @@ function StoresHero() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
-                    lineNumber: 29,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
-            lineNumber: 4,
+            lineNumber: 6,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/modules/marketplace/components/stores/stores-hero.tsx",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 5
     }, this);
 }
