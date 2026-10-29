@@ -1,9 +1,0 @@
-{
-  "/(marketplace)/page": "app/(marketplace)/page.js",
-  "/(marketplace)/producto/[id]/page": "app/(marketplace)/producto/[id]/page.js",
-  "/(marketplace)/tiendas/[id]/page": "app/(marketplace)/tiendas/[id]/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/explorar/page": "app/explorar/page.js",
-  "/rutas/page": "app/rutas/page.js",
-  "/tiendas/page": "app/tiendas/page.js"
-}

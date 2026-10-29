@@ -96,9 +96,6 @@ export function StoreCard({ store }: Props) {
             <span className="text-2xl font-extrabold text-[var(--color-texto)]" style={{ fontFamily: BODY }}>
               {store.rating.toFixed(1)}
             </span>
-            <span className="text-xs text-[var(--color-texto-suave)]" style={{ fontFamily: MONO }}>
-              ({store.reviewCount ?? 0})
-            </span>
           </div>
         ) : (
           <span className="text-xs text-[var(--color-texto-suave)]" style={{ fontFamily: MONO }}>

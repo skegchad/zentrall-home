@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { FiIcon } from "../fi-icon";
 import { ThemeToggle } from "../home/theme-toggle";
 
@@ -22,6 +23,8 @@ type HeaderProps = {
     links?: StoreNavLink[];
     activeLabel?: string;
     cartCount?: number;
+    backHref?: string;
+    backLabel?: string;
 };
 
 const defaultLinks: StoreNavLink[] = [
@@ -36,6 +39,8 @@ export function Header({
     links = defaultLinks,
     activeLabel = "Inicio",
     cartCount = 0,
+    backHref = "/tiendas",
+    backLabel = "Volver",
 }: HeaderProps) {
     const [open, setOpen] = useState(false);
     const [offset, setOffset] = useState(0);
@@ -81,10 +86,21 @@ export function Header({
             className="fixed inset-x-0 z-50 bg-transparent px-2 pt-2 sm:px-4 sm:pt-3 md:px-6"
         >
             <div className="flex min-w-0 items-start justify-between gap-2 sm:gap-3">
-                {/* Izquierda: tienda, navegación y tema */}
+                {/* Izquierda: volver, tienda, navegación y tema */}
                 <div
-                    className={`${pillBase} ${bg} min-w-0 gap-1 py-1.5 pl-2 pr-1.5 sm:gap-3 sm:py-2 sm:pl-4 sm:pr-2 md:pl-5`}
+                    className={`${pillBase} ${bg} min-w-0 gap-1 py-1.5 pl-1.5 pr-1.5 sm:gap-3 sm:py-2 sm:pl-2 sm:pr-2`}
                 >
+                    <Link
+                        href={backHref}
+                        aria-label={backLabel}
+                        className="flex h-9 shrink-0 items-center gap-1.5 rounded-full px-2.5 text-xs font-medium text-white/85 transition hover:bg-white/15 hover:text-white"
+                    >
+                        <ArrowLeft size={16} aria-hidden />
+                        <span className="hidden sm:inline">{backLabel}</span>
+                    </Link>
+
+                    <span aria-hidden className="h-5 w-px shrink-0 bg-white/15" />
+
                     <Link
                         href="/"
                         aria-label={`${storeName}, inicio`}

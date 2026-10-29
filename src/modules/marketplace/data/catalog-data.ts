@@ -84,7 +84,7 @@ export const catalogProducts: CatalogProduct[] = [
     id: "p3",
     uuid: "TEMP-UUID-p3",
     name: "Molde Papá Noel de pie",
-    price: 6.55,
+    price: 6.55,  
     oldPrice: 6.9,
     discount: 5,
     category: "Velas",
@@ -178,6 +178,7 @@ export const catalogProducts: CatalogProduct[] = [
 export const catalogStores: CatalogStore[] = [
   {
     id: "dz",
+    cover: "/tiendas/dz/hero-banner.webp",
     slug: "dz",
     name: "CreacionesDZ",
     category: "General",

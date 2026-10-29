@@ -60,6 +60,7 @@ const toHomeProduct = (
   category: product.category,
   description: product.description,
   image: product.image,
+  href: product.href,
 });
 
 // Selecciones provisionales para completar el diseño.
