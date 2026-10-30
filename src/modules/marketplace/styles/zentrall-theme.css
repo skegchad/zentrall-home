@@ -29,6 +29,8 @@
   --sombra-header: 0 2px 12px rgba(20, 20, 50, 0.1);
   --color-panel: #EDF7F1;
   --color-panel-borde: #8AD0AB4d;
+  --color-accion: #e5604f;
+  --color-sobre-accion: #ffffff;
 }
 
 /* ===== MODO OSCURO =====
@@ -60,6 +62,8 @@ html[data-theme-mode="dark"],
   --sombra-header: 0 2px 12px rgba(0, 0, 0, 0.5);
   --color-panel: #8AD0AB4d;
   --color-panel-borde: #00473E59;
+  --color-accion: #f0736a;
+  --color-sobre-accion: #14132a;
 }
 
 /* ===== Borde líquido animado del hero =====
@@ -69,6 +73,7 @@ html[data-theme-mode="dark"],
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -78,16 +83,19 @@ html[data-theme-mode="dark"],
   from {
     transform: translateX(-50%);
   }
+
   to {
     transform: translateX(0);
   }
 }
 
 @keyframes zentrall-bob {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(5px);
   }
@@ -103,15 +111,19 @@ html[data-theme-mode="dark"],
 .zentrall-wave-b {
   will-change: transform, translate;
   animation:
-    wave-drift-left 20s linear infinite -2s, /* desfase pequeño */
+    wave-drift-left 20s linear infinite -2s,
+    /* desfase pequeño */
     wave-tide-b 12s ease-in-out infinite alternate;
 }
+
 /* ===== Elementos flotantes ===== */
 @keyframes zentrall-float {
+
   0%,
   100% {
     transform: translateY(0) rotate(var(--rot, 0deg));
   }
+
   50% {
     transform: translateY(-10px) rotate(var(--rot, 0deg));
   }
@@ -133,36 +145,59 @@ html[data-theme-mode="dark"],
 /* Desplazamiento horizontal: el SVG mide 200% y el patrón se repite
    cada 50%, por eso el bucle es continuo y sin saltos */
 @keyframes wave-drift-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes wave-drift-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes wave-tide-a {
-  from { translate: 0 0; }
-  to   { translate: 0 10px; }
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: 0 10px;
+  }
 }
 
 @keyframes wave-tide-b {
-  from { translate: 0 10px; }
-  to   { translate: 0 0; }
+  from {
+    translate: 0 10px;
+  }
+
+  to {
+    translate: 0 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .zentrall-wave-a,
   .zentrall-wave-b {
     animation: none;
   }
 }
+
 /* ===== Scroll suave (Lenis) ===== */
 html.lenis,
 html.lenis body {
   height: auto;
 }
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
@@ -188,7 +223,8 @@ html.lenis body {
 .zentrall-reveal[data-state="in"] {
   opacity: 1;
   transform: none;
-  transition-delay: var(--reveal-delay, 0ms); /* el retraso solo aplica al entrar */
+  transition-delay: var(--reveal-delay, 0ms);
+  /* el retraso solo aplica al entrar */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -199,9 +235,11 @@ html.lenis body {
 
 /* ===== Tiendas (slideshow, hero, filtros) ===== */
 :root {
-  --tienda-fondo: #eef7f2;            /* verde clarito, casi igual a --color-fondo */
+  --tienda-fondo: #eef7f2;
+  /* verde clarito, casi igual a --color-fondo */
   --tienda-fondo-2: #e2f1e8;
-  --tienda-velo: 238, 247, 242;       /* rgb del degradado sobre la imagen */
+  --tienda-velo: 238, 247, 242;
+  /* rgb del degradado sobre la imagen */
   --tienda-texto: var(--color-texto);
   --tienda-texto-suave: var(--color-texto-suave);
   --tienda-borde: var(--color-panel-borde);
@@ -231,10 +269,12 @@ html[data-theme-mode="dark"],
   --tienda-whatsapp: #25d366;
   --tienda-sobre-whatsapp: #0b1f16;
 }
+
 :root {
   --tienda-nuevo: #067b72;
   --tienda-estrella: #d98a00;
-  --ph-l1: 82%;   /* degradado de respaldo sin imagen: luminosidad */
+  --ph-l1: 82%;
+  /* degradado de respaldo sin imagen: luminosidad */
   --ph-l2: 68%;
 }
 
@@ -246,4 +286,7 @@ html[data-theme-mode="dark"],
   --ph-l1: 30%;
   --ph-l2: 15%;
 }
-:root { --font-display: 'Arvo', Georgia, serif; }
+
+:root {
+  --font-display: 'Arvo', Georgia, serif;
+}

@@ -106,7 +106,7 @@ export function ProductCardWide({ product, onAdd }: ProductCardWideProps) {
             type="button"
             aria-label={`Agregar ${product.name} al carrito`}
             onClick={onAdd}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-texto)] text-[var(--color-fondo)] transition hover:opacity-85"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-accion)] text-[var(--color-sobre-accion)] transition hover:-translate-y-0.5 hover:brightness-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-accion)]"
           >
             <ShoppingCart size={18} />
           </button>

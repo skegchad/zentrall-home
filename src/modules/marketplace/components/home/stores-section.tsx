@@ -52,86 +52,77 @@ export function StoresSection() {
     "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--tienda-borde)] bg-[var(--tienda-fondo)] text-[var(--tienda-texto)] transition-colors hover:bg-[var(--tienda-texto)] hover:text-[var(--tienda-fondo)] disabled:pointer-events-none disabled:opacity-35";
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20">
-      {/* Decoración de fondo */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-      >
-      </div>
+  <section className="relative py-16 sm:py-20">
+    <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Encabezado (fuera del panel) */}
+      <div className="mb-8 flex items-end justify-between gap-4 sm:mb-10">
+        <div className="min-w-0">
+          <p
+            className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--tienda-acento)]"
+            style={{ fontFamily: "var(--font-mono, ui-monospace, monospace)" }}
+          >
+            Hecho cerca de ti
+          </p>
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Encabezado */}
-        <div className="mb-8 flex items-end justify-between gap-4 sm:mb-10">
-          <div className="min-w-0">
-            <p
-              className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-[var(--tienda-acento)]"
-              style={{
-                fontFamily:
-                  "var(--font-mono, ui-monospace, monospace)",
-              }}
-            >
-              Hecho cerca de ti
-            </p>
+          <h2
+            className={`${serif} text-2xl font-extrabold tracking-tight text-[var(--tienda-texto)] sm:text-5xl lg:text-6xl`}
+          >
+            Negocios en Zentrall
+          </h2>
 
-            <h2
-              className={`${serif} text-2xl font-extrabold tracking-tight text-[var(--tienda-texto)] sm:text-5xl lg:text-6xl`}
-            >
-              Negocios en Zentrall
-            </h2>
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-[var(--tienda-texto-suave)] sm:text-base">
+            Descubre tiendas locales, conoce sus productos y apoya a los
+            negocios de nuestra comunidad.
+          </p>
 
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-[var(--tienda-texto-suave)] sm:text-base">
-              Descubre tiendas locales, conoce sus productos y apoya a los
-              negocios de nuestra comunidad.
-            </p>
-
-            <div
-              aria-hidden="true"
-              className="mt-3 h-[6px] w-full max-w-[570px] bg-[repeating-linear-gradient(135deg,var(--color-descuento)_0_4px,var(--color-borde)_4px_8px)]"
-            />
-          </div>
-
-          {/* Enlace y controles */}
-          <div className="mb-1 flex shrink-0 items-center gap-3">
-            <Link
-              href="/tiendas"
-              className="hidden items-center gap-1 text-sm font-bold text-[var(--tienda-acento)] transition-opacity hover:opacity-70 sm:flex"
-            >
-              Ver todos <ChevronRight size={16} />
-            </Link>
-
-            {stores.length > 0 && (
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  aria-label="Negocios anteriores"
-                  onClick={() => scrollByPage(-1)}
-                  disabled={!canPrev}
-                  className={arrowClass}
-                >
-                  <ChevronLeft size={18} />
-                </button>
-
-                <button
-                  type="button"
-                  aria-label="Siguientes negocios"
-                  onClick={() => scrollByPage(1)}
-                  disabled={!canNext}
-                  className={arrowClass}
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
-            )}
-          </div>
+          <div
+            aria-hidden="true"
+            className="mt-3 h-[6px] w-full max-w-[570px] bg-[repeating-linear-gradient(135deg,var(--color-descuento)_0_4px,var(--color-borde)_4px_8px)]"
+          />
         </div>
 
-        {/* Carrusel: una sola fila */}
-        {stores.length > 0 ? (
+        {/* Enlace y controles */}
+        <div className="mb-1 flex shrink-0 items-center gap-3">
+          <Link
+            href="/tiendas"
+            className="hidden items-center gap-1 text-sm font-bold text-[var(--tienda-acento)] transition-opacity hover:opacity-70 sm:flex"
+          >
+            Ver todos <ChevronRight size={16} />
+          </Link>
+
+          {stores.length > 0 && (
+            <div className="flex gap-2">
+              <button
+                type="button"
+                aria-label="Negocios anteriores"
+                onClick={() => scrollByPage(-1)}
+                disabled={!canPrev}
+                className={arrowClass}
+              >
+                <ChevronLeft size={18} />
+              </button>
+
+              <button
+                type="button"
+                aria-label="Siguientes negocios"
+                onClick={() => scrollByPage(1)}
+                disabled={!canNext}
+                className={arrowClass}
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Panel: solo envuelve las tarjetas */}
+      {stores.length > 0 ? (
+        <div className="rounded-[28px] bg-[color-mix(in_srgb,var(--color-primario)_14%,var(--color-fondo))] p-5 sm:p-8">
           <div
             ref={trackRef}
             onScroll={updateButtons}
-            className="-mx-4 -mt-4 -mb-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-10 pt-4 [scroll-padding-inline:1rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="-mx-5 -my-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-5 py-4 [scroll-padding-inline:1.25rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:-mx-8 sm:px-8 sm:[scroll-padding-inline:2rem]"
           >
             {stores.map((store) => (
               <div
@@ -142,22 +133,23 @@ export function StoresSection() {
               </div>
             ))}
           </div>
-        ) : (
-          <p className="rounded-2xl border border-[var(--tienda-borde)] p-6 text-sm text-[var(--tienda-texto-suave)]">
-            Próximamente encontrarás negocios locales aquí.
-          </p>
-        )}
-
-        {/* Botón inferior para móviles */}
-        <div className="mt-6 flex justify-center sm:hidden">
-          <Link
-            href="/tiendas"
-            className="rounded-full border border-[var(--tienda-borde)] px-5 py-3 text-sm font-semibold text-[var(--tienda-texto)] transition-colors hover:bg-[var(--tienda-fondo-2)]"
-          >
-            Explorar todos los negocios
-          </Link>
         </div>
+      ) : (
+        <p className="rounded-2xl border border-[var(--tienda-borde)] p-6 text-sm text-[var(--tienda-texto-suave)]">
+          Próximamente encontrarás negocios locales aquí.
+        </p>
+      )}
+
+      {/* Botón inferior para móviles */}
+      <div className="mt-6 flex justify-center sm:hidden">
+        <Link
+          href="/tiendas"
+          className="rounded-full border border-[var(--tienda-borde)] px-5 py-3 text-sm font-semibold text-[var(--tienda-texto)] transition-colors hover:bg-[var(--tienda-fondo-2)]"
+        >
+          Explorar todos los negocios
+        </Link>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }

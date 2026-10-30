@@ -29,7 +29,7 @@ export function ExploreHero({ query, onQueryChange, routes, active, onToggleRout
       <div className="mx-auto grid w-full max-w-[1180px] items-center gap-8 px-4 sm:px-6 md:grid-cols-[1.5fr_1fr]">
         <div>
           <h1
-            className="text-[clamp(2.1rem,5vw,3.4rem)] font-bold leading-[1.05] tracking-tight text-[var(--color-texto)]"
+            className="text-[clamp(2.6rem,7vw,6rem)] font-bold leading-[1.05] tracking-tight text-[var(--color-texto)]"
             style={{ fontFamily: DISPLAY }}
           >
             Encuentra algo bueno,{" "}
