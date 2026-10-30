@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { FiIcon } from "../fi-icon";
 import { ThemeToggle } from "../home/theme-toggle";
+import type { AffiliatedStore } from "../../data/stores-data";
+import type { StoreNavLink } from "../../lib/stores-links";
 
 const pillBase =
     "flex items-center rounded-full border border-white/15 text-white shadow-lg backdrop-blur-xl transition-colors duration-300";
@@ -12,36 +14,26 @@ const pillBase =
 const iconBtn =
     "flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white/85 transition hover:bg-white/15 hover:text-white";
 
-type StoreNavLink = {
-    label: string;
-    href: string;
-};
-
 type HeaderProps = {
-    storeName: string;
-    storeLogo?: string;
-    links?: StoreNavLink[];
+    store: Pick<AffiliatedStore, "name" | "slug" | "logo">;
+    links: StoreNavLink[];
     activeLabel?: string;
     cartCount?: number;
     backHref?: string;
     backLabel?: string;
 };
 
-const defaultLinks: StoreNavLink[] = [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Tienda", href: "#tienda" },
-    { label: "Conócenos", href: "#conocenos" },
-];
-
 export function Header({
-    storeName,
-    storeLogo,
-    links = defaultLinks,
+    store,
+    links,
     activeLabel = "Inicio",
     cartCount = 0,
     backHref = "/tiendas",
     backLabel = "Volver",
 }: HeaderProps) {
+    const storeName = store.name;
+    const storeLogo = store.logo ?? undefined;
+
     const [open, setOpen] = useState(false);
     const [offset, setOffset] = useState(0);
     const [scrolled, setScrolled] = useState(false);
@@ -102,11 +94,12 @@ export function Header({
                     <span aria-hidden className="h-5 w-px shrink-0 bg-white/15" />
 
                     <Link
-                        href="/"
+                        href={`/tiendas/${store.slug}`}
                         aria-label={`${storeName}, inicio`}
                         className="flex min-w-0 shrink items-center gap-1.5 pr-1 leading-none sm:gap-2 sm:pr-2"
                     >
                         {storeLogo && (
+                            // eslint-disable-next-line @next/next/no-img-element
                             <img
                                 src={storeLogo}
                                 alt={`Logo de ${storeName}`}
@@ -127,11 +120,12 @@ export function Header({
                             <Link
                                 key={link.label}
                                 href={link.href}
-                                className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 transition ${
-                                    link.label === activeLabel
+                                onClick={() => setOpen(false)}
+                                aria-current={link.label === activeLabel ? "page" : undefined}
+                                className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3.5 py-2 transition ${link.label === activeLabel
                                         ? "bg-white/15 text-white"
                                         : "text-white/70 hover:bg-white/10 hover:text-white"
-                                }`}
+                                    }`}
                             >
                                 {link.label}
                             </Link>
@@ -174,9 +168,8 @@ export function Header({
                             key={link.label}
                             href={link.href}
                             onClick={() => setOpen(false)}
-                            className={`flex items-center justify-between gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition hover:bg-white/10 ${
-                                link.label === activeLabel ? "bg-white/10 text-white" : "text-white/80"
-                            }`}
+                            className={`flex items-center justify-between gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition hover:bg-white/10 ${link.label === activeLabel ? "bg-white/10 text-white" : "text-white/80"
+                                }`}
                         >
                             {link.label}
                         </Link>
